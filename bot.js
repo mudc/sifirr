@@ -17,10 +17,10 @@ client.on('message', msg => {
     msg.channel.sendMessage('BENCE DE!!!');
   }
   if (msg.content.toLowerCase() === 'Selam') {
-    msg.reply('Selam');
+    msg.channel.sendMessage ('Selam');
   }
   if (msg.content === 'günaydın') {
-    msg.reply('günaydın');
+    msg.channel.sendMessage ('günaydın');
   }
     if (msg.content === '!mısır') {
     msg.channel.sendMessage(':popcorn:');
