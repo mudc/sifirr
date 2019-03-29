@@ -23,7 +23,7 @@ client.on('message', msg => {
     msg.channel.sendMessage ('günaydın');
   }
   if (msg.content === '<:Pay:559366844415213569>') {
-    msg.channel.sendMessage (':Ticket2:');
+    msg.channel.sendMessage ('<:Ticket2:559366844167880717>');
   }
   if (msg.content === 'günaydın') {
     msg.channel.sendMessage ('günaydın');
