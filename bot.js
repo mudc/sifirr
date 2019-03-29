@@ -32,7 +32,7 @@ client.on('message', msg => {
     msg.channel.sendMessage(':popcorn:');
   }
   if (msg.content === '!bilet') {
-    msg.channel.sendMessage('??');
+    msg.channel.sendMessage('https://720p-izle.com/izle/altyazi/anna-karenina.html');
   }
   if (msg.content === '!321') {
     msg.channel.sendMessage('!123');
