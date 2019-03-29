@@ -22,6 +22,12 @@ client.on('message', msg => {
   if (msg.content === 'günaydın') {
     msg.channel.sendMessage ('günaydın');
   }
+  if (msg.content === ':Pay:') {
+    msg.channel.sendMessage (':Ticket:');
+  }
+  if (msg.content === 'günaydın') {
+    msg.channel.sendMessage ('günaydın');
+  }
     if (msg.content === '!mısır') {
     msg.channel.sendMessage(':popcorn:');
   }
