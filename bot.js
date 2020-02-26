@@ -70,6 +70,7 @@ client.on('message', msg => {
       msg.channel.sendMessage('Salon 10');
     }
   }
+
   if (msg.content === 'hazırım') {
     if (Math.floor((Math.random () * 3) + 1) ===1) {
       msg.channel.sendMessage('https://tenor.com/view/popcorn-bored-gif-10365509');
@@ -79,7 +80,8 @@ client.on('message', msg => {
       msg.channel.sendMessage('https://tenor.com/view/cine-pel%c3%adcula-palomitas-kino-popcorn-gif-12330033');
     }
   }
-   if (msg.content === '!popcorn') {
+  
+  if (msg.content === '!popcorn') {
     if (Math.floor((Math.random () * 3) + 1) ===1) {
       msg.channel.sendMessage('https://tenor.com/view/popcorn-bored-gif-10365509');
     }else if (Math.floor((Math.random () * 3) + 1) ===2) {
