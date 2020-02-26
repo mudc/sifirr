@@ -17,7 +17,7 @@ client.on('message', msg => {
     msg.channel.sendMessage('BENCE DE!!!');
   }
   if (msg.content.toLowerCase() === 'Selam') {
-    msg.reply('burdayım burda');
+    msg.reply('selam');
   }
   if (msg.content === 'günaydın') {
     msg.reply('günaydın');
