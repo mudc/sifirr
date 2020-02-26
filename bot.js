@@ -19,11 +19,11 @@ client.on('message', msg => {
   if (msg.content.toLowerCase() === 'Selam') {
     msg.channel.sendMessage ('Selam');
   }
-  if (msg.content === 'günaydın') {
-    msg.channel.sendMessage ('günaydın');
+  if (msg.content === 'Günaydın') {
+    msg.channel.sendMessage ('Günaydın');
   }
-  if (msg.content === '<:Pay:559366844415213569>') {
-   msg.reply('<:Ticket2:559366844167880717>');
+  if (msg.content === '<:pay:682349478409142333>') {
+   msg.reply('<:ticket:682349478300483607>');
   }
   if (msg.content === 'günaydın') {
     msg.channel.sendMessage ('günaydın');
@@ -32,12 +32,12 @@ client.on('message', msg => {
     msg.channel.sendMessage(':popcorn:');
   }
   if (msg.content === '!bilet') {
-    msg.channel.sendMessage('https://720p-izle.com/izle/altyazi/anna-karenina.html');
+    msg.channel.sendMessage('...');
   }
   if (msg.content === '!321') {
-    msg.channel.sendMessage('!123');
+    msg.channel.sendMessage('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
   }
-  if (msg.content === '!kapanış') {
+  if (msg.content === '!theend') {
     msg.channel.sendMessage('https://tenor.com/view/lisk-the-end-gif-10529426');
   }
   if (msg.content === 'film') {
@@ -70,10 +70,26 @@ client.on('message', msg => {
       msg.channel.sendMessage('Salon 10');
     }
   }
+  if (msg.content === 'hazırım') {
+    if (Math.floor((Math.random () * 3) + 1) ===1) {
+      msg.channel.sendMessage('https://tenor.com/view/popcorn-bored-gif-10365509');
+    }else if (Math.floor((Math.random () * 3) + 1) ===2) {
+      msg.channel.sendMessage('https://tenor.com/view/popcorn-gif-4572206');
+    }else if (Math.floor((Math.random () * 3) + 1) ===3) {
+      msg.channel.sendMessage('https://tenor.com/view/cine-pel%c3%adcula-palomitas-kino-popcorn-gif-12330033');
+    }
+  }
+   if (msg.content === '!popcorn') {
+    if (Math.floor((Math.random () * 3) + 1) ===1) {
+      msg.channel.sendMessage('https://tenor.com/view/popcorn-bored-gif-10365509');
+    }else if (Math.floor((Math.random () * 3) + 1) ===2) {
+      msg.channel.sendMessage('https://tenor.com/view/popcorn-gif-4572206');
+    }else if (Math.floor((Math.random () * 3) + 1) ===3) {
+      msg.channel.sendMessage('https://tenor.com/view/cine-pel%c3%adcula-palomitas-kino-popcorn-gif-12330033');
+    }
+  }
   
  
-  
-
 });
 
 client.login(process.env.BOT_TOKEN);
