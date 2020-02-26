@@ -22,19 +22,19 @@ client.on('message', msg => {
   if (msg.content === 'günaydın') {
     msg.reply('günaydın');
   }
-   if (msg.content === '<:pay:558747261929259062>') {
-    msg.reply('<:Ticket5:558747261954162698>');
+   if (msg.content === '<:pay:682349478409142333>') {
+    msg.reply('<:ticket:682349478300483607>');
   }
     if (msg.content === '!mısır') {
     msg.channel.sendMessage(':popcorn:');
   }
-  if (msg.content === '<:Ticket5:558747261954162698>') {
-    msg.channel.sendMessage('https://720p-izle.com/izle/altyazi/the-dictator.html');
+  if (msg.content === '<:ticket:682349478300483607>') {
+    msg.channel.sendMessage('...');
   }
   if (msg.content === '!321') {
-    msg.channel.sendMessage('https://tenor.com/view/movies-popcorn-cinema-eat-munch-gif-8433504');
+    msg.channel.sendMessage('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
   }
-  if (msg.content === '!kapanış') {
+  if (msg.content === '!theend') {
     msg.channel.sendMessage('https://tenor.com/view/lisk-the-end-gif-10529426');
   }
   if (msg.content === 'film') {
@@ -74,7 +74,7 @@ client.on('message', msg => {
     }
   }
   
-  if (msg.content === 'hazırım') {
+  if (msg.content === '!popcorn') {
     if (Math.floor((Math.random () * 3) + 1) ===1) {
       msg.channel.sendMessage('https://tenor.com/view/popcorn-bored-gif-10365509');
     }else if (Math.floor((Math.random () * 3) + 1) ===2) {
