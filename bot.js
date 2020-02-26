@@ -17,25 +17,22 @@ client.on('message', msg => {
     msg.channel.sendMessage('BENCE DE!!!');
   }
   if (msg.content.toLowerCase() === 'Selam') {
-    msg.channel.sendMessage ('Selam');
+    msg.reply('burdayım burda');
   }
   if (msg.content === 'günaydın') {
-    msg.channel.sendMessage ('günaydın');
+    msg.reply('günaydın');
   }
-  if (msg.content === '<:Pay:559366844415213569>') {
-   msg.reply('<:Ticket2:559366844167880717>');
-  }
-  if (msg.content === 'günaydın') {
-    msg.channel.sendMessage ('günaydın');
+   if (msg.content === '<:pay:558747261929259062>') {
+    msg.reply('<:Ticket5:558747261954162698>');
   }
     if (msg.content === '!mısır') {
     msg.channel.sendMessage(':popcorn:');
   }
-  if (msg.content === '!bilet') {
-    msg.channel.sendMessage('https://720p-izle.com/izle/altyazi/anna-karenina.html');
+  if (msg.content === '<:Ticket5:558747261954162698>') {
+    msg.channel.sendMessage('https://720p-izle.com/izle/altyazi/the-dictator.html');
   }
   if (msg.content === '!321') {
-    msg.channel.sendMessage('!123');
+    msg.channel.sendMessage('https://tenor.com/view/movies-popcorn-cinema-eat-munch-gif-8433504');
   }
   if (msg.content === '!kapanış') {
     msg.channel.sendMessage('https://tenor.com/view/lisk-the-end-gif-10529426');
@@ -46,6 +43,12 @@ client.on('message', msg => {
   if (msg.content === '!koltuk') {
     msg.channel.sendMessage("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 +1) + "`");
   }
+ 
+  
+ 
+
+  
+  
 
   if (msg.content === '!salon') {
     if (Math.floor((Math.random () * 10) + 1) ===1) {
@@ -71,7 +74,16 @@ client.on('message', msg => {
     }
   }
   
- 
+  if (msg.content === 'hazırım') {
+    if (Math.floor((Math.random () * 3) + 1) ===1) {
+      msg.channel.sendMessage('https://tenor.com/view/popcorn-bored-gif-10365509');
+    }else if (Math.floor((Math.random () * 3) + 1) ===2) {
+      msg.channel.sendMessage('https://tenor.com/view/popcorn-gif-4572206');
+    }else if (Math.floor((Math.random () * 3) + 1) ===3) {
+      msg.channel.sendMessage('https://tenor.com/view/cine-pel%c3%adcula-palomitas-kino-popcorn-gif-12330033');
+    }
+  }
+
   
 
 });
