@@ -43,9 +43,6 @@ client.on('message', msg => {
   if (msg.content === '!koltuk') {
     msg.channel.sendMessage("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 +1) + "`");
   }
-  if (msg.content === '!komut') {
-    msg.channel.sendMessage("`!koltuk - !salon - <:pay:682349478409142333> - <:ticket:682349478300483607>  "`");
-  }
   
  
 
