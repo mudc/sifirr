@@ -50,26 +50,14 @@ client.on('message', msg => {
   
 
   if (msg.content === '!salon') {
-    if (Math.floor((Math.random () * 10) + 1) ===1) {
+    if (Math.floor((Math.random () * 4) + 1) ===1) {
       msg.channel.sendMessage('Salon 1');
-    }else if (Math.floor((Math.random () * 10) + 1) ===2) {
+    }else if (Math.floor((Math.random () * 4) + 1) ===2) {
       msg.channel.sendMessage('Salon 2');
-    }else if (Math.floor((Math.random () * 10) + 1) ===3) {
+    }else if (Math.floor((Math.random () * 4) + 1) ===3) {
       msg.channel.sendMessage('Salon 3');
-    }else if (Math.floor((Math.random () * 10) + 1) ===4) {
+    }else if (Math.floor((Math.random () * 4) + 1) ===4) {
       msg.channel.sendMessage('Salon 4');
-    }else if (Math.floor((Math.random () * 10) + 1) ===5) {
-      msg.channel.sendMessage('Salon 5');
-    }else if (Math.floor((Math.random () * 10) + 1) ===6) {
-      msg.channel.sendMessage('Salon 6');
-    }else if (Math.floor((Math.random () * 10) + 1) ===7) {
-      msg.channel.sendMessage('Salon 7');
-    }else if (Math.floor((Math.random () * 10) + 1) ===8) {
-      msg.channel.sendMessage('Salon 8');
-    }else if (Math.floor((Math.random () * 10) + 1) ===9) {
-      msg.channel.sendMessage('Salon 9');
-    }else if (Math.floor((Math.random () * 10) + 1) ===10) {
-      msg.channel.sendMessage('Salon 10');
     }
   }
   
