@@ -22,8 +22,8 @@ client.on('message', msg => {
   if (msg.content === 'günaydın') {
     msg.reply('günaydın');
   }
-   if (msg.content === '<:pay:682349478409142333>') {
-    msg.reply('<:ticket:682349478300483607>');
+   if (msg.content === '<:pay:682349478409142333><:pay:682349478409142333>') {
+    msg.reply('<:ticket:682349478300483607><:ticket:682349478300483607>');
   }
     if (msg.content === '!mısır') {
     msg.channel.sendMessage(':popcorn:');
