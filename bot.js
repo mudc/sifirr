@@ -46,7 +46,7 @@ client.on('message', msg => {
   if (msg.content === 'film') {
     msg.channel.sendMessage('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
   }
-  if (msg.content === '!koltuk') {
+  if (msg.content === '<:ticket:682349478300483607>') {
     msg.channel.sendMessage("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 +1) + "`");
   }
   
