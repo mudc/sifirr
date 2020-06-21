@@ -34,6 +34,9 @@ client.on('message', msg => {
     if (msg.content === '!mısır') {
     msg.channel.sendMessage(':popcorn:');
   }
+   if (msg.content === '!popcorn') {
+    msg.channel.sendMessage(':popcorn:');
+  }
   if (msg.content === '<:ticket:682349478300483607>') {
     msg.channel.sendMessage('...');
   }
