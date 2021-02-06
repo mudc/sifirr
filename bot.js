@@ -96,7 +96,7 @@ async def leave(ctx):
     voice_client = client.voice_client_in(server)
     if voice_client != None:
     	await voice_client.disconnect()
-  
+  }
 
 });
 
