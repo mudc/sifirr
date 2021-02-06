@@ -80,17 +80,7 @@ client.on('message', msg => {
     }
   }
 
-  @client.command(pass_content=True)
-async def join (ctx):
-    channel = ctx.message.author.voice.channel
-    if not channel:
-        await ctx.send("You are not connected to a voice channel")
-        return
-    voice = get(client.voice_clients, guild=ctx.guild)
-    if voice and voice.is_connected():
-        await voice.move_to(channel)
-    else:
-        voice = await channel.connect()
+  
 
 
 });
