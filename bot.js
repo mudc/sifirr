@@ -2,6 +2,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
 
+client = commands.Bot(command_prefix = "!")
+client.remove_command("help")
+
 var prefix = ayarlar.prefix;
 
 
