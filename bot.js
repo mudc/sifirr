@@ -4,6 +4,7 @@ const ayarlar = require('./ayarlar.json');
 
 var prefix = ayarlar.prefix;
 
+client = commands.Bot(command_prefix = "!")
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
