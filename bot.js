@@ -10,7 +10,7 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'yeter') {
+  if (msg.content === prefix +'yeter') {
     msg.channel.sendMessage('bence de!');
   }
   if (msg.content === 'YETER') {
