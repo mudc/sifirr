@@ -117,7 +117,7 @@ client.on('message', msg => {
       server.queue.push(args[1]);
 
       if (!message.guild.voiceConnection)
-        message.member.voiceChannel.join().then(connection => {
+        message.member.voice.channel.join().then(connection => {
           message.reply("Here I am!");
         });
 
