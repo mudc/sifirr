@@ -80,6 +80,51 @@ client.on('message', msg => {
     }
   }
 
+  switch (args[0]) {
+    case "play":
+      function play(connection, message) {
+        var server = servers[message.guild.id];
+
+        server.dispatcher = connection.playStream(
+          ytdl(server.queue[0], { filter: "audioonly" })
+        );
+        server.queue.shift();
+
+        server.dispatcher.on("end", function() {
+          if (server.queue[0]) {
+            play(connection, message);
+          } else {
+            connection.disconnect();
+          }
+        });
+      }
+
+      if (!args[1]) {
+        message.channel.send("Give me a link to play");
+        return;
+      }
+      if (!message.member.voice.channel) {
+        message.channel.send("Join a voice channel to play music!");
+        return;
+      }
+      if (!servers[message.guild.id])
+        servers[message.guild.id] = {
+          queue: []
+        };
+
+      var server = servers[message.guild.id];
+
+      server.queue.push(args[1]);
+
+      if (!message.guild.voiceConnection)
+        message.member.voiceChannel.join().then(connection => {
+          message.reply("Here I am!");
+        });
+
+      break;
+  }
+
+
   
 
 });
