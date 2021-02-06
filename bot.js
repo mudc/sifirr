@@ -81,6 +81,22 @@ client.on('message', msg => {
   }
 
   
+  @client.command(pass_context = True)
+async def join(ctx):
+	server = ctx.message.server
+	if client.is_voice_connected(server):
+		voice_client = client.voice_client_in(server)
+		await voice_client.disconnect()
+	channel = ctx.message.author.voice.voice_channel
+	await client.join_voice_channel(channel)
+
+@client.command(pass_context = True)
+async def leave(ctx):
+    server = ctx.message.server
+    voice_client = client.voice_client_in(server)
+    if voice_client != None:
+    	await voice_client.disconnect()
+  
 
 });
 
