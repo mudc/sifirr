@@ -14,11 +14,17 @@ const picLogChannel = '855551723871535104';
 function isNumeric(num) {
     return !isNaN(num)
 }
-bot.on('ready', () => {
-    bot.user.setActivity('twitch.tv/kabrockie', { type: 'WATCHING' });
-    console.log('Komiser Nevra göreve hazır.');
-})
 
+// Belirli mesajlara göre yapılan işlemler burada
+bot.on('message', message => {
+
+    if (message.author.bot) return;    // Bot kendi yazdığı mesajları ignoreluyor.
+    if (message.channel.type === "dm") return; // Özel mesajları ignore
+    let args = message.content.substring(PREFIX.length).split(" ");
+
+    if (message.guild.id !== kabrockieServer) {
+        return;
+    }
 
 
 
