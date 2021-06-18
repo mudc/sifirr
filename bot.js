@@ -82,7 +82,7 @@ client.on('message', msg => {
     }
   }
 
-  const ZeroServer = '846062779169636392';
+const ZeroServer = '846062779169636392';
 const deleteLogChannel = '855551660175917116';
 const editLogChannel = '855551688470560828';
 const picLogChannel = '855551723871535104';
@@ -221,7 +221,7 @@ bot.on('messageUpdate', function (oldMessage, newMessage) {
     }
 
 
-    /*
+    
     // Birisi bir fotoğraf linki attığında pic loguna düşmüyor
     // Çünkü link atıldığında fotoğraf hemen ortaya çıkmıyor, bir kaç saniye sonra yükleniyor
     // Aşağıdaki kod ile linkli mesajlar da pic loguna düşecek
