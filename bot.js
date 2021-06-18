@@ -15,25 +15,7 @@ function isNumeric(num) {
     return !isNaN(num)
 }
 
-// Eğer herhangi bir mesaj silinirse mesajla ilgili bilgileri ilgili kanala yazıyor
-bot.on('messageDelete', function (message, channel) {
 
-    if (message.guild.id !== kabrockieServer) {
-        return;
-    }
-
-    bot.channels.get(deleteLogChannel).send("**[" + Date(Date.now()) + "]** " + message.channel + " kanalında *" + String(message.author.id) + " (" + message.author.username + ")* kişisinin mesajı silindi: " + '"' + message.content + '"');
-
-    // Eğer mesaj sadece bir fotoğraftan vs. oluşuyorsa boş mesaj olarak gözüküyor.
-    // Bu yüzden her attachmentın linkini log kanalına atıyor
-    // Silinen attachmentları görmenin yolu ne yazık ki yok ancak dosya adından ne olduğu bi ihtimal anlaşılabilir
-    if ((message.attachments).array().length > 0) {
-        var Attachment = (message.attachments).array();
-        Attachment.forEach(function (attachment) {
-            bot.channels.get(picLogChannel).send(attachment.url);
-        })
-    }
-});
 
 
 client.on('ready', () => {
