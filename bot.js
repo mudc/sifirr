@@ -14,7 +14,10 @@ const picLogChannel = '855551723871535104';
 function isNumeric(num) {
     return !isNaN(num)
 }
-
+bot.on('ready', () => {
+    bot.user.setActivity('twitch.tv/kabrockie', { type: 'WATCHING' });
+    console.log('Komiser Nevra göreve hazır.');
+})
 
 
 
