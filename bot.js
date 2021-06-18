@@ -11,6 +11,17 @@ const deleteLogChannel = '855551660175917116';
 const editLogChannel = '855551688470560828';
 const picLogChannel = '855551723871535104';
 
+function isNumeric(num) {
+    return !isNaN(num)
+}
+
+
+
+
+
+
+
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
