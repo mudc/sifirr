@@ -6,6 +6,10 @@ const ayarlar = require('./ayarlar.json');
 
 var prefix = ayarlar.prefix;
 
+const kabrockieServer = '846062779169636392';
+const deleteLogChannel = '855551660175917116';
+const editLogChannel = '855551688470560828';
+const picLogChannel = '855551723871535104';
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -82,7 +86,17 @@ client.on('message', msg => {
     }
   }
 
+  // Bu fonksiyon verilen parametrenin sayı olup olmadığını kontrol ediyor.
+function isNumeric(num) {
+    return !isNaN(num)
+}
   
+  // Bot hazır
+bot.on('ready', () => {
+    bot.user.setActivity('twitch.tv/kabrockie', { type: 'WATCHING' });
+    console.log('Komiser Nevra göreve hazır.');
+})
+
 
 
 });
