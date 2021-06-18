@@ -1,5 +1,5 @@
-const {Discord, MessageEmbed} = require('discord.js');
-const client = new Client({ partials: ['MESSAGE']});
+const Discord = require('discord.js');
+const client = new Client();
 const ayarlar = require('./ayarlar.json');
 
 
