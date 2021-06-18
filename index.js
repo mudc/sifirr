@@ -143,7 +143,7 @@ bot.on('messageUpdate', function (oldMessage, newMessage) {
     }
 
 
-    /
+    
     // Birisi bir fotoğraf linki attığında pic loguna düşmüyor
     // Çünkü link atıldığında fotoğraf hemen ortaya çıkmıyor, bir kaç saniye sonra yükleniyor
     // Aşağıdaki kod ile linkli mesajlar da pic loguna düşecek
@@ -156,7 +156,7 @@ bot.on('messageUpdate', function (oldMessage, newMessage) {
             bot.channels.get(picLogChannel).send({ files: [attachment.url] });
         })
     }
-    */
+   
 
 
     // Atılan fotoğraf linkli mesajlar fotoğraf ortaya çıkınca editlenmiş gibi algılanıyor
