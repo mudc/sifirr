@@ -86,17 +86,7 @@ client.on('message', msg => {
     }
   }
 
-  // Bu fonksiyon verilen parametrenin sayı olup olmadığını kontrol ediyor.
-function isNumeric(num) {
-    return !isNaN(num)
-}
-  
-  // Bot hazır
-bot.on('ready', () => {
-    bot.user.setActivity('twitch.tv/kabrockie', { type: 'WATCHING' });
-    console.log('Komiser Nevra göreve hazır.');
-})
-
+ 
 
 
 });
