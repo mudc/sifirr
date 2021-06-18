@@ -8,14 +8,7 @@ const ayarlar = require('./ayarlar.json');
 
 var prefix = ayarlar.prefix;
 
-const kabrockieServer = '846062779169636392';
-const deleteLogChannel = '855551660175917116';
-const editLogChannel = '855551688470560828';
-const picLogChannel = '855551723871535104';
 
-function isNumeric(num) {
-    return !isNaN(num)
-}
 
 client.on('ready', () => {
   client.user.setActivity('twitch.tv/angyfish', { type: 'WATCHING' });
@@ -23,10 +16,7 @@ client.on('ready', () => {
 });
 
 
-client.on('messageDelete',message => {
-    console.log("Hello");
-    console.log(message.content):
-});
+
 
 
 
