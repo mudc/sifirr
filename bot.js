@@ -19,7 +19,8 @@ function isNumeric(num) {
 
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setActivity('twitch.tv/angyfish', { type: 'WATCHING' });
+    console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('message', msg => {
