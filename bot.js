@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Client();
+const client = new Client()
 const ayarlar = require('./ayarlar.json');
 
 
