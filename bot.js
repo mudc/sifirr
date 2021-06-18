@@ -1,6 +1,7 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const {Discord, MessageEmbed} = require('discord.js');
+const client = new Client({ partials: ['MESSAGE']});
 const ayarlar = require('./ayarlar.json');
+
 
 
 
@@ -15,13 +16,18 @@ function isNumeric(num) {
     return !isNaN(num)
 }
 
-
-
-
 client.on('ready', () => {
   client.user.setActivity('twitch.tv/angyfish', { type: 'WATCHING' });
     console.log(`Logged in as ${client.user.tag}!`);
 });
+
+
+client.on('messageDelete',message => {
+    console.log("Hello");
+    console.log(message.content):
+});
+
+
 
 client.on('message', msg => {
   if (msg.content === 'yeter') {
