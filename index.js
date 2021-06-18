@@ -4,7 +4,7 @@ const config = require("./config.json");
 
 var prefix = ayarlar.prefix; // prefix olarak > kullanılıyor. Bota komut verilirken verilen komutlar > ile başlamalı.
 
-const ZeroServer = '846062779169636392';
+const kabrockieServer = '846062779169636392';
 const deleteLogChannel = '855551660175917116';
 const editLogChannel = '855551688470560828';
 const picLogChannel = '855551723871535104';
@@ -29,7 +29,7 @@ bot.on('message', message => {
     if (message.channel.type === "dm") return; // Özel mesajları ignore
     let args = message.content.substring(PREFIX.length).split(" ");
 
-    if (message.guild.id !== ZeroServer) {
+    if (message.guild.id !== kabrockieServer) {
         return;
     }
 
