@@ -24,9 +24,11 @@ client.on('messageDelete', message => {
   client.channels.get("deleteLogChannel").send(`A message saying "***${message.cleanContent}***" has been deleted at ${new Date()}`)
 });
 
+
+
 client.on('messageUpdate', function (oldMessage, newMessage) {
 
-    if (oldMessage.guild.id !== angyfishbotServer) {
+    if (oldMessage.guild.id !== angyfishServer) {
         return;
     }
     if (oldMessage.author.client) return;  // Botun kendi mesajlarını ignore
