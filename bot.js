@@ -41,7 +41,7 @@ client.on('messageUpdate', function (oldMessage, newMessage) {
         Attachment.forEach(function (attachment) {
             client.channels.get(picLogChannel).send({ files: [attachment.url] });
         })
-    }
+});
 
 
 client.on('message', msg => {
