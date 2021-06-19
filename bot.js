@@ -8,6 +8,10 @@ const ayarlar = require('./ayarlar.json');
 
 var prefix = ayarlar.prefix;
 
+const angyfishServer = '846062779169636392';
+const deleteLogChannel = '855551660175917116';
+const editLogChannel = '855551688470560828';
+const picLogChannel = '855551723871535104';
 
 
 client.on('ready', () => {
@@ -17,7 +21,7 @@ client.on('ready', () => {
 
 client.on('messageDelete', message => {
   console.log(`a message saying "***${message.cleanContent}***" was deleted from channel: ${message.channel.name} at ${new Date()}`);
-  client.channels.get("855551660175917116").send(`A message saying "***${message.cleanContent}***" has been deleted at ${new Date()}`)
+  client.channels.get("deleteLogChannel").send(`A message saying "***${message.cleanContent}***" has been deleted at ${new Date()}`)
 });
 
 
