@@ -15,12 +15,12 @@ const picLogChannel = '855551723871535104';
 
 
 client.on('ready', () => {
-  client.user.setActivity('twitch.tv/angyfish', { type: 'WATCHING' });
+  client.user.setActivity('twitch.tv/angyfisH', { type: 'WATCHING' });
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('messageDelete', message => {
-  console.log(`a message saying "***${message.cleanContent}***" was deleted from channel: ${message.channel.name} at ${new Date()}`);
+  console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name} at ${Date(Date.now()}`);
   client.channels.get("855551660175917116").send(`A message saying "***${message.cleanContent}***" + "***${message.author.id}***" + "***${message.author.username}***" has been deleted at ${new Date()}`)
 });
 
