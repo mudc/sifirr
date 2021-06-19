@@ -15,7 +15,7 @@ const picLogChannel = '855551723871535104';
 
 
 client.on('ready', () => {
-  client.user.setActivity('twitch.tv/angyfisH', { type: 'WATCHING' });
+  client.user.setActivity('twitch.tv/angyfish', { type: 'WATCHING' });
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
