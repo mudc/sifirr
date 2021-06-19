@@ -21,7 +21,7 @@ client.on('ready', () => {
 
 client.on('messageDelete', message => {
   console.log(`a message saying "***${message.cleanContent}***" was deleted from channel: ${message.channel.name} at ${new Date()}`);
-  client.channels.get("855551660175917116").send(`A message saying "***${message.cleanContent}***" has been deleted at ${new Date()}`)
+  client.channels.get(855551723871535104).send("**[" + Date(Date.now()) + "]** " + newMessage.author.id + " (" + newMessage.author.username + "), " + newMessage.channel + " kanalına şu eklentileri attı: ")
 });
 
 
