@@ -24,7 +24,22 @@ client.on('messageDelete', message => {
   client.channels.get("deleteLogChannel").send(`A message saying "***${message.cleanContent}***" has been deleted at ${new Date()}`)
 });
 
+client.on('messageUpdate', function (oldMessage, newMessage) {
 
+    if (oldMessage.guild.id !== angyfishbotServer) {
+        return;
+    }
+    if (oldMessage.author.client) return;  // Botun kendi mesajlarını ignore
+    
+    if((newMessage.attachments).array().length > 0){
+        
+        client.channels.get(picLogChannel).send("**[" + Date(Date.now()) + "]** " + newMessage.author.id + " (" + newMessage.author.username + "), " + newMessage.channel + " kanalına şu eklentileri attı: ")
+    
+        var Attachment = (newMessage.attachments).array();
+        Attachment.forEach(function (attachment) {
+            client.channels.get(picLogChannel).send({ files: [attachment.url] });
+        })
+    }
 
 
 client.on('message', msg => {
