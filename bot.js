@@ -15,7 +15,10 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
+client.on('messageDelete', message => {
+  console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name} at ${new Date()}`);
+  client.channels.get("855589463559110666").send(`A message saying "${message.cleanContent}" has been deleted at ${new Date()}`)
+});
 
 
 
