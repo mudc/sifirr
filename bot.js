@@ -11,7 +11,7 @@ var prefix = ayarlar.prefix;
 
 
 client.on('ready', () => {
-  client.user.setActivity('twitch.tv/angyfish', { type: 'WATCHING' });
+  client.user.setActivity('twitch.tv/ANGYFISH', { type: 'WATCHING' });
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
