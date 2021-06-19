@@ -15,31 +15,31 @@ const picLogChannel = '855551723871535104';
 
 
 client.on('ready', () => {
-  client.user.setActivity('twitch.tv/angyfish', { type: 'WATCHING' });
+  client.user.setActivity('twitch.tv/angyfisH', { type: 'WATCHING' });
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('messageDelete', message => {
   console.log(`a message saying "***${message.cleanContent}***" was deleted from channel: ${message.channel.name} at ${new Date()}`);
-  client.channels.get("deleteLogChannel").send(`A message saying "***${message.cleanContent}***" has been deleted at ${new Date()}`)
+  client.channels.get("855551660175917116").send(`A message saying "***${message.cleanContent}***" has been deleted at ${new Date()}`)
 });
 
 
 
 client.on('messageUpdate', function (oldMessage, newMessage) {
 
-    if (oldMessage.guild.id !== angyfishServer) {
+    if (oldMessage.guild.id !== 846062779169636392) {
         return;
     }
     if (oldMessage.author.client) return;  // Botun kendi mesajlarını ignore
     
     if((newMessage.attachments).array().length > 0){
         
-        client.channels.get(picLogChannel).send("**[" + Date(Date.now()) + "]** " + newMessage.author.id + " (" + newMessage.author.username + "), " + newMessage.channel + " kanalına şu eklentileri attı: ")
+        client.channels.get(855551723871535104).send("**[" + Date(Date.now()) + "]** " + newMessage.author.id + " (" + newMessage.author.username + "), " + newMessage.channel + " kanalına şu eklentileri attı: ")
     
         var Attachment = (newMessage.attachments).array();
         Attachment.forEach(function (attachment) {
-            client.channels.get(picLogChannel).send({ files: [attachment.url] });
+            client.channels.get(855551723871535104).send({ files: [attachment.url] });
         })
     }
 });
