@@ -49,6 +49,14 @@ if (msg.content.toLowerCase() === 'günaydın') {
         msg.channel.sendMessage('Tünaydın');
     }
 }
+  if (msg.content.toLowerCase() === 'günaydın') {
+    hrs = hrs + 3; // GMT +3
+    if (hrs <= 12 || hrs >= 24) {
+        msg.react(':white_check_mark:');
+    } else {
+        msg.react(':no_entry_sign:');
+    }
+}
    if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
     msg.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
   }
