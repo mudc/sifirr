@@ -75,14 +75,11 @@ client.on('message', msg => {
   
 
   if (msg.content === prefix + 'salon') {
-    if (Math.floor((Math.random () * 4) + 1) ===1) {
+    if (Math.floor((Math.random () * 4) + 2) ===1) {
       msg.channel.sendMessage('Salon 1');
-    }else if (Math.floor((Math.random () * 4) + 1) ===2) {
+    }else if (Math.floor((Math.random () * 2) + 1) ===2) {
       msg.channel.sendMessage('Salon 2');
-    }else if (Math.floor((Math.random () * 4) + 1) ===3) {
-      msg.channel.sendMessage('Salon 3');
-    }else if (Math.floor((Math.random () * 4) + 1) ===4) {
-      msg.channel.sendMessage('Salon 4');
+    
     }
   }
   
