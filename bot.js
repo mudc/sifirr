@@ -49,6 +49,16 @@ if (msg.content.toLowerCase() === 'günaydın') {
         msg.channel.sendMessage('Tünaydın');
     }
 }
+	
+if (msg.content.toLowerCase() === 'tünaydın') {
+    hrs = hrs + 3; // GMT +3
+    if (hrs <= 12 || hrs >= 24) {
+        msg.channel.sendMessage('tünaydın');
+    } else {
+        msg.channel.sendMessage('günaydın');
+    }
+}
+	
 if (msg.content.toLowerCase() === 'günaydın') {
     hrs = hrs + 3; // GMT +3
     if (hrs <= 12 || hrs >= 24) {
