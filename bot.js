@@ -63,8 +63,7 @@ if (msg.content.toLowerCase() === 'günaydın') {
     hrs = hrs + 3; // GMT +3
     if (hrs <= 12 || hrs >= 24) {
         msg.react('✅');
-		.then(() => msg.react('🌞'))	
-	    	.catch(error => console.error('One of the emojis failed to react:', error));
+	msg.react('🌞');	
     } else {
         msg.react('🚫');
     }
