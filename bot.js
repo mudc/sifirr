@@ -26,23 +26,6 @@ client.on('messageDelete', message => {
 
 
 
-client.on('messageUpdate', function (oldMessage, newMessage) {
-
-    if (oldMessage.guild.id !== 846062779169636392) {
-        return;
-    }
-    if (oldMessage.author.client) return;  // Botun kendi mesajlarını ignore
-    
-    if((newMessage.attachments).array().length > 0){
-        
-        client.channels.get(855551723871535104).send("**[" + Date(Date.now()) + "]** " + newMessage.author.id + " (" + newMessage.author.username + "), " + newMessage.channel + " kanalına şu eklentileri attı: ")
-    
-        var Attachment = (newMessage.attachments).array();
-        Attachment.forEach(function (attachment) {
-            client.channels.get(855551723871535104).send({ files: [attachment.url] });
-        })
-    }
-});
 
 
 client.on('message', msg => {
@@ -58,14 +41,14 @@ client.on('message', msg => {
   if (msg.content === 'günaydın') {
     msg.reply('günaydın');
   }
-   if (msg.content === '<:pay:682349478409142333><:pay:682349478409142333>') {
-    msg.reply('<:ticket:682349478300483607><:ticket:682349478300483607>');
+   if (msg.content === '<:pay:856947848805220352><:pay:856947848805220352>') {
+    msg.reply('<:ticket:856947901438885929><:ticket:856947901438885929>');
   }
-    if (msg.content === '<:pay:682349478409142333> <:pay:682349478409142333>') {
-    msg.reply('<:ticket:682349478300483607> <:ticket:682349478300483607>');
+    if (msg.content === '<:pay:856947848805220352> <:pay:856947848805220352>') {
+    msg.reply('<:ticket:856947901438885929> <:ticket:856947901438885929>');
   }
-    if (msg.content === '<:pay:682349478409142333>') {
-    msg.reply('<:ticket:682349478300483607>');
+    if (msg.content === '<:pay:856947848805220352>') {
+    msg.reply('<:ticket:856947901438885929>');
   }
     if (msg.content === prefix + 'mısır') {
     msg.channel.sendMessage(':popcorn:');
@@ -73,7 +56,7 @@ client.on('message', msg => {
    if (msg.content === prefix + 'popcorn') {
     msg.channel.sendMessage(':popcorn:');
   }
-  if (msg.content === '<:ticket:682349478300483607>') {
+  if (msg.content === '<:ticket:856947901438885929>') {
     msg.channel.sendMessage('...');
   }
   if (msg.content === prefix + '321') {
@@ -85,7 +68,7 @@ client.on('message', msg => {
   if (msg.content === 'film') {
     msg.channel.sendMessage('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
   }
-  if (msg.content === '<:ticket:682349478300483607>') {
+  if (msg.content === '<:ticket:856947901438885929>') {
     msg.channel.sendMessage("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 +1) + "`");
   }
   
