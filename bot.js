@@ -53,9 +53,9 @@ if (msg.content.toLowerCase() === 'günaydın') {
 if (msg.content.toLowerCase() === 'tünaydın') {
     hrs = hrs + 3; // GMT +3
     if (hrs <= 12 || hrs >= 24) {
-        msg.channel.sendMessage('tünaydın');
-    } else {
         msg.channel.sendMessage('günaydın');
+    } else {
+        msg.channel.sendMessage('tünaydın');
     }
 }
 	
