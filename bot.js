@@ -23,7 +23,7 @@ client.on('message', msg => {
 
     if (message.author.bot) return;
     if (message.channel.type === "dm") return;
-   });
+   }
 
 client.on('messageDelete', message => {
   console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name} at ${new Date()}`);
