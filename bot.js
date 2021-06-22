@@ -29,17 +29,14 @@ client.on('messageDelete', message => {
 
 
 client.on('message', msg => {
-  if (msg.content === 'yeter') {
+  if (msg.content.toLowerCase() === 'yeter') {
     msg.channel.sendMessage('bence de!');
   }
-  if (msg.content === 'YETER') {
-    msg.channel.sendMessage('BENCE DE!!!');
-  }
-  if (msg.content === 'selam') {
-    msg.reply('selam');
+  if (msg.content.toLowerCase() === 'selam') {
+    msg.channel.sendMessage('selam');
   }
   if (msg.content.toLowerCase() === 'günaydın') {
-    msg.reply('günaydın');
+    msg.channel.sendMessage('günaydın');
   }
    if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
     msg.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
@@ -47,22 +44,22 @@ client.on('message', msg => {
     if (msg.content === '<:pay:856947305592127579>') {
     msg.reply('<:ticket:856947316279214111>');
   }
-    if (msg.content === prefix + 'mısır') {
+    if (msg.content.toLowerCase() === prefix + 'mısır') {
     msg.channel.sendMessage(':popcorn:');
   }
-   if (msg.content === prefix + 'popcorn') {
+   if (msg.content.toLowerCase() === prefix + 'popcorn') {
     msg.channel.sendMessage(':popcorn:');
   }
   if (msg.content === '<:ticket:856947316279214111>') {
     msg.channel.sendMessage('...');
   }
-  if (msg.content === prefix + '321') {
+  if (msg.content.toLowerCase() === prefix + '321') {
     msg.channel.sendMessage('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
   }
-  if (msg.content === prefix + 'theend') {
+  if (msg.content.toLowerCase() === prefix + 'theend') {
     msg.channel.sendMessage('https://tenor.com/view/lisk-the-end-gif-10529426');
   }
-  if (msg.content === 'film') {
+  if (msg.content.toLowerCase() === prefix + 'film') {
     msg.channel.sendMessage('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
   }
   if (msg.content === '<:ticket:856947316279214111>') {
