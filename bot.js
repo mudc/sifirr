@@ -30,13 +30,7 @@ client.on('messageDelete', message => {
 });
 
 
-client.on('message', msg => {
-	if (msg.content === '!fruits') {
-		msg.react('🍎');
-		msg.react('🍊');
-		msg.react('🍇');
-	}
-});
+
 
 
 client.on('message', msg => {
@@ -63,6 +57,15 @@ if (msg.content.toLowerCase() === 'günaydın') {
         msg.react('🚫');
     }
 }
+	
+if (msg.content.toLowerCase() === 'tünaydın') {
+    hrs = hrs + 3; // GMT +3
+    if (hrs <= 12 || hrs >= 24) {
+        msg.react('🚫');
+    } else {
+        msg.react('✅');
+    }
+}	
    if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
     msg.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
   }
