@@ -19,11 +19,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', msg => {
 
-    if (message.author.bot) return;
-    if (message.channel.type === "dm") return;
-   }
 
 client.on('messageDelete', message => {
   console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name} at ${new Date()}`);
@@ -35,6 +31,7 @@ client.on('messageDelete', message => {
 
 
 client.on('message', msg => {
+  if (msg .author.bot) return; 
   if (msg.content.toLowerCase() === 'yeter') {
     msg.channel.sendMessage('bence de!');
   }
@@ -71,7 +68,7 @@ client.on('message', msg => {
   if (msg.content === '<:ticket:856947316279214111>') {
     msg.channel.sendMessage("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 +1) + "`");
   }
-  
+
  
 
   
