@@ -93,9 +93,15 @@ client.on('message', msg => {
     }
   }
 
- 
+
 
 
 });
 
+
+
 client.login(process.env.BOT_TOKEN);
+
+var myDate = new Date();
+var hrs = myDate.getHours();
+console.log(hrs);
