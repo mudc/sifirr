@@ -102,7 +102,7 @@ if (msg.content.toLowerCase() === 'tünaydın') {
     msg.channel.sendMessage('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
   }
   if (msg.content === '<:ticket:856947316279214111>') {
-    msg.channel.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 +1) + "`");
+    msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 +1) + "`");
   }
 
  
