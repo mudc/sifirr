@@ -63,6 +63,7 @@ if (msg.content.toLowerCase() === 'günaydın') {
     hrs = hrs + 3; // GMT +3
     if (hrs <= 12 || hrs >= 24) {
         msg.react('✅');
+        msg.react('🌞');	    
     } else {
         msg.react('🚫');
     }
