@@ -38,7 +38,7 @@ client.on('message', msg => {
   if (msg.content === 'selam') {
     msg.reply('selam');
   }
-  if (msg.content === 'günaydın') {
+  if (msg.content.toLowerCase() === 'günaydın') {
     msg.reply('günaydın');
   }
    if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
