@@ -26,7 +26,7 @@ client.on('ready', () => {
 
 client.on('messageDelete', message => {
   console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name} at ${new Date()}`);
-  client.channels.get("855551660175917116").send(`A message saying "***${message.cleanContent}***" + "***${message.author.id}***" + "***${message.author.username}***" has been deleted at ${currentDate.toLocaleString("tr-TR")}`)
+  client.channels.get("855551660175917116").send(`A message saying "***${message.cleanContent}***" + "***${message.author.id}***" + "***${message.author.username}***" has been deleted at ${myDate.toLocaleString("tr-TR")}`)
 });
 
 
