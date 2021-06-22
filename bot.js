@@ -8,7 +8,7 @@ const currentDate = new Date();
 
 var prefix = ayarlar.prefix;
 
-const angyfishServer = '846062779169636392';
+const angyfishServer = '794931185289265182';
 const deleteLogChannel = '855551660175917116';
 const editLogChannel = '855551688470560828';
 const picLogChannel = '855551723871535104';
