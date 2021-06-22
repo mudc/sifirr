@@ -1,12 +1,15 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
-const currentDate = new Date();
-
 
 
 
 var prefix = ayarlar.prefix;
+var myDate = new Date();
+var hrs = myDate.getHours();
+console.log(hrs);
+
+
 
 const angyfishServer = '794931185289265182';
 const deleteLogChannel = '855551660175917116';
@@ -38,9 +41,14 @@ client.on('message', msg => {
   if (msg.content.toLowerCase() === 'selam') {
     msg.channel.sendMessage('selam');
   }
-  if (msg.content.toLowerCase() === 'günaydın') {
-    msg.channel.sendMessage('günaydın');
-  }
+ if (msg.content.toLowerCase() === 'günaydın') {
+    hrs = hrs + 3; // GMT +3
+    if (hrs <= 12) {
+        msg.channel.sendMessage('günaydın');
+    } else {
+        msg.channel.sendMessage('Tünaydın');
+    }
+}
    if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
     msg.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
   }
