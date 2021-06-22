@@ -41,14 +41,11 @@ client.on('message', msg => {
   if (msg.content === 'günaydın') {
     msg.reply('günaydın');
   }
-   if (msg.content === '<:pay:856947848805220352><:pay:856947848805220352>') {
-    msg.reply('<:ticket:856947901438885929><:ticket:856947901438885929>');
+   if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
+    msg.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
   }
-    if (msg.content === '<:pay:856947848805220352> <:pay:856947848805220352>') {
-    msg.reply('<:ticket:856947901438885929> <:ticket:856947901438885929>');
-  }
-    if (msg.content === '<:pay:856947848805220352>') {
-    msg.reply('<:ticket:856947901438885929>');
+    if (msg.content === '<:pay:856947305592127579>') {
+    msg.reply('<:ticket:856947316279214111>');
   }
     if (msg.content === prefix + 'mısır') {
     msg.channel.sendMessage(':popcorn:');
@@ -56,7 +53,7 @@ client.on('message', msg => {
    if (msg.content === prefix + 'popcorn') {
     msg.channel.sendMessage(':popcorn:');
   }
-  if (msg.content === '<:ticket:856947901438885929>') {
+  if (msg.content === '<:ticket:856947316279214111>') {
     msg.channel.sendMessage('...');
   }
   if (msg.content === prefix + '321') {
@@ -68,7 +65,7 @@ client.on('message', msg => {
   if (msg.content === 'film') {
     msg.channel.sendMessage('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
   }
-  if (msg.content === '<:ticket:856947901438885929>') {
+  if (msg.content === '<:ticket:856947316279214111>') {
     msg.channel.sendMessage("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 +1) + "`");
   }
   
