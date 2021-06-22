@@ -35,7 +35,7 @@ client.on('message', msg => {
   if (msg.content === 'YETER') {
     msg.channel.sendMessage('BENCE DE!!!');
   }
-  if (msg.content.toLowerCase() === 'Selam') {
+  if (msg.content === 'selam') {
     msg.reply('selam');
   }
   if (msg.content === 'günaydın') {
