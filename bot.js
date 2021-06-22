@@ -30,7 +30,13 @@ client.on('messageDelete', message => {
 });
 
 
-
+client.on('message', msg => {
+	if (msg.content === '!fruits') {
+		msg.react('🍎');
+		msg.react('🍊');
+		msg.react('🍇');
+	}
+});
 
 
 client.on('message', msg => {
