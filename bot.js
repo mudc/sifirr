@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
-const { Client, MessageEmbed } = require('discord.js');
+const Discord = require('discord.js');
 
 
 var prefix = ayarlar.prefix;
@@ -29,19 +29,27 @@ client.on('messageDelete', message => {
   client.channels.get("855551660175917116").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
 });
 
-client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'mentalpower') {
-    const kanal = new MessageEmbed()
 
-    .setTitle('MentalPower')
-    .setDescription('Kanala abone olun.')
-    .setAuthor('Deneme Botu')
-    .setColor("RANDOM")
-    .setThumbnail('https://cdn.discordapp.com/attachments/434407003234893824/727070979695837234/adasdad.png')
-    .addField(':hearts: Yorum Yazın!', 'Videoyu beğenmeyi unutmayın!');
-    msg.channel.send(kanal);
-  }
-});
+  if (msg.content.toLowerCase() === 'mentalpower') {
+    const exampleEmbed = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Some title')
+	.setURL('https://discord.js.org/')
+	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription('Some description here')
+	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	.addFields(
+		{ name: 'Regular field title', value: 'Some value here' },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+	)
+	.addField('Inline field title', 'Some value here', true)
+	.setImage('https://i.imgur.com/wSTFkRM.png')
+	.setTimestamp()
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+
+channel.send(exampleEmbed);
 
 
 
