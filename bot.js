@@ -106,12 +106,12 @@ if (msg.content.toLowerCase() === 'tünaydın') {
     msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 +1) + "`");
   }
 
- if(msg.content === "!help") {
+if(msg.content === "!help") {
 let embed = new MessageEmbed()
 .setTitle("Command List")
 .setDescription("!help, !roll, !kick, !ban")
 .setColor("RANDOM")
-msg.channel.send(embed)
+msg.channel.sendMessage(embed)
 }
 
   
