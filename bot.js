@@ -10,22 +10,7 @@ var hrs = myDate.getHours();
 hrs = hrs + 3; // GMT +3
 console.log(hrs);
 
-accentsTidy = function(s){
-    var r=s.toLowerCase();
-    r = r.replace(new RegExp(/\s/g),"");
-    r = r.replace(new RegExp(/[àáâãäå]/g),"a");
-    r = r.replace(new RegExp(/æ/g),"ae");
-    r = r.replace(new RegExp(/ç/g),"c");
-    r = r.replace(new RegExp(/[èéêë]/g),"e");
-    r = r.replace(new RegExp(/[ìíîï]/g),"i");
-    r = r.replace(new RegExp(/ñ/g),"n");                
-    r = r.replace(new RegExp(/[òóôõö]/g),"o");
-    r = r.replace(new RegExp(/œ/g),"oe");
-    r = r.replace(new RegExp(/[ùúûü]/g),"u");
-    r = r.replace(new RegExp(/[ýÿ]/g),"y");
-    r = r.replace(new RegExp(/\W/g),"");
-    return r;
-};
+
 
 
 const angyfishServer = '794931185289265182';
@@ -46,6 +31,28 @@ client.on('messageDelete', message => {
   client.channels.get("855551660175917116").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
 });
 
+client.on('message', msg => {
+ accentsTidy = function(s){
+    var r=s.toLowerCase();
+    r = r.replace(new RegExp(/\s/g),"");
+    r = r.replace(new RegExp(/[àáâãäå]/g),"a");
+    r = r.replace(new RegExp(/æ/g),"ae");
+    r = r.replace(new RegExp(/ç/g),"c");
+    r = r.replace(new RegExp(/[èéêë]/g),"e");
+    r = r.replace(new RegExp(/[ìíîï]/g),"i");
+    r = r.replace(new RegExp(/ñ/g),"n");                
+    r = r.replace(new RegExp(/[òóôõö]/g),"o");
+    r = r.replace(new RegExp(/œ/g),"oe");
+    r = r.replace(new RegExp(/[ùúûü]/g),"u");
+    r = r.replace(new RegExp(/[ýÿ]/g),"y");
+    r = r.replace(new RegExp(/\W/g),"");
+    return r;
+  if (msg .author.bot) return; 
+  if (msg.content.toLowerCase() === 'deneme') {
+    msg.channel.sendMessage('check');
+  }
+
+};
 
 
 client.on('message', msg => {
