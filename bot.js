@@ -42,7 +42,7 @@ client.on('message', msg => {
   }
 if (msg.content.toLowerCase() === 'günaydın') {
     hrs = hrs + 3; // GMT +3
-    if (hrs <= 11 || hrs >= 24) {
+    if (hrs < 12 || hrs >= 24) {
         msg.channel.sendMessage('günaydın');
     } else {
         msg.channel.sendMessage('Tünaydın');
@@ -51,7 +51,7 @@ if (msg.content.toLowerCase() === 'günaydın') {
 	
 if (msg.content.toLowerCase() === 'tünaydın') {
     hrs = hrs + 3; // GMT +3
-    if (hrs <= 12 || hrs >= 24) {
+    if (hrs < 12 || hrs >= 24) {
         msg.channel.sendMessage('günaydın');
     } else {
         msg.channel.sendMessage('tünaydın');
@@ -60,7 +60,7 @@ if (msg.content.toLowerCase() === 'tünaydın') {
 	
 if (msg.content.toLowerCase() === 'günaydın') {
     hrs = hrs + 3; // GMT +3
-    if (hrs <= 12 || hrs >= 24) {
+    if (hrs < 12 || hrs >= 24) {
         msg.react('✅');
 	msg.react('🌞');	
     } else {
@@ -70,7 +70,7 @@ if (msg.content.toLowerCase() === 'günaydın') {
 	
 if (msg.content.toLowerCase() === 'tünaydın') {
     hrs = hrs + 3; // GMT +3
-    if (hrs <= 12 || hrs >= 24) {
+    if (hrs < 12 || hrs >= 24) {
         msg.react('🚫');
     } else {
         msg.react('✅');
