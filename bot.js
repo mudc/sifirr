@@ -7,7 +7,9 @@ const ayarlar = require('./ayarlar.json');
 var prefix = ayarlar.prefix;
 var myDate = new Date();
 var hrs = myDate.getHours();
+hrs = hrs + 3; // GMT +3
 console.log(hrs);
+
 
 
 
@@ -41,7 +43,6 @@ client.on('message', msg => {
     msg.channel.sendMessage('selam');
   }
 if (msg.content.toLowerCase() === 'günaydın') {
-    hrs = hrs + 3; // GMT +3
     if (hrs < 12 || hrs >= 24) {
         msg.channel.sendMessage('günaydın');
     } else {
@@ -50,7 +51,6 @@ if (msg.content.toLowerCase() === 'günaydın') {
 }
 	
 if (msg.content.toLowerCase() === 'tünaydın') {
-    hrs = hrs + 3; // GMT +3
     if (hrs < 12 || hrs >= 24) {
         msg.channel.sendMessage('günaydın');
     } else {
@@ -59,7 +59,6 @@ if (msg.content.toLowerCase() === 'tünaydın') {
 }
 	
 if (msg.content.toLowerCase() === 'günaydın') {
-    hrs = hrs + 3; // GMT +3
     if (hrs < 12 || hrs >= 24) {
         msg.react('✅');
 	msg.react('🌞');	
@@ -69,7 +68,6 @@ if (msg.content.toLowerCase() === 'günaydın') {
 }
 	
 if (msg.content.toLowerCase() === 'tünaydın') {
-    hrs = hrs + 3; // GMT +3
     if (hrs < 12 || hrs >= 24) {
         msg.react('🚫');
     } else {
