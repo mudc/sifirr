@@ -32,16 +32,12 @@ client.on('messageDelete', message => {
 });
 
 
-const yardım = now MessageEmbed()
-.setTitle('yardım menüsü')
-.setDescription('deneme1')
-.addField('deneme3', 'deneme4')
-.setTimeStamp()
-client.on('message', msg => {
-if (msg.content.toLowerCase() === prefix + 'yardım') {
-    msg.channel.send(yardım);
-  }
-});
+
+if (msg.content.toLowerCase() === 'yeter') {
+    msg.channel.send('bence de!');
+  } 
+
+
 
 
 
