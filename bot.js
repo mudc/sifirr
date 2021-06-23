@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
-const embed = new Discord.RichEmbed()
+const { Client, MessageEmbed } = require('discord.js')
 
 
 var prefix = ayarlar.prefix;
@@ -26,15 +26,22 @@ client.on('ready', () => {
 
 client.on('messageDelete', message => {
   console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name}`);
-  client.channels.get("855551660175917116").send(`.setTitle("${message.author.username}")
-.setAuthor("Silinen Mesaj", "","https://yagami.xyz")
-.setColor(0x00AE86)
-.setDescription("${message.cleanContent}")
-.setFooter("${message.author.id}, ")
-.setTimestamp()message.channel.send({embed})`)
+  client.channels.get("855551660175917116").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
 });
 
+client.on('message', message => {
+  if (message.content.toLowerCase() === 'mentalpower') {
+    const kanal = new MessageEmbed()
 
+    .setTitle('MentalPower')
+    .setDescription('Kanala abone olun.')
+    .setAuthor('Deneme Botu')
+    .setColor("RANDOM")
+    .setThumbnail('https://cdn.discordapp.com/attachments/434407003234893824/727070979695837234/adasdad.png')
+    .addField(':hearts: Yorum Yazın!', 'Videoyu beğenmeyi unutmayın!');
+    message.channel.send(kanal);
+  }
+});
 
 
 
