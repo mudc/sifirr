@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
-
+const { MessageEmbed } = require('discord.js')
 
 
 var prefix = ayarlar.prefix;
@@ -34,6 +34,18 @@ client.on('messageDelete', message => {
 var originalText = "éàçèñ"
 var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 console.log(result)
+
+
+const yardım = new MessageEmbed()
+.setTitle('yardım menüsü')
+.setDescription('deneme1')
+.addField('deneme3', 'deneme4')
+.setTimeStamp()
+client.on('message', msg => {
+if (msg.content.toLowerCase() === prefix + 'yardım') {
+    msg.channel.send(yardım);
+  }
+});
 
 
 client.on('message', msg => {
