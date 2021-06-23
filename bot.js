@@ -29,7 +29,15 @@ client.on('messageDelete', message => {
   client.channels.get("855551660175917116").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
 });
 
-
+client.on('message', message => {
+if(message.content === "!help") {
+let embed = new MessageEmbed()
+.setTitle("Command List")
+.setDescription("!help, !roll, !kick, !ban")
+.setColor("RANDOM")
+message.channel.send(embed)
+}
+});
 
 
 
@@ -106,15 +114,7 @@ if (msg.content.toLowerCase() === 'tünaydın') {
     msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 +1) + "`");
   }
 
-if(msg.content === "!help") {
-let embed = new MessageEmbed()
-.setTitle("Command List")
-.setDescription("!help, !roll, !kick, !ban")
-.setColor("RANDOM")
-msg.channel.sendMessage(embed)
-}
 
-  
   
 
   if (msg.content === prefix + 'salon') {
