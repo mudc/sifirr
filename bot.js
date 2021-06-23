@@ -30,7 +30,7 @@ client.on('messageDelete', message => {
 });
 
 client.on('message', msg => {
-if(msg.content === "!help") {
+if (msg.content === "!help") {
 let embed = new MessageEmbed()
 .setTitle("Command List")
 .setDescription("!help, !roll, !kick, !ban")
