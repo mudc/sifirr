@@ -26,7 +26,7 @@ client.on('ready', () => {
 
 client.on('messageDelete', message => {
   console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name}`);
-  client.channels.get("855551660175917116").send(`**${message.author.username}** : "__*${message.cleanContent}*__" + ${message.author.id}  has been deleted`)
+  client.channels.get("855551660175917116").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
 });
 
 
