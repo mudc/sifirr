@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
-
+const { MessageEmbed } = require("discord.js")
 
 
 var prefix = ayarlar.prefix;
@@ -31,6 +31,17 @@ client.on('messageDelete', message => {
   client.channels.get("855551660175917116").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
 });
 
+
+const yardım = now MessageEmbed()
+.setTitle('yardım menüsü')
+.setDescription('deneme1 \n deneme2')
+.addField('deneme3', 'deneme4')
+.setTimeStamp()
+client.on('message', msg => {
+if (msg.content.toLowerCase() === prefix + 'yardım') {
+    msg.channel.sendMessage(yardım);
+  }
+});
 
 
 
