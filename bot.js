@@ -105,7 +105,12 @@ if (msg.content.toLowerCase() === 'tünaydın') {
   if (msg.content === '<:ticket:856947316279214111>') {
     msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 +1) + "`");
   }
-
+  if (msg.content.toLowerCase() === 'yaksamlar') {
+    msg.channel.sendMessage('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
+  }
+  if (msg.content.toLowerCase() === 'yakşamlar') {
+    msg.channel.sendMessage('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
+  }
 
   
 
