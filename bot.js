@@ -26,11 +26,13 @@ client.on('ready', () => {
 
 client.on('messageDelete', message => {
   console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name}`);
-  client.channels.get("855551660175917116").send(`embed=discord.Embed(title="${message.cleanContent}", color=0xff0000)
-embed.set_author(name="${message.author.username}")
-embed.add_field(name="", value="", inline=False)
-embed.set_footer(text="${message.author.id}")
-await ctx.send(embed=embed)`)
+  client.channels.get("855551660175917116").send(`const embed = new Discord.RichEmbed()
+.setTitle("${message.author.username}")
+.setAuthor("Silinen Mesaj", "","https://yagami.xyz")
+.setColor(0x00AE86)
+.setDescription("${message.cleanContent}")
+.setFooter("${message.author.id}, ")
+.setTimestamp()message.channel.send({embed})`)
 });
 
 
