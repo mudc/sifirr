@@ -34,12 +34,12 @@ client.on('messageDelete', message => {
 
 const yardım = now MessageEmbed()
 .setTitle('yardım menüsü')
-.setDescription('deneme1 \n deneme2')
+.setDescription('deneme1')
 .addField('deneme3', 'deneme4')
 .setTimeStamp()
 client.on('message', msg => {
 if (msg.content.toLowerCase() === prefix + 'yardım') {
-    msg.channel.sendMessage(yardım);
+    msg.channel.send(yardım);
   }
 });
 
