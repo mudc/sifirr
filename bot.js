@@ -29,8 +29,8 @@ client.on('messageDelete', message => {
   client.channels.get("855551660175917116").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
 });
 
-client.on('message', message => {
-  if (message.content.toLowerCase() === 'mentalpower') {
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'mentalpower') {
     const kanal = new MessageEmbed()
 
     .setTitle('MentalPower')
@@ -39,7 +39,7 @@ client.on('message', message => {
     .setColor("RANDOM")
     .setThumbnail('https://cdn.discordapp.com/attachments/434407003234893824/727070979695837234/adasdad.png')
     .addField(':hearts: Yorum Yazın!', 'Videoyu beğenmeyi unutmayın!');
-    message.channel.send(kanal);
+    msg.channel.send(kanal);
   }
 });
 
