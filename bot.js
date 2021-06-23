@@ -36,7 +36,7 @@ client.on('message', msg => {
 if (msg.content.toLowerCase() === 'yeter') {
     msg.channel.send('bence de!');
   } 
-
+});
 
 
 
