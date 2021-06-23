@@ -31,10 +31,12 @@ client.on('messageDelete', message => {
   client.channels.get("855551660175917116").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
 });
 
-
+const zero = new MessageEmbed()
+.setTitle('yardım menüsü')
+.setDescription('deneme1')
 client.on('message', msg => {
-if (msg.content.toLowerCase() === 'yeter') {
-    msg.channel.send('bence de!');
+if (msg.content.toLowerCase() === 'angy') {
+    msg.channel.send(zero);
   } 
 });
 
