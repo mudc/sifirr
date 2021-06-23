@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
-const Discord = require('discord.js');
+const { MessageEmbed } = require("discord.js")
 
 
 var prefix = ayarlar.prefix;
@@ -30,26 +30,13 @@ client.on('messageDelete', message => {
 });
 
 
-  if (msg.content.toLowerCase() === 'mentalpower') {
-    const exampleEmbed = new Discord.MessageEmbed()
-	.setColor('#0099ff')
-	.setTitle('Some title')
-	.setURL('https://discord.js.org/')
-	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-	.setDescription('Some description here')
-	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
-	.addFields(
-		{ name: 'Regular field title', value: 'Some value here' },
-		{ name: '\u200B', value: '\u200B' },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
-	)
-	.addField('Inline field title', 'Some value here', true)
-	.setImage('https://i.imgur.com/wSTFkRM.png')
-	.setTimestamp()
-	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-
-channel.send(exampleEmbed);
+if(msg.content === "!help") {
+let embed = new MessageEmbed()
+.setTitle("Command List")
+.setDescription("!help, !roll, !kick, !ban")
+.setColor("RANDOM")
+msg.channel.send(embed)
+}
 
 
 
