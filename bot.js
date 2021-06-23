@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
-
+const embed = new Discord.RichEmbed()
 
 
 var prefix = ayarlar.prefix;
@@ -26,8 +26,7 @@ client.on('ready', () => {
 
 client.on('messageDelete', message => {
   console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name}`);
-  client.channels.get("855551660175917116").send(`const embed = new Discord.RichEmbed()
-.setTitle("${message.author.username}")
+  client.channels.get("855551660175917116").send(`.setTitle("${message.author.username}")
 .setAuthor("Silinen Mesaj", "","https://yagami.xyz")
 .setColor(0x00AE86)
 .setDescription("${message.cleanContent}")
