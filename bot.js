@@ -29,16 +29,6 @@ client.on('messageDelete', message => {
   client.channels.get("855551660175917116").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
 });
 
-client.on('message', msg => {
-if (msg.content === "!help") {
-let embed = new MessageEmbed()
-.setTitle("Command List")
-.setDescription("!help, !roll, !kick, !ban")
-.setColor("RANDOM")
-msg.channel.sendMessage(embed)
-}
-});
-
 
 
 
