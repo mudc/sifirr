@@ -19,10 +19,7 @@ client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('messageDelete', message => {
-	console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name}`);
-	client.channels.get("855551660175917116").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
-});
+
 
 var originalText = "éàçèñ"
 var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
