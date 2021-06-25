@@ -34,24 +34,52 @@ client.on('message', msg => {
 	}
 	if (msg.content.toLowerCase() === 'günaydın') {
 		if (hrs < 12 || hrs >= 24) {
-           		 msg.channel.send("Günaydın :slight_smile: ")
+           		 msg.channel.send("Günaydın :city_sunset: ")
        		 } else if (hrs < 17) {
-           		 msg.channel.send("Tünaydın :slight_smile: ")
+           		 msg.channel.send("Tünaydın :city_dusk: ")
       		 } else if (hrs < 22) {
            		 msg.channel.send("Yakşamlar :slight_smile: ")
         	 } else {
-           		msg.channel.send("İyi geceler :slight_smile: ")
+           		msg.channel.send("İyi geceler :night_with_stars: ")
        		 }
 	}
 
 	if (msg.content.toLowerCase() === 'tünaydın') {
 		if (hrs < 12 || hrs >= 24) {
-			msg.channel.send('günaydın');
-		} else {
-			msg.channel.send('tünaydın');
-		}
+           		 msg.channel.send("Günaydın :city_sunset: ")
+       		 } else if (hrs < 17) {
+           		 msg.channel.send("Tünaydın :city_dusk: ")
+      		 } else if (hrs < 22) {
+           		 msg.channel.send("Yakşamlar :cityscape: ")
+        	 } else {
+           		msg.channel.send("İyi geceler :night_with_stars: ")
+       		 }
+	}
+	
+	if (msg.content.toLowerCase() === 'yakşamlar') {
+		if (hrs < 12 || hrs >= 24) {
+           		 msg.channel.send("Günaydın :city_sunset: ")
+       		 } else if (hrs < 17) {
+           		 msg.channel.send("Tünaydın :city_dusk: ")
+      		 } else if (hrs < 22) {
+           		 msg.channel.send("Yakşamlar :cityscape: ")
+        	 } else {
+           		msg.channel.send("İyi geceler :night_with_stars: ")
+       		 }
 	}
 
+	if (msg.content.toLowerCase() === 'iyi geceler') {
+		if (hrs < 12 || hrs >= 24) {
+           		 msg.channel.send("Günaydın :city_sunset: ")
+       		 } else if (hrs < 17) {
+           		 msg.channel.send("Tünaydın :city_dusk: ")
+      		 } else if (hrs < 22) {
+           		 msg.channel.send("Yakşamlar :cityscape: ")
+        	 } else {
+           		msg.channel.send("İyi geceler :night_with_stars: ")
+       		 }
+	}
+	
 	if (msg.content.toLowerCase() === 'günaydın') {
 		if (hrs < 12 || hrs >= 24) {
 			msg.react('✅');
