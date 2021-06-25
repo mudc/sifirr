@@ -222,6 +222,7 @@ client.on('message', msg => {
 			msg.react('🚫');
 			msg.react('🌇');
 		} else {
+			msg.channel.send('https://prnt.sc/16s6xuv');
 			msg.react('🌇');
 			const yaksa = new Discord.MessageEmbed()
 			.setColor('RANDOM')
