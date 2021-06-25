@@ -7,6 +7,11 @@ var myDate = new Date();
 var hrs = myDate.getHours();
 console.log(hrs);
 
+const angyfishServer = '794931185289265182';
+const deleteLogChannel = '855551660175917116';
+const editLogChannel = '855551688470560828';
+const picLogChannel = '855551723871535104';
+
 client.on('ready', () => {
 	client.user.setActivity('v1.0.0', {
 		type: 'STREAMING',
@@ -17,7 +22,7 @@ client.on('ready', () => {
 
 client.on('messageDelete', message => {
 	console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name}`);
-	client.channels.get("855551660175917116").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
+	client.channels.get(deleteLogChannel).send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
 });
 
 var originalText = "éàçèñ"
