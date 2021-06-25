@@ -224,8 +224,7 @@ client.on('message', msg => {
 				name: 'Örnek',
 				value: '!filmekle "Filmin Adı" 12:30 https://google.com/img/exm.png'
 			},
-			msg.react('🚫');
-			msg.react('🌇');
+
 		} else if (hrs < 17) {
 			msg.channel.send("Tünaydın :city_dusk: ")
 			msg.react('🚫');
