@@ -222,7 +222,7 @@ client.on('message', msg => {
 			msg.react('🚫');
 			msg.react('🌇');
 		} else {
-			msg.channel.send('https://prnt.sc/16s6xuv');
+			msg.channel.send('https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png');
 			msg.react('🌇');
 			const yaksa = new Discord.MessageEmbed()
 			.setColor('RANDOM')
@@ -230,7 +230,7 @@ client.on('message', msg => {
 			.setDescription('akşamınız hayrolsun ;) ')
 			.addFields({
 				name: 'Örnek',
-				value: '!filmekle "Filmin Adı" - https://image.prntscr.com/image/tUJJ2NBwR6u4_6pLDSZPXA.png'
+				value: '!filmekle "Filmin Adı" - https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png'
 			}, {
 				name: 'Check',
 				value: '✅',
