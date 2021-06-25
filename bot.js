@@ -30,7 +30,7 @@ client.on('message', msg => {
 	if (msg.author.bot) return;
 
 	// Kelime kontrol: Kelimeleri boşluklarına ayırır
-	let keywords = message.content.toLowerCase();
+	let keywords = msg.content.toLowerCase();
 
 	// Yazılan mesajda günaydın var mı kontrol eder
 	let gunaydin = keywords.includes('günaydın');
