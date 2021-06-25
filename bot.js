@@ -216,6 +216,37 @@ client.on('message', msg => {
 		return msg.channel.send(exampleEmbed);
 	}
 	
+	if (msg.content === '🎫') {
+		const ticket = new Discord.MessageEmbed()
+			.setColor('#ffff00')
+			.setTitle('Bilet Gişesi')
+			.setDescription('de  ')
+			.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858092650606755840/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg')
+			.addFields({
+				name: 'Koltuk Numaranız',
+				value: 'Math.floor(Math.random() * 65 + 1)  12:30 https://google.com/img/exm.png'
+			}, {
+				name: 'Film Adı',
+				value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
+			}, {
+				name: 'Film Saati',
+				value: '12:30',
+				inline: true
+			}, {
+				name: 'Film Afişi',
+				value: 'Sadece Url',
+				inline: true
+			}, )
+			.setTimestamp()
+			.setFooter('Bot gibi bot');
+
+		return msg.channel.send(ticket);
+	}
+	
+	if (msg.content === '<:ticket:856947316279214111>') {
+		msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
+	}
+	
 	if (iyiaksamlar === true) {
 		if (hrs < 12 || hrs >= 24) {
 			msg.channel.send("iyi akşamar :city_sunset: ")
