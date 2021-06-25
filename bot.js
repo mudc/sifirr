@@ -7,7 +7,6 @@ const ayarlar = require('./ayarlar.json');
 var prefix = ayarlar.prefix;
 var myDate = new Date();
 var hrs = myDate.getHours();
-hrs = hrs + 3; // GMT +3
 console.log(hrs);
 
 
