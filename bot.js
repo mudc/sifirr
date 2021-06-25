@@ -133,17 +133,7 @@ client.on('message', msg => {
 		}
 	}
 	
-	if (iyiaksamlar === true) {
-		if (hrs < 12 || hrs >= 24) {
-			msg.channel.send("iyi akşamar :city_sunset: ")
-			msg.react('🚫');
-			msg.react('🌇');
-		} else {
-			msg.channel.send("yi akşam :city_dusk: ")
-			msg.react('✅');
-			msg.react('🌆');
-		}
-	}
+
 	
 
 
@@ -225,7 +215,38 @@ client.on('message', msg => {
 
 		return msg.channel.send(exampleEmbed);
 	}
+	
+	if (iyiaksamlar === true) {
+		if (hrs < 12 || hrs >= 24) {
+			msg.channel.send("iyi akşamar :city_sunset: ")
+			msg.react('🚫');
+			msg.react('🌇');
+		} else {
+			const yaksa = new Discord.MessageEmbed()
+						.setColor('#ffff00')
+			.setTitle('Film Komutları')
+			.setDescription('Kaliteli filmin yeni adresi ;) ')
+			.addFields({
+				name: 'Örnek',
+				value: '!filmekle "Filmin Adı" 12:30 https://google.com/img/exm.png'
+			}, {
+				name: 'Film Adı',
+				value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
+			}, {
+				name: 'Film Saati',
+				value: '12:30',
+				inline: true
+			}, {
+				name: 'Film Afişi',
+				value: 'Sadece Url',
+				inline: true
+			}, )
+			.setTimestamp()
+			.setFooter('Bot gibi bot');
 
+		return msg.channel.send(yaksa);
+		}	
+	}
 
 	
 });
