@@ -222,12 +222,12 @@ client.on('message', msg => {
 			msg.react('🚫');
 			msg.react('🌇');
 		} else {
-			msg.channel.send('https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png');
 			msg.react('🌇');
 			const yaksa = new Discord.MessageEmbed()
 			.setColor('RANDOM')
 			.setTitle('iyi akşamlar')
 			.setDescription('akşamınız hayrolsun ;) ')
+			.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png')
 			.addFields({
 				name: 'Örnek',
 				value: '!filmekle "Filmin Adı" - https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png'
