@@ -222,13 +222,14 @@ client.on('message', msg => {
 			msg.react('🚫');
 			msg.react('🌇');
 		} else {
+			msg.react('🌇');
 			const yaksa = new Discord.MessageEmbed()
-						.setColor('#ffff00')
-			.setTitle('Film Komutları')
-			.setDescription('Kaliteli filmin yeni adresi ;) ')
+			.setColor('RANDOM')
+			.setTitle('iyi akşamlar')
+			.setDescription('akşamınız hayrolsun ;) ')
 			.addFields({
 				name: 'Örnek',
-				value: '!filmekle "Filmin Adı" 12:30 https://google.com/img/exm.png'
+				value: '!filmekle "Filmin Adı" - https://prnt.sc/16s6xuv'
 			}, {
 				name: 'Film Adı',
 				value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
@@ -238,7 +239,7 @@ client.on('message', msg => {
 				inline: true
 			}, {
 				name: 'Film Afişi',
-				value: 'Sadece Url',
+				value: 'https://prnt.sc/16s6xuv',
 				inline: true
 			}, )
 			.setTimestamp()
