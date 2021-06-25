@@ -31,7 +31,7 @@ var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 console.log(result)
 
 client.on('message', msg => {
-  if (msg.author.bot) return; 
+  if (msg. author.bot) return; 
   if (msg.content.toLowerCase() === 'deneme1') {
 const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#ffff00')
@@ -61,7 +61,7 @@ const exampleEmbed = new Discord.MessageEmbed()
 
 
 client.on('message', msg => {
-  if (msg.author.bot) return; 
+  if (msg. author.bot) return; 
   if (msg.content.toLowerCase() === 'yeter') {
     msg.channel.sendMessage('bence de!');
   }
