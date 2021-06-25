@@ -7,7 +7,7 @@ var myDate = new Date();
 var hrs = myDate.getHours();
 console.log(hrs);
 
-const angyfishServer = '794931185289265182';
+
 const deleteLogChannel = '855551660175917116';
 const editLogChannel = '855551688470560828';
 const picLogChannel = '855551723871535104';
