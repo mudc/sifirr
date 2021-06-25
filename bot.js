@@ -171,5 +171,4 @@ client.login(process.env.BOT_TOKEN);
 
 var myDate = new Date();
 var hrs = myDate.getHours();
-hrs = hrs + 3; // GMT +3
 console.log(hrs);
