@@ -35,7 +35,34 @@ var originalText = "éàçèñ"
 var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 console.log(result)
 
+client.on('message', msg => {
+  if (msg .author.bot) return; 
+  if (msg.content.toLowerCase() === 'deneme1') {
+const exampleEmbed = new Discord.MessageEmbed()
+            .setColor('#ffff00')
+            .setTitle('Film Komutları')
+            .setDescription('Kaliteli filmin yeni adresi :wink: ')
+            .addFields({
+                name: 'Örnek',
+                value: '!filmekle "Filmin Adı" 12:30 https://google.com/img/exm.png'
+            }, {
+                name: 'Film Adı',
+                value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
+            }, {
+                name: 'Film Saati',
+                value: '12:30',
+                inline: true
+            }, {
+                name: 'Film Afişi',
+                value: 'Sadece Url',
+                inline: true
+            }, )
+            .setTimestamp()
+            .setFooter('Bot gibi bot');
 
+        return msg.channel.send(exampleEmbed);
+  }
+});
 
 
 client.on('message', msg => {
