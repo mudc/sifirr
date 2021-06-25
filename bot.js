@@ -156,10 +156,11 @@ client.on('message', msg => {
 	if (msg.content.toLowerCase() === prefix + '321') {
 		msg.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
 	}
-	if (msg.member.cache.roles(r => r.name === "Mayor") || msg.member.cache.roles(r => r.name === "Mods")) {
-		 if (msg.content.toLowerCase() === prefix + 'theend') {
-        	     msg.channel.send('https://tenor.com/view/lisk-the-end-gif-10529426%27); 
-		 }
+	if(msg.member.roles.cache.some(r => r.name === "Mods")) {
+  		if (msg.content.toLowerCase() === prefix + 'theend') {
+        		msg.channel.send('https://tenor.com/view/lisk-the-end-gif-10529426%27); 
+		
+		}
 	}
 	if (msg.content.toLowerCase() === prefix + 'film') {
 		msg.channel.send('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
