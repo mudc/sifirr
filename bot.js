@@ -156,7 +156,7 @@ client.on('message', msg => {
 	if (msg.content.toLowerCase() === prefix + '321') {
 		msg.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
 	}
-  	if if (message.member.roles.cache.some(role => role.name === 'Mods')) {
+  	if if (msg.member.roles.cache.some(role => role.name === 'Mods')) {
 		 if (msg.content.toLowerCase() === prefix + 'theend') {
         	     msg.channel.send('https://tenor.com/view/lisk-the-end-gif-10529426%27'); 
 		 }
