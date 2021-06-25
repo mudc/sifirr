@@ -36,51 +36,79 @@ client.on('message', msg => {
 		if (hrs < 12 || hrs >= 24) {
            		 msg.channel.send("Günaydın :city_sunset: ")
 			 msg.react('✅');
+			 msg.react('🌇');
        		 } else if (hrs < 17) {
            		 msg.channel.send("Tünaydın :city_dusk: ")
-			 msg.react('✅');
+			 msg.react('🚫');
+			 msg.react('🌆');
       		 } else if (hrs < 22) {
            		 msg.channel.send("Yakşamlar :cityscape: ")
-			 msg.react('✅');
+			 msg.react('🚫');
+			 msg.react('🏙️');
         	 } else {
            		msg.channel.send("İyi geceler :night_with_stars: ")
-			msg.react('✅');
+			msg.react('🚫');
+			msg.react('🌃');
        		 }
 	}
 
 	if (msg.content.toLowerCase() === 'tünaydın') {
 		if (hrs < 12 || hrs >= 24) {
            		 msg.channel.send("Günaydın :city_sunset: ")
+			 msg.react('🚫');
+			 msg.react('🌇');
        		 } else if (hrs < 17) {
            		 msg.channel.send("Tünaydın :city_dusk: ")
+			 msg.react('✅');
+			 msg.react('🌆');
       		 } else if (hrs < 22) {
            		 msg.channel.send("Yakşamlar :cityscape: ")
+			 msg.react('🚫');
+			 msg.react('🏙️');
         	 } else {
            		msg.channel.send("İyi geceler :night_with_stars: ")
+			msg.react('🚫');
+			msg.react('🌃');
        		 }
 	}
 	
 	if (msg.content.toLowerCase() === 'yakşamlar') {
 		if (hrs < 12 || hrs >= 24) {
            		 msg.channel.send("Günaydın :city_sunset: ")
+			 msg.react('🚫');
+			 msg.react('🌇');
        		 } else if (hrs < 17) {
            		 msg.channel.send("Tünaydın :city_dusk: ")
+			 msg.react('🚫');
+			 msg.react('🌆');
       		 } else if (hrs < 22) {
            		 msg.channel.send("Yakşamlar :cityscape: ")
+			 msg.react('✅');
+			 msg.react('🏙️');
         	 } else {
            		msg.channel.send("İyi geceler :night_with_stars: ")
+			msg.react('🚫');
+			msg.react('🌃');
        		 }
 	}
 
 	if (msg.content.toLowerCase() === 'iyi geceler') {
 		if (hrs < 12 || hrs >= 24) {
            		 msg.channel.send("Günaydın :city_sunset: ")
+			 msg.react('🚫');
+			 msg.react('🌇');
        		 } else if (hrs < 17) {
            		 msg.channel.send("Tünaydın :city_dusk: ")
+			 msg.react('🚫');
+			 msg.react('🌆');
       		 } else if (hrs < 22) {
            		 msg.channel.send("Yakşamlar :cityscape: ")
+			 msg.react('🚫');
+			 msg.react('🏙️');
         	 } else {
            		msg.channel.send("İyi geceler :night_with_stars: ")
+			msg.react('✅');
+			msg.react('🌃');
        		 }
 	}
 	
