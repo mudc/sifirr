@@ -21,24 +21,9 @@ client.on('ready', () => {
 
 
 client.on('messageDelete', msg => {
-    if (msg.channel.type == 'text') {
-      var logger = msg.guild.channels.get(855551660175917116);
-      if (logger) {
-	 const exampleEmbed = new Discord.MessageEmbed()
-          .setTitle('Message Deleted')
-          .addField('Author', msg.author.username)
-          .addField('Message', msg.cleanContent)
-          .setThumbnail(msg.author.avatarURL)
-          .setColor('0x00AAFF');
-    
-	.setFooter(msg.author.id);
-	    
-	      logger.send({ exampleEmbed });
-      }
-    }
-  });
- 
-
+	console.log(`a message saying "${msg.cleanContent}" was deleted from channel: ${msg.channel.name}`);
+	client.channels.cache.get("855551660175917116").send(`**${msg.author.username}** : "${msg.cleanContent}" + _${msg.author.id}_`)
+});
 
 
 
