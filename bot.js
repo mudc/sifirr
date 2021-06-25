@@ -214,16 +214,16 @@ client.on('message', msg => {
 		return msg.channel.send(exampleEmbed);
 	}
 
-	if (iyiaksamlar === true) {
+		if (iyiaksamlar === true) {
 		if (hrs < 12 || hrs >= 24) {
-			msg.channel.send("iyi akşamlar :city_sunset: ")
+			msg.channel.send("iyi akşamar :city_sunset: ")
 			msg.react('🚫');
 			msg.react('🌇');
 		} else if (hrs < 17) {
-			msg.channel.send("yok :city_dusk: ")
-			msg.react('🚫');
+			msg.channel.send("yi akşam :city_dusk: ")
+			msg.react('✅');
 			msg.react('🌆');
-		} 
+		}
 	}
 	
 });
