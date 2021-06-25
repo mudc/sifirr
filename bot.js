@@ -40,6 +40,7 @@ client.on('message', msg => {
 
 	// Yazılan mesajda günaydın var mı kontrol eder
 	let gunaydin = keywords.includes('günaydın');
+	let iyiaksamlar = keywords.includes('iyi akşamlar');
 	let tunaydin = keywords.includes('tünaydın');
 	let yaksamlar = keywords.includes('yakşamlar');
 	let iyigeceler = keywords.includes('iyi geceler')
@@ -104,6 +105,7 @@ client.on('message', msg => {
 			msg.channel.send("Yakşamlar :cityscape: ")
 			msg.react('✅');
 			msg.react('🏙️');
+			msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 		} else {
 			msg.channel.send("İyi geceler :night_with_stars: ")
 			msg.react('🚫');
@@ -130,6 +132,8 @@ client.on('message', msg => {
 			msg.react('🌃');
 		}
 	}
+	
+
 
 
 	if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
@@ -162,9 +166,7 @@ client.on('message', msg => {
 	if (msg.content.toLowerCase() === 'yaksamlar') {
 		msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 	}
-	if (msg.content.toLowerCase() === 'yakşamlar') {
-		msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
-	}
+	
 
 
 	if (msg.content === prefix + 'salon') {
@@ -212,6 +214,33 @@ client.on('message', msg => {
 		return msg.channel.send(exampleEmbed);
 	}
 
+			if (iyiaksamlar === true) {
+		if (hrs < 12 || hrs >= 24) {
+			const iyaksamlar = new Discord.MessageEmbed()
+			.setColor('#ffff00')
+			.setTitle('Günaydın :city_sunset: ')
+			.setDescription('Kaliteli filmin yeni adresi ;) ')
+			.addFields({
+				name: 'Örnek',
+				value: '!filmekle "Filmin Adı" 12:30 https://google.com/img/exm.png'
+			},
+			msg.react('🚫');
+			msg.react('🌇');
+		} else if (hrs < 17) {
+			msg.channel.send("Tünaydın :city_dusk: ")
+			msg.react('🚫');
+			msg.react('🌆');
+		} else if (hrs < 22) {
+			msg.channel.send("Yakşamlar :cityscape: ")
+			msg.react('🚫');
+			msg.react('🏙️');
+		} else {
+			msg.channel.send("İyi geceler :night_with_stars: ")
+			msg.react('✅');
+			msg.react('🌃');
+		}
+	return msg.channel.send(iyaksamlar);				
+	}
 
 });
 
