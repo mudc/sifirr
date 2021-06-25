@@ -22,7 +22,7 @@ client.on('ready', () => {
 
 client.on('messageDelete', msg => {
     if (msg.channel.type == 'text') {
-      var logger = msg.guild.channels.get("855551660175917116");
+      var logger = msg.guild.channels.get(855551660175917116);
       if (logger) {
 	 const exampleEmbed = new Discord.MessageEmbed()
           .setTitle('Message Deleted')
