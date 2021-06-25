@@ -7,7 +7,6 @@ var myDate = new Date();
 var hrs = myDate.getHours();
 console.log(hrs);
 
-
 const deleteLogChannel = '855551660175917116';
 const editLogChannel = '855551688470560828';
 const picLogChannel = '855551723871535104';
@@ -30,93 +29,105 @@ var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 console.log(result)
 
 client.on('message', msg => {
+
 	if (msg.author.bot) return;
+
+	// Kelime kontrol: Kelimeleri boşluklarına ayırır
+	let keywords = message.content.toLowerCase();
+
+	// Yazılan mesajda günaydın var mı kontrol eder
+	let gunaydin = keywords.includes('günaydın');
+	let tunaydin = keywords.includes('tünaydın');
+	let yaksamlar = keywords.includes('yakşamlar');
+	let iyigeceler = keywords.includes('iyi geceler')
+
+
 	if (msg.content.toLowerCase() === 'yeter') {
 		msg.channel.send('bence de!');
 	}
 	if (msg.content.toLowerCase() === 'selam') {
 		msg.channel.send('selam');
 	}
-	if (msg.content.toLowerCase() === 'günaydın') {
+	if (gunaydin === true) {
 		if (hrs < 12 || hrs >= 24) {
-           		 msg.channel.send("Günaydın :city_sunset: ")
-			 msg.react('✅');
-			 msg.react('🌇');
-       		 } else if (hrs < 17) {
-           		 msg.channel.send("Tünaydın :city_dusk: ")
-			 msg.react('🚫');
-			 msg.react('🌆');
-      		 } else if (hrs < 22) {
-           		 msg.channel.send("Yakşamlar :cityscape: ")
-			 msg.react('🚫');
-			 msg.react('🏙️');
-        	 } else {
-           		msg.channel.send("İyi geceler :night_with_stars: ")
+			msg.channel.send("Günaydın :city_sunset: ")
+			msg.react('✅');
+			msg.react('🌇');
+		} else if (hrs < 17) {
+			msg.channel.send("Tünaydın :city_dusk: ")
+			msg.react('🚫');
+			msg.react('🌆');
+		} else if (hrs < 22) {
+			msg.channel.send("Yakşamlar :cityscape: ")
+			msg.react('🚫');
+			msg.react('🏙️');
+		} else {
+			msg.channel.send("İyi geceler :night_with_stars: ")
 			msg.react('🚫');
 			msg.react('🌃');
-       		 }
+		}
 	}
 
-	if (msg.content.toLowerCase() === 'tünaydın') {
+	if (tunaydin === true) {
 		if (hrs < 12 || hrs >= 24) {
-           		 msg.channel.send("Günaydın :city_sunset: ")
-			 msg.react('🚫');
-			 msg.react('🌇');
-       		 } else if (hrs < 17) {
-           		 msg.channel.send("Tünaydın :city_dusk: ")
-			 msg.react('✅');
-			 msg.react('🌆');
-      		 } else if (hrs < 22) {
-           		 msg.channel.send("Yakşamlar :cityscape: ")
-			 msg.react('🚫');
-			 msg.react('🏙️');
-        	 } else {
-           		msg.channel.send("İyi geceler :night_with_stars: ")
+			msg.channel.send("Günaydın :city_sunset: ")
+			msg.react('🚫');
+			msg.react('🌇');
+		} else if (hrs < 17) {
+			msg.channel.send("Tünaydın :city_dusk: ")
+			msg.react('✅');
+			msg.react('🌆');
+		} else if (hrs < 22) {
+			msg.channel.send("Yakşamlar :cityscape: ")
+			msg.react('🚫');
+			msg.react('🏙️');
+		} else {
+			msg.channel.send("İyi geceler :night_with_stars: ")
 			msg.react('🚫');
 			msg.react('🌃');
-       		 }
-	}
-	
-	if (msg.content.toLowerCase() === 'yakşamlar') {
-		if (hrs < 12 || hrs >= 24) {
-           		 msg.channel.send("Günaydın :city_sunset: ")
-			 msg.react('🚫');
-			 msg.react('🌇');
-       		 } else if (hrs < 17) {
-           		 msg.channel.send("Tünaydın :city_dusk: ")
-			 msg.react('🚫');
-			 msg.react('🌆');
-      		 } else if (hrs < 22) {
-           		 msg.channel.send("Yakşamlar :cityscape: ")
-			 msg.react('✅');
-			 msg.react('🏙️');
-        	 } else {
-           		msg.channel.send("İyi geceler :night_with_stars: ")
-			msg.react('🚫');
-			msg.react('🌃');
-       		 }
+		}
 	}
 
-	if (msg.content.toLowerCase() === 'iyi geceler') {
+	if (yaksamlar === true) {
 		if (hrs < 12 || hrs >= 24) {
-           		 msg.channel.send("Günaydın :city_sunset: ")
-			 msg.react('🚫');
-			 msg.react('🌇');
-       		 } else if (hrs < 17) {
-           		 msg.channel.send("Tünaydın :city_dusk: ")
-			 msg.react('🚫');
-			 msg.react('🌆');
-      		 } else if (hrs < 22) {
-           		 msg.channel.send("Yakşamlar :cityscape: ")
-			 msg.react('🚫');
-			 msg.react('🏙️');
-        	 } else {
-           		msg.channel.send("İyi geceler :night_with_stars: ")
+			msg.channel.send("Günaydın :city_sunset: ")
+			msg.react('🚫');
+			msg.react('🌇');
+		} else if (hrs < 17) {
+			msg.channel.send("Tünaydın :city_dusk: ")
+			msg.react('🚫');
+			msg.react('🌆');
+		} else if (hrs < 22) {
+			msg.channel.send("Yakşamlar :cityscape: ")
+			msg.react('✅');
+			msg.react('🏙️');
+		} else {
+			msg.channel.send("İyi geceler :night_with_stars: ")
+			msg.react('🚫');
+			msg.react('🌃');
+		}
+	}
+
+	if (iyigeceler === true) {
+		if (hrs < 12 || hrs >= 24) {
+			msg.channel.send("Günaydın :city_sunset: ")
+			msg.react('🚫');
+			msg.react('🌇');
+		} else if (hrs < 17) {
+			msg.channel.send("Tünaydın :city_dusk: ")
+			msg.react('🚫');
+			msg.react('🌆');
+		} else if (hrs < 22) {
+			msg.channel.send("Yakşamlar :cityscape: ")
+			msg.react('🚫');
+			msg.react('🏙️');
+		} else {
+			msg.channel.send("İyi geceler :night_with_stars: ")
 			msg.react('✅');
 			msg.react('🌃');
-       		 }
+		}
 	}
-	
+
 
 	if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
 		msg.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
@@ -172,7 +183,7 @@ client.on('message', msg => {
 		}
 	}
 
-	if(msg.content === "deneme1"){
+	if (msg.content === "deneme1") {
 		const exampleEmbed = new Discord.MessageEmbed()
 			.setColor('#ffff00')
 			.setTitle('Film Komutları')
@@ -197,8 +208,6 @@ client.on('message', msg => {
 
 		return msg.channel.send(exampleEmbed);
 	}
-
-
 
 
 });
