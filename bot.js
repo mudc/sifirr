@@ -257,7 +257,7 @@ client.on('message', msg => {
 			const yaksa = new Discord.MessageEmbed()
 			.setColor('RANDOM')
 			.setTitle('iyi akşamlar')
-			.setDescription('akşamınız hayrolsun ;) ')
+			.setDescription('akşamınız hayrolsun :) ')
 			.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png')
 			.addFields({
 				name: 'Check',
