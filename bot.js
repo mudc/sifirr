@@ -19,18 +19,25 @@ client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
 
+	client.on('messageDelete', msg => {
+		var logger = client.channels.cache.get("855551660175917116")
+		const embed = new Discord.MessageEmbed()
+			 .setTitle('Message Deleted')
+         		 .addField('Author', message.author.username)
+         		 .addField('Message', message.cleanContent)
+         		 .setThumbnail(message.author.avatarURL)
+         		 .setColor('0x00AAFF');
+		 logger.send({ embed });
+      }
+    }
+  });
+
 client.on('messageDelete', msg => {
 	console.log(`a message saying "${msg.cleanContent}" was deleted from channel: ${msg.channel.name}`);
 	client.channels.cache.get("855551660175917116").send(`**${msg.author.username}** : "${msg.cleanContent}" + _${msg.author.id}_`)
 });
 
-client.on('messageUpdate', msg => {
-	console.log(`a message saying "${msg.cleanContent}" was deleted from channel: ${msg.channel.name}`);
-	if((msg.attachments).array().length > 0){
-	client.channels.cache.get("855551723871535104").send(`**${msg.author.username}** :  + _${msg.author.id}_ + _${msg.channel.name}_`)
 
-	}
-});
 
 var originalText = "éàçèñ"
 var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
