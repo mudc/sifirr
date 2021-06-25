@@ -34,10 +34,14 @@ client.on('message', msg => {
 	}
 	if (msg.content.toLowerCase() === 'günaydın') {
 		if (hrs < 12 || hrs >= 24) {
-			msg.channel.send('günaydın');
-		} else {
-			msg.channel.send('Tünaydın');
-		}
+           		 msg.channel.send("Günaydın :slight_smile: ")
+       		 } else if (hrs < 17) {
+           		 msg.channel.send("Tünaydın :slight_smile: ")
+      		 } else if (hrs < 22) {
+           		 msg.channel.send("Yakşamlar :slight_smile: ")
+        	 } else {
+           		msg.channel.send("İyi geceler :slight_smile: ")
+       		 }
 	}
 
 	if (msg.content.toLowerCase() === 'tünaydın') {
