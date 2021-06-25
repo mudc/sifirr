@@ -230,7 +230,7 @@ client.on('message', msg => {
 			.setDescription('akşamınız hayrolsun ;) ')
 			.addFields({
 				name: 'Örnek',
-				value: '!filmekle "Filmin Adı" - https://prnt.sc/16s6xuv'
+				value: '!filmekle "Filmin Adı" - https://image.prntscr.com/image/tUJJ2NBwR6u4_6pLDSZPXA.png'
 			}, {
 				name: 'Check',
 				value: '✅',
