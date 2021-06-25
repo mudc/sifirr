@@ -23,9 +23,10 @@ client.on('ready', () => {
 		var logger = client.channels.cache.get("855551660175917116")
 		const embed = new Discord.MessageEmbed()
 			 .setTitle('Message Deleted')
-         		 .addField('Author', message.author.username)
-         		 .addField('Message', message.cleanContent)
-         		 .setThumbnail(message.author.avatarURL)
+         		 .addField('Author', msg.author.username)
+         		 .addField('Message', msg.cleanContent)
+			 .addField('Message', msg.author.id)
+         		 .setThumbnail(msg.author.avatarURL)
          		 .setColor('0x00AAFF');
 		 logger.send({ embed });
       }
