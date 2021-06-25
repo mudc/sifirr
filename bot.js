@@ -156,9 +156,9 @@ client.on('message', msg => {
 	if (msg.content.toLowerCase() === prefix + '321') {
 		msg.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
 	}
-  	if (msg.member.roles.cache.some(role => role.name === 'Mods')) {
+  	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		 if (msg.content.toLowerCase() === prefix + 'theend') {
-        	     msg.channel.send('https://tenor.com/view/lisk-the-end-gif-10529426%27'); 
+        	     msg.channel.send('https://tenor.com/view/sad-no-way-the-end-ending-gif-13844808'); 
 		 }
 	}
 	if (msg.content.toLowerCase() === prefix + 'film') {
