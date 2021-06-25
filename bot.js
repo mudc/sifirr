@@ -112,22 +112,7 @@ client.on('message', msg => {
        		 }
 	}
 	
-	if (msg.content.toLowerCase() === 'günaydın') {
-		if (hrs < 12 || hrs >= 24) {
-			
-			msg.react('🌞');
-		} else {
-			msg.react('🚫');
-		}
-	}
 
-	if (msg.content.toLowerCase() === 'tünaydın') {
-		if (hrs < 12 || hrs >= 24) {
-			msg.react('🚫');
-		} else {
-			msg.react('✅');
-		}
-	}
 	if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
 		msg.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
 	}
