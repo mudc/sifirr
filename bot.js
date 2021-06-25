@@ -30,7 +30,7 @@ client.on('messageDelete', msg => {
           .addField('Message', msg.cleanContent)
           .setThumbnail(msg.author.avatarURL)
           .setColor('0x00AAFF');
-       	.setTimestamp()
+    
 	.setFooter(msg.author.id);
 	    
 	      logger.send({ exampleEmbed });
