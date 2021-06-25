@@ -24,9 +24,12 @@ client.on('messageDelete', msg => {
 	client.channels.cache.get("855551660175917116").send(`**${msg.author.username}** : "${msg.cleanContent}" + _${msg.author.id}_`)
 });
 
-client.on('messageDelete', msg => {
+client.on('messageUpdate', msg => {
 	console.log(`a message saying "${msg.cleanContent}" was deleted from channel: ${msg.channel.name}`);
-	client.channels.get("855551723871535104").send("**[" + Date(Date.now()) + "]** " + newMessage.author.id + " (" + newMessage.author.username + "), " + newMessage.channel + " kanalına şu eklentileri attı: ")
+	if((msg.attachments).array().length > 0){
+	client.channels.cache.get("855551723871535104").send(`**${msg.author.username}** :  + _${msg.author.id}_ + _${msg.channel.name}_`)
+
+	}
 });
 
 var originalText = "éàçèñ"
