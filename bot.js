@@ -214,33 +214,18 @@ client.on('message', msg => {
 		return msg.channel.send(exampleEmbed);
 	}
 
-			if (iyiaksamlar === true) {
+	if (iyiaksamlar === true) {
 		if (hrs < 12 || hrs >= 24) {
-			const iyaksamlar = new Discord.MessageEmbed()
-			.setColor('#ffff00')
-			.setTitle('Günaydın :city_sunset: ')
-			.setDescription('Kaliteli filmin yeni adresi ;) ')
-			.addFields({
-				name: 'Örnek',
-				value: '!filmekle "Filmin Adı" 12:30 https://google.com/img/exm.png'
-			},
-
+			msg.channel.send("iyi akşamlar :city_sunset: ")
+			msg.react('🚫');
+			msg.react('🌇');
 		} else if (hrs < 17) {
-			msg.channel.send("Tünaydın :city_dusk: ")
+			msg.channel.send("yok :city_dusk: ")
 			msg.react('🚫');
 			msg.react('🌆');
-		} else if (hrs < 22) {
-			msg.channel.send("Yakşamlar :cityscape: ")
-			msg.react('🚫');
-			msg.react('🏙️');
-		} else {
-			msg.channel.send("İyi geceler :night_with_stars: ")
-			msg.react('✅');
-			msg.react('🌃');
-		}
-	return msg.channel.send(iyaksamlar);				
+		} 
 	}
-
+	
 });
 
 client.login(process.env.BOT_TOKEN);
