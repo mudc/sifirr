@@ -30,8 +30,7 @@ client.on('ready', () => {
          		 .setColor('0x00AAFF');
 		 logger.send({ embed });
       }
-    }
-  });
+ 
 
 client.on('messageDelete', msg => {
 	console.log(`a message saying "${msg.cleanContent}" was deleted from channel: ${msg.channel.name}`);
