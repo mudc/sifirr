@@ -229,15 +229,12 @@ client.on('message', msg => {
 			.setDescription('akşamınız hayrolsun ;) ')
 			.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png')
 			.addFields({
-				name: 'Örnek',
-				value: '!filmekle "Filmin Adı" - https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png'
-			}, {
 				name: 'Check',
 				value: '✅',
 				inline: true
 			}, )
 			.setTimestamp()
-			.setFooter('Bot gibi bot');
+			.setFooter('LobbyBoy');
 
 		return msg.channel.send(yaksa);
 		}	
