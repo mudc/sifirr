@@ -22,7 +22,7 @@ client.on('ready', () => {
 
 client.on('messageDelete', message => {
 	console.log(`a message saying "${message.cleanContent}" was deleted from channel: ${message.channel.name}`);
-	client.channels.get(deleteLogChannel).send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
+	client.channels.get("deleteLogChannel").send(`**${message.author.username}** : "${message.cleanContent}" + _${message.author.id}_`)
 });
 
 var originalText = "éàçèñ"
