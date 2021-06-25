@@ -231,15 +231,8 @@ client.on('message', msg => {
 				name: 'Örnek',
 				value: '!filmekle "Filmin Adı" - https://prnt.sc/16s6xuv'
 			}, {
-				name: 'Film Adı',
-				value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
-			}, {
-				name: 'Film Saati',
-				value: '12:30',
-				inline: true
-			}, {
-				name: 'Film Afişi',
-				value: 'https://prnt.sc/16s6xuv',
+				name: 'Check',
+				value: '✅',
 				inline: true
 			}, )
 			.setTimestamp()
