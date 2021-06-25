@@ -19,23 +19,26 @@ client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
 
-	client.on('messageDelete', msg => {
-		var logger = client.channels.cache.get("855551660175917116")
-		const embed = new Discord.MessageEmbed()
-			 .setTitle('Message Deleted')
-         		 .addField('Author', msg.author.username)
-         		 .addField('Message', msg.cleanContent)
-			 .addField('Message', msg.author.id)
-         		 .setThumbnail(msg.author.avatarURL)
-         		 .setColor('0x00AAFF');
-		 logger.send({ embed });
-      }
- 
 
 client.on('messageDelete', msg => {
-	console.log(`a message saying "${msg.cleanContent}" was deleted from channel: ${msg.channel.name}`);
-	client.channels.cache.get("855551660175917116").send(`**${msg.author.username}** : "${msg.cleanContent}" + _${msg.author.id}_`)
-});
+    if (msg.channel.type == 'text') {
+      var logger = msg.guild.channels.get("855551660175917116");
+      if (logger) {
+	 const exampleEmbed = new Discord.MessageEmbed()
+          .setTitle('Message Deleted')
+          .addField('Author', msg.author.username)
+          .addField('Message', msg.cleanContent)
+          .setThumbnail(msg.author.avatarURL)
+          .setColor('0x00AAFF');
+       	.setTimestamp()
+	.setFooter(msg.author.id);
+	    
+	      logger.send({ exampleEmbed });
+      }
+    }
+  });
+ 
+
 
 
 
