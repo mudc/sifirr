@@ -133,12 +133,12 @@ client.on('message', msg => {
 		}
 	}
 	
-			if (iyiaksamlar === true) {
+	if (iyiaksamlar === true) {
 		if (hrs < 12 || hrs >= 24) {
 			msg.channel.send("iyi akşamar :city_sunset: ")
 			msg.react('🚫');
 			msg.react('🌇');
-		} else if (hrs < 17) {
+		} else {
 			msg.channel.send("yi akşam :city_dusk: ")
 			msg.react('✅');
 			msg.react('🌆');
