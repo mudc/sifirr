@@ -7,6 +7,8 @@ var myDate = new Date();
 var hrs = myDate.getHours();
 console.log(hrs);
 
+
+
 const deleteLogChannel = '846062780083732511';
 const editLogChannel = '846062780083732510';
 const picLogChannel = '855551723871535104';
@@ -298,7 +300,9 @@ client.on('message', msg => {
 		return msg.channel.send(yaksa);
 		}	
 	}
+	if msg.content.startswith('^botservers'):
 
+    await msg.channel.send("I'm in " + str(len(client.guilds)) + " servers!")
 	
 });
 
