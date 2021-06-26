@@ -218,12 +218,12 @@ client.on('message', msg => {
 						value: mcount
 				},{
 						name: 'Text channels',
-						value: tcount,
+						value: "tcount",
 						inline: true
 				},{
 
 						name: 'Voice channels',
-						value: vcount,
+						value: 'vcount',
 						inline: true
 				},
 						 );
