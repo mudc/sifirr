@@ -202,7 +202,6 @@ client.on('message', msg => {
 		if (msg.content.toLowerCase() === prefix +  'stats') {
 			const ucount = client.users.cache.size;
 			const scount = client.guilds.cache.size;
-			const mcount = client.guild.members.cache.size;
 			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
 			const stats = new Discord.MessageEmbed()
@@ -216,7 +215,7 @@ client.on('message', msg => {
 						value: scount
 				},{
 						name: 'Members', 
-						value: mcount
+						value: ucount
 				},{
 						name: 'Text channels',
 						value: tcount,
@@ -225,10 +224,6 @@ client.on('message', msg => {
 
 						name: 'Voice channels',
 						value: vcount,
-						inline: true
-				},{
-						name: 'Users',
-						value: ucount,
 						inline: true
 				},
 						 );
