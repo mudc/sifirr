@@ -198,8 +198,6 @@ client.on('message', msg => {
 	if (msg.content.toLowerCase() === 'yaksamlar') {
 		msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 	}
-	
-
 
 	if (msg.content === prefix + 'salon') {
 		if (Math.floor((Math.random() * 4) + 2) === 1) {
@@ -300,9 +298,11 @@ client.on('message', msg => {
 		return msg.channel.send(yaksa);
 		}	
 	}
-	if msg.content.startswith('^botservers'):
+	
+	if (msg.content.toLowerCase() === '!status') {
+		msg.channel.send('client.setActivity(`Currently in ${client.guilds.cache.size} servers');
+		
 
-    await msg.channel.send("I'm in " + str(len(client.guilds)) + " servers!")
 	
 });
 
