@@ -198,7 +198,37 @@ client.on('message', msg => {
 	if (msg.content.toLowerCase() === 'yaksamlar') {
 		msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 	}
-	if (msg.content.toLowerCase() === 'stats') {
+	if (msg.content.toLowerCase() === prefix +  'stats') {
+		const stats = new Discord.MessageEmbed()
+			.setColor('RANDOM')
+			.setTitle('Film Komutları')
+			.setDescription('Kaliteli filmin yeni adresi ;) ')
+			.addFields({
+				name: 'Örnek',
+				value: '${client.guilds.cache.size}'
+			}, {
+				name: 'Film Adı',
+				value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
+			}, {
+				name: 'Film Saati',
+				value: '12:30',
+				inline: true
+			}, {
+				name: 'Film Afişi',
+				value: 'Sadece Url',
+				inline: true
+			}, )
+			.setTimestamp()
+			.setFooter('Bot gibi bot');
+
+		return msg.channel.send(exampleEmbed);
+	}
+		
+		
+		
+		
+		
+		
 		msg.channel.send(`Server count: ${client.guilds.cache.size}`);
 	}
 	
