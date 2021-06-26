@@ -7,7 +7,7 @@ var myDate = new Date();
 var hrs = myDate.getHours();
 console.log(hrs);
 
-const deleteLogChannel = '855551660175917116';
+const deleteLogChannel = '846062780083732511';
 const editLogChannel = '846062780083732510';
 const picLogChannel = '855551723871535104';
 
@@ -21,21 +21,32 @@ client.on('ready', () => {
 
 
 client.on('messageDelete', msg => {
-	console.log(`a message saying "${msg.cleanContent}" was deleted from channel: ${msg.channel.name}`);
-	client.channels.cache.get(deleteLogChannel).send(`**${msg.author.username}** : "${msg.cleanContent}" + _${msg.author.id}_`)
+	if (!msg.author) return;
+	const msgdelLog = client.channels.cache.find(channel => channel.id ==='855551660175917116');
+	 var delembed = new Discord.MessageEmbed()
+	 .setAuthor(msg.author.username)
+	 .setTimestamp()
+	 .setColor('#392B47')
+	 .addFields(
+		 {name: 'original:',value: msg.cleanContent},
+		 {name: 'edit:', value: msg.author.id}    );
+ msgdelLog.send(delembed);
+		 
 });
+
+
 
 client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
    	if (!oldmsg.author) return;
-   	const msgLog = client.channels.cache.find(channel => channel.id ==='855551688470560828');
-		var embed = new Discord.MessageEmbed()
+   	const msgeditLog = client.channels.cache.find(channel => channel.id ==='855551688470560828');
+		var editembed = new Discord.MessageEmbed()
 		.setAuthor(newmsg.author.username)
 		.setTimestamp()
 		.setColor('#392B47')
 		.addFields(
     		{name: 'original:',value: oldmsg},
     		{name: 'edit:', value: newmsg}    );
-	msgLog.send(embed);
+	msgeditLog.send(editembed);
 			
 });
 
