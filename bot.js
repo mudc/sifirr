@@ -28,9 +28,11 @@ client.on('messageDelete', msg => {
 	 .setTimestamp()
 	 .setColor('#392B47')
 	 .addFields(
-		 {name: 'original:',value: msg.cleanContent},
-		 {name: 'edit:', value: msg.author.id}    );
- msgdelLog.send(delembed);
+		 {name: 'silinen mesaj:',value: msg.cleanContent},
+		 {name: 'kanal:', msg.channel}    )
+	.setFooter('value: msg.author.id');
+	
+	msgdelLog.send(delembed);
 		 
 });
 
