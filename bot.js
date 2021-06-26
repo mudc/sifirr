@@ -27,7 +27,7 @@ client.on('messageDelete', msg => {
 	 .setTitle('Message Deleted')
 	 .setAuthor(msg.author.username)
 	 .setColor('#392B47')
-	 .setThumbnail(msg.author.avatarURL)
+	 .setThumbnail(msg.author.avatarURL())
 	 .setFooter(msg.author.id)
 	 .setTimestamp()
 	 .addFields(
