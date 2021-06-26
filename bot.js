@@ -30,7 +30,7 @@ client.on('messageDelete', msg => {
 	 .setFooter('value: msg.author.id')
 	 .addFields(
 		 {name: 'silinen mesaj:',value: msg.cleanContent},
-		 {name: 'kanal:', msg.channel}    );
+		 {name: 'kanal:', msg.channel.name}    );
  
 	msgdelLog.send(delembed);
 		 
