@@ -45,7 +45,7 @@ client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
 		.setAuthor(newmsg.author.username, newmsg.author.avatarURL())
 		.setColor('#ffda99')
 		.setTimestamp()
-		.setFooter(newmsg.author.id)
+		.setFooter(`Message ID: ${newmsg.id} | Author ID: ${newmsg.author.id}`)
 		.addFields(
     		{name: '📄 original:',value: oldmsg},
     		{name: '📝 edit:', value: newmsg}    );
