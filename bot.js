@@ -203,23 +203,11 @@ client.on('message', msg => {
 			.setColor('RANDOM')
 			.setTitle('Film Komutları')
 			.setDescription('Kaliteli filmin yeni adresi ;) ')
-			.addFields({
-				name: 'Örnek',
-				value: '${client.guilds.cache.size}'
-			}, {
-				name: 'Film Adı',
-				value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
-			}, {
-				name: 'Film Saati',
-				value: '12:30',
-				inline: true
-			}, {
-				name: 'Film Afişi',
-				value: 'Sadece Url',
-				inline: true
-			}, )
 			.setTimestamp()
-			.setFooter('Bot gibi bot');
+			.setFooter('Bot gibi bot')
+			.addFields(
+				{name: '🚫 silinen mesaj:',value: client.guilds.cache.size},
+				{name: 'kanal:', value: msg.channel.name}    );
 
 		return msg.channel.send(stats);
 	}
