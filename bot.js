@@ -224,13 +224,6 @@ client.on('message', msg => {
 		return msg.channel.send(exampleEmbed);
 	}
 		
-		
-		
-		
-		
-		
-		msg.channel.send(`Server count: ${client.guilds.cache.size}`);
-	}
 	
 	if (msg.content === prefix + 'salon') {
 		if (Math.floor((Math.random() * 4) + 2) === 1) {
