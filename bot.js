@@ -202,7 +202,7 @@ client.on('message', msg => {
 		if (msg.content.toLowerCase() === prefix +  'stats') {
 			const ucount = client.users.cache.size;
 			const scount = client.guilds.cache.size;
-			const mcount = message.guild.members.cache.size;
+			const mcount = client.guild.members.cache.size;
 			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
 			const stats = new Discord.MessageEmbed()
