@@ -200,8 +200,9 @@ client.on('message', msg => {
 	}
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content.toLowerCase() === prefix +  'stats') {
-			const mcount = client.users.cache.size;
+			const ucount = client.users.cache.size;
 			const scount = client.guilds.cache.size;
+			const mcount = message.guild.members.cache.size;
 			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
 			const stats = new Discord.MessageEmbed()
@@ -214,16 +215,20 @@ client.on('message', msg => {
 						name: 'Server:',
 						value: scount
 				},{
-						name: 'Users', 
+						name: 'Members', 
 						value: mcount
 				},{
 						name: 'Text channels',
-						value: "tcount",
+						value: tcount,
 						inline: true
 				},{
 
 						name: 'Voice channels',
-						value: 'vcount',
+						value: vcount,
+						inline: true
+				},{
+						name: 'Users',
+						value: ucount,
 						inline: true
 				},
 						 );
