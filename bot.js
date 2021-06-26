@@ -300,7 +300,7 @@ client.on('message', msg => {
 	}
 	
 	if (msg.content.toLowerCase() === '!status') {
-		msg.channel.send('client.setActivity(`Currently in ${client.guilds.cache.size} servers');
+		console.log(`a message saying "${msg.guilds.cache.size}" was deleted from channel: ${msg.channel.name}`);
 	}	
 
 	
