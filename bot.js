@@ -27,7 +27,7 @@ client.on('messageDelete', msg => {
 	 .setAuthor(msg.author.username)
 	 .setTimestamp()
 	 .setColor('#392B47')
-	 .setFooter('value: msg.author.id')
+	 .setFooter('msg.author.id')
 	 .addFields(
 		 {name: 'silinen mesaj:',value: msg.cleanContent},
 		 {name: 'kanal:', value: msg.channel.name}    );
