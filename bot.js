@@ -301,7 +301,7 @@ client.on('message', msg => {
 	
 	if (msg.content.toLowerCase() === '!status') {
 		msg.channel.send('client.setActivity(`Currently in ${client.guilds.cache.size} servers');
-		
+	}	
 
 	
 });
