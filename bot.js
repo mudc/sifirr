@@ -26,7 +26,7 @@ client.on('messageDelete', msg => {
 	 var delembed = new Discord.MessageEmbed()
 	 .setAuthor(msg.author.username, msg.author.avatarURL())
 	 .setColor('#c92424')
-	 .setFooter('deneme', msg.author.id)
+	 .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`)
 	 .setTimestamp()
 	 .addFields(
 		 {name: '🚫 silinen mesaj:',value: msg.cleanContent},
