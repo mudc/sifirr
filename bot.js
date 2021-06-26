@@ -8,7 +8,7 @@ var hrs = myDate.getHours();
 console.log(hrs);
 
 const deleteLogChannel = '855551660175917116';
-const editLogChannel = '855551688470560828';
+const editLogChannel = '846062780083732510';
 const picLogChannel = '855551723871535104';
 
 client.on('ready', () => {
@@ -25,6 +25,18 @@ client.on('messageDelete', msg => {
 	client.channels.cache.get(deleteLogChannel).send(`**${msg.author.username}** : "${msg.cleanContent}" + _${msg.author.id}_`)
 });
 
+client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
+   if (!oldmsg.author) return;
+   const msgLog = client.channels.cache.find(channel => channel.id ==='855551688470560828');
+var embed = new Discord.MessageEmbed()
+.setAuthor(newmsg.author.username)
+.setTimestamp()
+.setColor('#392B47')
+.addFields(
+    {name: 'original:',value: oldmsg},
+    {name: 'edit:', value: newmsg}    );
+msgLog.send(embed);
+}
 
 
 var originalText = "éàçèñ"
