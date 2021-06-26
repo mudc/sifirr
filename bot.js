@@ -37,7 +37,7 @@ client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
     		{name: 'edit:', value: newmsg}    );
 	msgLog.send(embed);
 			
-	}
+});
 
 var originalText = "éàçèñ"
 var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
