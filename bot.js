@@ -198,20 +198,39 @@ client.on('message', msg => {
 	if (msg.content.toLowerCase() === 'yaksamlar') {
 		msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 	}
-	if (msg.content.toLowerCase() === prefix +  'stats') {
-		const stats = new Discord.MessageEmbed()
-			.setColor('RANDOM')
-			.setTitle('Film Komutları')
-			.setDescription('Kaliteli filmin yeni adresi ;) ')
-			.setTimestamp()
-			.setFooter('Bot gibi bot')
-			.addFields(
-				{name: '🚫 silinen mesaj:',value: client.guilds.cache.size},
-				{name: 'kanal:', value: msg.channel.name}    );
+	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (msg.content.toLowerCase() === prefix +  'stats') {
+			const mcount = client.users.cache.size;
+			const scount = client.guilds.cache.size;
+			const tcount = client.channels.filter(c => c.type === 'text').cache.size;
+			const vcount = client.channels.filter(c => c.type === 'voice').cache.size;
+			const stats = new Discord.MessageEmbed()
+				.setColor('RANDOM')
+				.setTitle('Film Komutları')
+				.setDescription(`:white_check_mark: Statistics of Lobby Boy`)
+				.setTimestamp()
+				.setFooter('Bot gibi bot')
+				.addFields({
+						name: 'Server:',
+						value: '${scount}'
+				},{
+						name: 'Users', 
+						value: '${mcount}'
+				},{
+						name: 'Text channels',
+						value: '${tcount}',
+						inline: true
+				},{
 
-		return msg.channel.send(stats);
-	}
-		
+						name: 'Voice channels',
+						value: '${vcount}',
+						inline: true
+				},
+						 );
+
+			return msg.channel.send(stats);
+		}
+	}	
 	
 	if (msg.content === prefix + 'salon') {
 		if (Math.floor((Math.random() * 4) + 2) === 1) {
