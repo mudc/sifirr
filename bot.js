@@ -212,7 +212,7 @@ client.on('message', msg => {
 				.setFooter('Bot gibi bot')
 				.addFields({
 						name: 'Server:',
-						value: scount,
+						value: scount
 				},{
 						name: 'Users', 
 						value: mcount
