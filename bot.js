@@ -22,7 +22,7 @@ client.on('ready', () => {
 
 client.on('messageDelete', msg => {
 	if (!msg.author) return;
-	const msgdelLog = client.channels.cache.find(channel => channel.id ==='855551660175917116');
+	const msgdelLog = client.channels.cache.find(channel => channel.id ==='858302774721904671');
 	 var delembed = new Discord.MessageEmbed()
 	 .setTitle('Message Deleted')
 	 .setAuthor(msg.author.username)
@@ -42,7 +42,7 @@ client.on('messageDelete', msg => {
 
 client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
    	if (!oldmsg.author) return;
-   	const msgeditLog = client.channels.cache.find(channel => channel.id ==='855551688470560828');
+   	const msgeditLog = client.channels.cache.find(channel => channel.id ==='858302833837473812');
 		var editembed = new Discord.MessageEmbed()
 		.setAuthor(newmsg.author.username)
 		.setTimestamp()
