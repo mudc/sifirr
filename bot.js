@@ -221,7 +221,7 @@ client.on('message', msg => {
 			.setTimestamp()
 			.setFooter('Bot gibi bot');
 
-		return msg.channel.send(exampleEmbed);
+		return msg.channel.send(stats);
 	}
 		
 	
