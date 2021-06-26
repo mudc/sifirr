@@ -24,10 +24,12 @@ client.on('messageDelete', msg => {
 	if (!msg.author) return;
 	const msgdelLog = client.channels.cache.find(channel => channel.id ==='855551660175917116');
 	 var delembed = new Discord.MessageEmbed()
+	 .setTitle('Message Deleted')
 	 .setAuthor(msg.author.username)
-	 .setTimestamp()
 	 .setColor('#392B47')
-	 .setFooter('msg.author.id')
+	 .setThumbnail(msg.author.avatarURL)
+	 .setFooter(msg.author.id)
+	 .setTimestamp()
 	 .addFields(
 		 {name: 'silinen mesaj:',value: msg.cleanContent},
 		 {name: 'kanal:', value: msg.channel.name}    );
