@@ -198,7 +198,10 @@ client.on('message', msg => {
 	if (msg.content.toLowerCase() === 'yaksamlar') {
 		msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 	}
-
+	if (msg.content.toLowerCase() === 'stats') {
+		msg.channel.send(`Server count: ${client.guilds.cache.size}`);
+	}
+	
 	if (msg.content === prefix + 'salon') {
 		if (Math.floor((Math.random() * 4) + 2) === 1) {
 			msg.channel.send('Salon 1');
@@ -299,9 +302,6 @@ client.on('message', msg => {
 		}	
 	}
 	
-	if (msg.content.toLowerCase() === '!status') {
-		console.log(`a message saying "${msg.guilds.cache.size}" was deleted from channel: ${msg.channel.name}`);
-	}	
 
 	
 });
