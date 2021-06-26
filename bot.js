@@ -25,8 +25,8 @@ client.on('messageDelete', msg => {
 	const msgdelLog = client.channels.cache.find(channel => channel.id ==='858302774721904671');
 	 var delembed = new Discord.MessageEmbed()
 	 .setAuthor(msg.author.username, msg.author.avatarURL())
-	 .setColor('#392B47')
-	 .setFooter(msg.author.id)
+	 .setColor('#c92424')
+	 .setFooter('deneme', msg.author.id)
 	 .setTimestamp()
 	 .addFields(
 		 {name: '🚫 silinen mesaj:',value: msg.cleanContent},
@@ -43,7 +43,7 @@ client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
    	const msgeditLog = client.channels.cache.find(channel => channel.id ==='858302833837473812');
 		var editembed = new Discord.MessageEmbed()
 		.setAuthor(newmsg.author.username, newmsg.author.avatarURL())
-		.setColor('#392B47')
+		.setColor('#ffda99')
 		.setTimestamp()
 		.setFooter(newmsg.author.id)
 		.addFields(
