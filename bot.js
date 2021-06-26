@@ -24,8 +24,7 @@ client.on('messageDelete', msg => {
 	if (!msg.author) return;
 	const msgdelLog = client.channels.cache.find(channel => channel.id ==='858302774721904671');
 	 var delembed = new Discord.MessageEmbed()
-	 .setTitle('Message Deleted')
-	 .setAuthor(msg.author.username)
+	 .setAuthor(msg.author.username, msg.author.avatarURL())
 	 .setColor('#392B47')
 	 .setThumbnail(msg.author.avatarURL())
 	 .setFooter(msg.author.id)
