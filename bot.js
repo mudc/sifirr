@@ -26,7 +26,7 @@ client.on('messageDelete', msg => {
 	 var delembed = new Discord.MessageEmbed()
 	 .setAuthor(msg.author.username, msg.author.avatarURL())
 	 .setColor('#392B47')
-	 .setFooter('ID:', msg.author.id)
+	 .setFooter(msg.author.id)
 	 .setTimestamp()
 	 .addFields(
 		 {name: 'silinen mesaj:',value: msg.cleanContent},
@@ -45,7 +45,7 @@ client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
 		.setAuthor(newmsg.author.username, newmsg.author.avatarURL())
 		.setColor('#392B47')
 		.setTimestamp()
-		.setFooter('ID:', newmsg.author.id)
+		.setFooter(newmsg.author.id)
 		.addFields(
     		{name: 'original:',value: oldmsg},
     		{name: 'edit:', value: newmsg}    );
