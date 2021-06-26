@@ -202,8 +202,8 @@ client.on('message', msg => {
 		if (msg.content.toLowerCase() === prefix +  'stats') {
 			const mcount = client.users.cache.size;
 			const scount = client.guilds.cache.size;
-			const tcount = client.channels.filter(c => c.type === 'text').cache.size;
-			const vcount = client.channels.filter(c => c.type === 'voice').cache.size;
+			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
+			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
 			const stats = new Discord.MessageEmbed()
 				.setColor('RANDOM')
 				.setTitle('Film Komutları')
