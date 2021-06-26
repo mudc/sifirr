@@ -29,7 +29,7 @@ client.on('messageDelete', msg => {
 	 .setFooter(msg.author.id)
 	 .setTimestamp()
 	 .addFields(
-		 {name: 'silinen mesaj:',value: msg.cleanContent},
+		 {name: '🚫 silinen mesaj:',value: msg.cleanContent},
 		 {name: 'kanal:', value: msg.channel.name}    );
  
 	msgdelLog.send(delembed);
@@ -47,8 +47,8 @@ client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
 		.setTimestamp()
 		.setFooter(newmsg.author.id)
 		.addFields(
-    		{name: 'original:',value: oldmsg},
-    		{name: 'edit:', value: newmsg}    );
+    		{name: '📄 original:',value: oldmsg},
+    		{name: '📝 edit:', value: newmsg}    );
 	msgeditLog.send(editembed);
 			
 });
