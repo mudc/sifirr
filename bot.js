@@ -115,7 +115,7 @@ client.on('message', msg => {
 	}
 
 	if (tunaydin === true) {
-		if (hrs > 5 < 12 || hrs >= 24) {
+		if (hrs > 12 || hrs >= 24) {
 			msg.channel.send("Günaydın :city_sunset: ")
 			msg.react('🚫');
 			msg.react('🌇');
