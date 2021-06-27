@@ -59,15 +59,19 @@ var originalText = "éàçèñ"
 var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 console.log(result)
 
+
 client.on('message', msg => {
-	if (msg.content === `${prefix}ping`) {
-		msg.channel.send('Pong.');
-	} else if (msg.content === `${prefix}beep`) {
-		msg.channel.send('Boop.');
-	} else if (msg.content === `${prefix}server`) {
-		msg.channel.send(`Server name: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
+	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (msg.content === `${prefix}ping`) {
+			msg.channel.send('Pong.');
+		} else if (msg.content === `${prefix}beep`) {
+			msg.channel.send('Boop.');
+		} else if (msg.content === `${prefix}server`) {
+			msg.channel.send(`Server name: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
+		}
 	}
 });
+
 
 client.on('message', msg => {
 
@@ -175,9 +179,10 @@ client.on('message', msg => {
 	
 
 
-
-	if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
-		msg.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
+	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
+			msg.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
+		}
 	}
 	if (msg.content === '<:pay:856947305592127579>') {
 		msg.reply('<:ticket:856947316279214111>');
@@ -191,8 +196,10 @@ client.on('message', msg => {
 	if (msg.content === '<:ticket:856947316279214111>') {
 		msg.channel.send('...');
 	}
-	if (msg.content.toLowerCase() === prefix + '321') {
-		msg.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
+	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (msg.content.toLowerCase() === prefix + '321') {
+			msg.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
+		}
 	}
   	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		 if (msg.content.toLowerCase() === prefix + 'theend') {
@@ -205,8 +212,11 @@ client.on('message', msg => {
 	if (msg.content === '<:ticket:856947316279214111>') {
 		msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 	}
-	if (msg.content.toLowerCase() === 'yaksamlar') {
-		msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
+	
+	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (msg.content.toLowerCase() === 'yaksamlar') {
+			msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
+		}
 	}
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content.toLowerCase() === prefix +  'stats') {
@@ -242,12 +252,14 @@ client.on('message', msg => {
 		}
 	}	
 	
-	if (msg.content === prefix + 'salon') {
-		if (Math.floor((Math.random() * 4) + 2) === 1) {
-			msg.channel.send('Salon 1');
-		} else if (Math.floor((Math.random() * 2) + 1) === 2) {
-			msg.channel.send('Salon 2');
+	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (msg.content === prefix + 'salon') {
+			if (Math.floor((Math.random() * 4) + 2) === 1) {
+				msg.channel.send('Salon 1');
+			} else if (Math.floor((Math.random() * 2) + 1) === 2) {
+				msg.channel.send('Salon 2');
 
+			}
 		}
 	}
 
@@ -261,87 +273,92 @@ client.on('message', msg => {
 		}
 	}
 
-	if (msg.content === "deneme1") {
-		const exampleEmbed = new Discord.MessageEmbed()
-			.setColor('#ffff00')
-			.setTitle('Film Komutları')
-			.setDescription('Kaliteli filmin yeni adresi ;) ')
-			.addFields({
-				name: 'Örnek',
-				value: '!filmekle "Filmin Adı" 12:30 https://google.com/img/exm.png'
-			}, {
-				name: 'Film Adı',
-				value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
-			}, {
-				name: 'Film Saati',
-				value: '12:30',
-				inline: true
-			}, {
-				name: 'Film Afişi',
-				value: 'Sadece Url',
-				inline: true
-			}, )
-			.setTimestamp()
-			.setFooter('Bot gibi bot');
+	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (msg.content === "deneme1") {
+			const exampleEmbed = new Discord.MessageEmbed()
+				.setColor('#ffff00')
+				.setTitle('Film Komutları')
+				.setDescription('Kaliteli filmin yeni adresi ;) ')
+				.addFields({
+					name: 'Örnek',
+					value: '!filmekle "Filmin Adı" 12:30 https://google.com/img/exm.png'
+				}, {
+					name: 'Film Adı',
+					value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
+				}, {
+					name: 'Film Saati',
+					value: '12:30',
+					inline: true
+				}, {
+					name: 'Film Afişi',
+					value: 'Sadece Url',
+					inline: true
+				}, )
+				.setTimestamp()
+				.setFooter('Bot gibi bot');
 
-		return msg.channel.send(exampleEmbed);
+			return msg.channel.send(exampleEmbed);
+		}
 	}
-	
-	if (msg.content === '🎫') {
-		const ticket = new Discord.MessageEmbed()
-			.setColor('#ffff00')
-			.setTitle('Bilet Gişesi')
-			.setDescription('de  ')
-			.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858092650606755840/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg')
-			.addFields({
-				name: 'Koltuk Numaranız',
-				value: 'Math.floor(Math.random() * 65 + 1)  12:30 https://google.com/img/exm.png'
-			}, {
-				name: 'Film Adı',
-				value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
-			}, {
-				name: 'Film Saati',
-				value: '12:30',
-				inline: true
-			}, {
-				name: 'Film Afişi',
-				value: 'Sadece Url',
-				inline: true
-			}, )
-			.setTimestamp()
-			.setFooter('Bot gibi bot');
 
-		return msg.channel.send(ticket);
+	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (msg.content === '🎫') {
+			const ticket = new Discord.MessageEmbed()
+				.setColor('#ffff00')
+				.setTitle('Bilet Gişesi')
+				.setDescription('de  ')
+				.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858092650606755840/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg')
+				.addFields({
+					name: 'Koltuk Numaranız',
+					value: 'Math.floor(Math.random() * 65 + 1)  12:30 https://google.com/img/exm.png'
+				}, {
+					name: 'Film Adı',
+					value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
+				}, {
+					name: 'Film Saati',
+					value: '12:30',
+					inline: true
+				}, {
+					name: 'Film Afişi',
+					value: 'Sadece Url',
+					inline: true
+				}, )
+				.setTimestamp()
+				.setFooter('Bot gibi bot');
+
+			return msg.channel.send(ticket);
+		}
 	}
-	
+		
 	if (msg.content === '<:ticket:856947316279214111>') {
 		msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 	}
 	
-	if (iyiaksamlar === true) {
-		if (hrs < 12 || hrs >= 24) {
-			msg.channel.send("iyi akşamar :city_sunset: ")
-			msg.react('🚫');
-			msg.react('🌇');
-		} else {
-			msg.react('🌇');
-			const yaksa = new Discord.MessageEmbed()
-			.setColor('RANDOM')
-			.setTitle('iyi akşamlar')
-			.setDescription('akşamınız hayrolsun :) ')
-			.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png')
-			.addFields({
-				name: 'Check',
-				value: '✅',
-				inline: true
-			}, )
-			.setTimestamp()
-			.setFooter('LobbyBoy');
+	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (iyiaksamlar === true) {
+			if (hrs < 12 || hrs >= 24) {
+				msg.channel.send("iyi akşamar :city_sunset: ")
+				msg.react('🚫');
+				msg.react('🌇');
+			} else {
+				msg.react('🌇');
+				const yaksa = new Discord.MessageEmbed()
+				.setColor('RANDOM')
+				.setTitle('iyi akşamlar')
+				.setDescription('akşamınız hayrolsun :) ')
+				.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png')
+				.addFields({
+					name: 'Check',
+					value: '✅',
+					inline: true
+				}, )
+				.setTimestamp()
+				.setFooter('LobbyBoy');
 
-		return msg.channel.send(yaksa);
-		}	
+			return msg.channel.send(yaksa);
+			}	
+		}
 	}
-	
 
 	
 });
