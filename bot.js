@@ -60,6 +60,16 @@ var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 console.log(result)
 
 client.on('message', msg => {
+	if (msg.content === `${prefix}ping`) {
+		msg.channel.send('Pong.');
+	} else if (msg.content === `${prefix}beep`) {
+		msg.channel.send('Boop.');
+	} else if (msg.content === `${prefix}server`) {
+		msg.channel.send(`Server name: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
+	}
+});
+
+client.on('message', msg => {
 
 	if (msg.author.bot) return;
 
