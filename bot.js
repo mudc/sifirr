@@ -24,38 +24,55 @@ client.on('ready', () => {
 
 client.on('messageDelete', msg => {
 	if (!msg.author) return;
-	const msgdelLog = client.channels.cache.find(channel => channel.id ==='858302774721904671');
-	 var delembed = new Discord.MessageEmbed()
-	 .setAuthor(msg.author.username, msg.author.avatarURL())
-	 .setColor('#c92424')
-	 .setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`)
-	 .setTimestamp()
-	 .addFields(
-		 {name: '🚫 silinen mesaj:',value: msg.cleanContent},
-		 {name: 'kanal:', value: msg.channel.name},
-		 { name: 'Channel', value: msg.channel.toString(), inline: true  }   );
- 
+	const msgdelLog = client.channels.cache.find(channel => channel.id === '858302774721904671');
+	var delembed = new Discord.MessageEmbed()
+		.setAuthor(msg.author.username, msg.author.avatarURL())
+		.setColor('#c92424')
+		.setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`)
+		.setTimestamp()
+		.addFields({
+			name: '🚫 silinen mesaj:',
+			value: msg.cleanContent
+		}, {
+			name: 'kanal:',
+			value: msg.channel.name
+		}, {
+			name: 'Channel',
+			value: msg.channel.toString(),
+			inline: true
+		});
+
 	msgdelLog.send(delembed);
-		 
+
 });
 
 
 
 client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
-   	if (!oldmsg.author) return;
-   	const msgeditLog = client.channels.cache.find(channel => channel.id ==='858302833837473812');
-		var editembed = new Discord.MessageEmbed()
+	if (!oldmsg.author) return;
+	const msgeditLog = client.channels.cache.find(channel => channel.id === '858302833837473812');
+	var editembed = new Discord.MessageEmbed()
 		.setAuthor(newmsg.author.username, newmsg.author.avatarURL())
 		.setColor('#ffda99')
 		.setTimestamp()
 		.setFooter(`Message ID: ${newmsg.id} | Author ID: ${newmsg.author.id}`)
-		.addFields(
-    		{name: '📄 original:',value: oldmsg},
-    		{name: '📝 edit:', value: newmsg},
-			{ name: 'Channel', value: oldmsg.channel.toString(), inline: true  },
-			{ name: 'Message', value: '[Jump To Message](' + oldmsg.url + ')', inline: true }    );
+		.addFields({
+			name: '📄 original:',
+			value: oldmsg
+		}, {
+			name: '📝 edit:',
+			value: newmsg
+		}, {
+			name: 'Channel',
+			value: oldmsg.channel.toString(),
+			inline: true
+		}, {
+			name: 'Message',
+			value: '[Jump To Message](' + oldmsg.url + ')',
+			inline: true
+		});
 	msgeditLog.send(editembed);
-			
+
 });
 
 var originalText = "éàçèñ"
@@ -111,7 +128,7 @@ client.on('message', msg => {
 				msg.channel.send("Yakşamlar :cityscape: ")
 				msg.react('🚫');
 				msg.react('🏙️');
-			} else if (hrs > 22 || hrs < 06 ) {
+			} else if (hrs > 22 || hrs < 06) {
 				msg.channel.send("İyi geceler :night_with_stars: ")
 				msg.react('🚫');
 				msg.react('🌃');
@@ -131,7 +148,7 @@ client.on('message', msg => {
 				msg.channel.send("Yakşamlar :cityscape: ")
 				msg.react('🚫');
 				msg.react('🏙️');
-			} else if (hrs > 22 || hrs < 06 ) {
+			} else if (hrs > 22 || hrs < 06) {
 				msg.channel.send("İyi geceler :night_with_stars: ")
 				msg.react('🚫');
 				msg.react('🌃');
@@ -152,7 +169,7 @@ client.on('message', msg => {
 				msg.react('✅');
 				msg.react('🏙️');
 				msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
-			} else if (hrs > 22 || hrs < 06 ) {
+			} else if (hrs > 22 || hrs < 06) {
 				msg.channel.send("İyi geceler :night_with_stars: ")
 				msg.react('🚫');
 				msg.react('🌃');
@@ -172,7 +189,7 @@ client.on('message', msg => {
 				msg.channel.send("Yakşamlar :cityscape: ")
 				msg.react('🚫');
 				msg.react('🏙️');
-			} else if (hrs > 22 || hrs < 06 ) {
+			} else if (hrs > 22 || hrs < 06) {
 				msg.channel.send("İyi geceler :night_with_stars: ")
 				msg.react('✅');
 				msg.react('🌃');
@@ -180,7 +197,7 @@ client.on('message', msg => {
 		}
 	}
 
-	
+
 
 
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
@@ -205,10 +222,10 @@ client.on('message', msg => {
 			msg.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
 		}
 	}
-  	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
-		 if (msg.content.toLowerCase() === prefix + 'theend') {
-        	     msg.channel.send('https://tenor.com/view/sad-no-way-the-end-ending-gif-13844808'); 
-		 }
+	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (msg.content.toLowerCase() === prefix + 'theend') {
+			msg.channel.send('https://tenor.com/view/sad-no-way-the-end-ending-gif-13844808');
+		}
 	}
 	if (msg.content.toLowerCase() === prefix + 'film') {
 		msg.channel.send('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
@@ -216,14 +233,14 @@ client.on('message', msg => {
 	if (msg.content === '<:ticket:856947316279214111>') {
 		msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 	}
-	
+
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content.toLowerCase() === 'yaksamlar') {
 			msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 		}
 	}
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
-		if (msg.content.toLowerCase() === prefix +  'stats') {
+		if (msg.content.toLowerCase() === prefix + 'stats') {
 			const ucount = client.users.cache.size;
 			const scount = client.guilds.cache.size;
 			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
@@ -235,27 +252,26 @@ client.on('message', msg => {
 				.setTimestamp()
 				.setFooter('Bot gibi bot')
 				.addFields({
-						name: 'Server:',
-						value: scount
-				},{
-						name: 'Members', 
-						value: ucount
-				},{
-						name: 'Text channels',
-						value: tcount,
-						inline: true
-				},{
+					name: 'Server:',
+					value: scount
+				}, {
+					name: 'Members',
+					value: ucount
+				}, {
+					name: 'Text channels',
+					value: tcount,
+					inline: true
+				}, {
 
-						name: 'Voice channels',
-						value: vcount,
-						inline: true
-				},
-						 );
+					name: 'Voice channels',
+					value: vcount,
+					inline: true
+				}, );
 
 			return msg.channel.send(stats);
 		}
-	}	
-	
+	}
+
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content === prefix + 'salon') {
 			if (Math.floor((Math.random() * 4) + 2) === 1) {
@@ -333,11 +349,11 @@ client.on('message', msg => {
 			return msg.channel.send(ticket);
 		}
 	}
-		
+
 	if (msg.content === '<:ticket:856947316279214111>') {
 		msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 	}
-	
+
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (iyiaksamlar === true) {
 			if (hrs < 12 || hrs >= 24) {
@@ -347,24 +363,39 @@ client.on('message', msg => {
 			} else {
 				msg.react('🌇');
 				const yaksa = new Discord.MessageEmbed()
-				.setColor('RANDOM')
-				.setTitle('iyi akşamlar')
-				.setDescription('akşamınız hayrolsun :) ')
-				.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png')
-				.addFields({
-					name: 'Check',
-					value: '✅',
-					inline: true
-				}, )
-				.setTimestamp()
-				.setFooter('LobbyBoy');
+					.setColor('RANDOM')
+					.setTitle('iyi akşamlar')
+					.setDescription('akşamınız hayrolsun :) ')
+					.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png')
+					.addFields({
+						name: 'Check',
+						value: '✅',
+						inline: true
+					}, )
+					.setTimestamp()
+					.setFooter('LobbyBoy');
 
-			return msg.channel.send(yaksa);
-			}	
+				return msg.channel.send(yaksa);
+			}
 		}
 	}
 
-	
+	const talkedRecently = new Set();
+	if (talkedRecently.has(msg.author.id)) {
+		msg.channel.send("Wait 1 minute before getting typing this again. - " + msg.author);
+	} else {
+
+		// the user can type the command ... your command code goes here :)
+
+		// Adds the user to the set so that they can't talk for a minute
+		talkedRecently.add(msg.author.id);
+		setTimeout(() => {
+			// Removes the user from the set after a minute
+			talkedRecently.delete(msg.author.id);
+		}, 60000);
+	}
+
+
 });
 
 client.login(process.env.BOT_TOKEN);
