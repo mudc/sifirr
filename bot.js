@@ -32,7 +32,7 @@ client.on('messageDelete', msg => {
 	 .setTimestamp()
 	 .addFields(
 		 {name: '🚫 silinen mesaj:',value: msg.cleanContent},
-		 {name: 'kanal:', value: msg.channel.name}
+		 {name: 'kanal:', value: msg.channel.name},
 		 { name: 'Channel', value: msg.channel.toString(), inline: true  },
 		 { name: 'Message', value: '[Jump To Message](' + msg.url + ')', inline true }    );
  
