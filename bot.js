@@ -34,7 +34,7 @@ client.on('messageDelete', msg => {
 		 {name: '🚫 silinen mesaj:',value: msg.cleanContent},
 		 {name: 'kanal:', value: msg.channel.name},
 		 { name: 'Channel', value: msg.channel.toString(), inline: true  },
-		 { name: 'Message', value: '[Jump To Message](' + msg.url + ')', inline true }    );
+		 { name: 'Message', value: '[Jump To Message](' + msg.url + ')', inline: true }    );
  
 	msgdelLog.send(delembed);
 		 
@@ -54,7 +54,7 @@ client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
     		{name: '📄 original:',value: oldmsg},
     		{name: '📝 edit:', value: newmsg},
 			{ name: 'Channel', value: oldmsg.channel.toString(), inline: true  },
-			{ name: 'Message', value: '[Jump To Message](' + oldmsg.url + ')', inline true }    );
+			{ name: 'Message', value: '[Jump To Message](' + oldmsg.url + ')', inline: true }    );
 	msgeditLog.send(editembed);
 			
 });
