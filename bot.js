@@ -51,7 +51,8 @@ client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
 		.setFooter(`Message ID: ${newmsg.id} | Author ID: ${newmsg.author.id}`)
 		.addFields(
     		{name: '📄 original:',value: oldmsg},
-    		{name: '[Jump To Message](' + oldmsg.url + ')', value: newmsg},
+    		{name: '📝 edit:', value: newmsg},
+			{name: '📝 edit:', value: '[newmsg](' + newmsg.url + ')'},
 			{ name: 'Channel', value: oldmsg.channel.toString(), inline: true  },
 			{ name: 'Message', value: '[Jump To Message](' + oldmsg.url + ')', inline: true }    );
 	msgeditLog.send(editembed);
