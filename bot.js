@@ -52,6 +52,7 @@ client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
     		{name: '📄 original:',value: oldmsg},
     		{name: '📝 edit:', value: newmsg},
 			{name: 'kanal:', value: oldmsg.channel.name, inline: true },
+			{ name: 'Channel', value: oldmsg.channel.toString(), inline: true  },
 			{ name: 'Message', value: '[Jump To Message](' + oldmsg.url + ')'}    );
 	msgeditLog.send(editembed);
 			
