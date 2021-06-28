@@ -383,11 +383,12 @@ client.on('message', msg => {
 	} else {
 
 		// the user can type the command ... your command code goes here :)
+	
+		// Adds the user to the set so that they can't talk for a minute
+		talkedRecently.add(msg.author.id);
 		if (msg.content.toLowerCase() === 'hi') {
 			msg.channel.send('hey');
 		}
-		// Adds the user to the set so that they can't talk for a minute
-		talkedRecently.add(msg.author.id);
 		setTimeout(() => {
 			// Removes the user from the set after a minute
 			talkedRecently.delete(msg.author.id);
