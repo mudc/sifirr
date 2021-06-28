@@ -99,7 +99,7 @@ client.on('message', msg => {
 	}
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (gunaydin === true) {
-			if (hrs < 12 || hrs >= 24) {
+			if (hrs < 12) {
 				msg.channel.send("Günaydın :city_sunset: ")
 				msg.react('✅');
 				msg.react('🌇');
@@ -111,7 +111,7 @@ client.on('message', msg => {
 				msg.channel.send("Yakşamlar :cityscape: ")
 				msg.react('🚫');
 				msg.react('🏙️');
-			} else {
+			} else if (hrs > 22 || hrs < 06 ) {
 				msg.channel.send("İyi geceler :night_with_stars: ")
 				msg.react('🚫');
 				msg.react('🌃');
@@ -119,7 +119,7 @@ client.on('message', msg => {
 		}
 
 		if (tunaydin === true) {
-			if (hrs < 12 || hrs >= 24) {
+			if (hrs < 12) {
 				msg.channel.send("Günaydın :city_sunset: ")
 				msg.react('🚫');
 				msg.react('🌇');
@@ -131,7 +131,7 @@ client.on('message', msg => {
 				msg.channel.send("Yakşamlar :cityscape: ")
 				msg.react('🚫');
 				msg.react('🏙️');
-			} else {
+			} else if (hrs > 22 || hrs < 06 ) {
 				msg.channel.send("İyi geceler :night_with_stars: ")
 				msg.react('🚫');
 				msg.react('🌃');
@@ -139,7 +139,7 @@ client.on('message', msg => {
 		}
 
 		if (yaksamlar === true) {
-			if (hrs < 12 || hrs >= 24) {
+			if (hrs < 12) {
 				msg.channel.send("Günaydın :city_sunset: ")
 				msg.react('🚫');
 				msg.react('🌇');
@@ -152,7 +152,7 @@ client.on('message', msg => {
 				msg.react('✅');
 				msg.react('🏙️');
 				msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
-			} else {
+			} else if (hrs > 22 || hrs < 06 ) {
 				msg.channel.send("İyi geceler :night_with_stars: ")
 				msg.react('🚫');
 				msg.react('🌃');
@@ -160,7 +160,7 @@ client.on('message', msg => {
 		}
 
 		if (iyigeceler === true) {
-			if (hrs < 12 || hrs >= 24) {
+			if (hrs < 12) {
 				msg.channel.send("Günaydın :city_sunset: ")
 				msg.react('🚫');
 				msg.react('🌇');
@@ -172,7 +172,7 @@ client.on('message', msg => {
 				msg.channel.send("Yakşamlar :cityscape: ")
 				msg.react('🚫');
 				msg.react('🏙️');
-			} else {
+			} else if (hrs > 22 || hrs < 06 ) {
 				msg.channel.send("İyi geceler :night_with_stars: ")
 				msg.react('✅');
 				msg.react('🌃');
