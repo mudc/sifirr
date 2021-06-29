@@ -193,7 +193,7 @@ client.on('message', msg => {
 				msg.react('🌃');
 			}
 		}
-	}
+	
 
 		if (iyiaksamlar === true) {
 			console.log(hrs);
@@ -219,7 +219,7 @@ client.on('message', msg => {
 				return msg.channel.send(yaksa);
 			}
 		}
-
+	}
 
 	if (msg.content.toLowerCase() === 'yeter') {
 		msg.channel.send('bence de!');
@@ -227,46 +227,56 @@ client.on('message', msg => {
 	if (msg.content.toLowerCase() === 'selam') {
 		msg.channel.send('selam');
 	}
-	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+	
+
+if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member.roles.cache.some(role => role.name === 'movie')) {
+		if (msg.content === '<:pay:856947305592127579>') {
+			msg.reply('<:ticket:856947316279214111>');
+		}
+		if (msg.content.toLowerCase() === prefix + 'mısır') {
+			msg.channel.send(':popcorn:');
+		}
+		if (msg.content.toLowerCase() === prefix + 'popcorn') {
+			msg.channel.send(':popcorn:');
+		}
+		if (msg.content === '<:ticket:856947316279214111>') {
+			msg.channel.send('...');
+		}
+		if (msg.content.toLowerCase() === prefix + 'film') {
+			msg.channel.send('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
+		}
+		if (msg.content === '<:ticket:856947316279214111>') {
+			msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
+		}
+		if (msg.content === prefix + 'popcorn') {
+			if (Math.floor((Math.random() * 3) + 1) === 1) {
+				msg.channel.send('https://tenor.com/view/popcorn-bored-gif-10365509');
+			} else if (Math.floor((Math.random() * 3) + 1) === 2) {
+				msg.channel.send('https://tenor.com/view/popcorn-gif-4572206');
+			} else if (Math.floor((Math.random() * 3) + 1) === 3) {
+				msg.channel.send('https://tenor.com/view/cine-pel%c3%adcula-palomitas-kino-popcorn-gif-12330033');
+			}
+		}
+}
+
+
+if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member.roles.cache.some(role => role.name === 'angyfish')) {
 		if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
 			msg.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
 		}
-	}
-	if (msg.content === '<:pay:856947305592127579>') {
-		msg.reply('<:ticket:856947316279214111>');
-	}
-	if (msg.content.toLowerCase() === prefix + 'mısır') {
-		msg.channel.send(':popcorn:');
-	}
-	if (msg.content.toLowerCase() === prefix + 'popcorn') {
-		msg.channel.send(':popcorn:');
-	}
-	if (msg.content === '<:ticket:856947316279214111>') {
-		msg.channel.send('...');
-	}
-	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content.toLowerCase() === prefix + '321') {
 			msg.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
 		}
-	}
-	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content.toLowerCase() === prefix + 'theend') {
 			msg.channel.send('https://tenor.com/view/sad-no-way-the-end-ending-gif-13844808');
 		}
-	}
-	if (msg.content.toLowerCase() === prefix + 'film') {
-		msg.channel.send('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
-	}
-	if (msg.content === '<:ticket:856947316279214111>') {
-		msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
-	}
-
-	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content.toLowerCase() === 'yaksamlar') {
 			msg.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 		}
-	}
-	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (msg.content === prefix + 'bilet') {
+			msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
+		}
+		
 		if (msg.content.toLowerCase() === prefix + 'stats') {
 			const ucount = client.users.cache.size;
 			const scount = client.guilds.cache.size;
@@ -297,9 +307,6 @@ client.on('message', msg => {
 
 			return msg.channel.send(stats);
 		}
-	}
-
-	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content === prefix + 'salon') {
 			if (Math.floor((Math.random() * 4) + 2) === 1) {
 				msg.channel.send('Salon 1');
@@ -308,19 +315,6 @@ client.on('message', msg => {
 
 			}
 		}
-	}
-
-	if (msg.content === prefix + 'popcorn') {
-		if (Math.floor((Math.random() * 3) + 1) === 1) {
-			msg.channel.send('https://tenor.com/view/popcorn-bored-gif-10365509');
-		} else if (Math.floor((Math.random() * 3) + 1) === 2) {
-			msg.channel.send('https://tenor.com/view/popcorn-gif-4572206');
-		} else if (Math.floor((Math.random() * 3) + 1) === 3) {
-			msg.channel.send('https://tenor.com/view/cine-pel%c3%adcula-palomitas-kino-popcorn-gif-12330033');
-		}
-	}
-
-	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content === "deneme1") {
 			const exampleEmbed = new Discord.MessageEmbed()
 				.setColor('#ffff00')
@@ -346,9 +340,6 @@ client.on('message', msg => {
 
 			return msg.channel.send(exampleEmbed);
 		}
-	}
-
-	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content === '🎫') {
 			const ticket = new Discord.MessageEmbed()
 				.setColor('#ffff00')
@@ -377,9 +368,6 @@ client.on('message', msg => {
 		}
 	}
 
-	if (msg.content === '<:ticket:856947316279214111>') {
-		msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
-	}
 
 
 /*
