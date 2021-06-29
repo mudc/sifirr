@@ -6,6 +6,7 @@ var prefix = ayarlar.prefix;
 
 
 
+
 const deleteLogChannel = '846062780083732511';
 const editLogChannel = '846062780083732510';
 const picLogChannel = '855551723871535104';
@@ -94,7 +95,7 @@ client.on('message', msg => {
 	
 	var myDate = new Date();
 	var hrs = myDate.getHours();
-	console.log(hrs);
+
 
 	// Kelime kontrol: Kelimeleri boşluklarına ayırır
 	let keywords = msg.content.toLowerCase();
