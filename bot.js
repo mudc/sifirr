@@ -9,7 +9,7 @@ var prefix = ayarlar.prefix;
 
 const deleteLogChannel = '846062780083732511';
 const editLogChannel = '846062780083732510';
-const picLogChannel = '855551723871535104';
+const picLogChannel = '858302891000201247';
 
 client.on('ready', () => {
 	client.user.setActivity('v1.0.0', {
@@ -43,7 +43,7 @@ client.on('messageDelete', msg => {
 	if ((message.attachments).array().length > 0) {
         var Attachment = (message.attachments).array();
         Attachment.forEach(function (attachment) {
-            client.channels.get(picLogChannel).send(attachment.url);
+            client.channels.cache.get(picLogChannel).send(attachment.url);
         })
     }
 
