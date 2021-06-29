@@ -125,14 +125,17 @@ client.on('message', msg => {
 				msg.channel.send("Tünaydın :city_dusk: ")
 				msg.react('🚫');
 				msg.react('🌆');
+				console.log(hrs);
 			} else if (hrs < 22) {
 				msg.channel.send("Yakşamlar :cityscape: ")
 				msg.react('🚫');
 				msg.react('🏙️');
+				console.log(hrs);
 			} else if (hrs > 22 || hrs < 06) {
 				msg.channel.send("İyi geceler :night_with_stars: ")
 				msg.react('🚫');
 				msg.react('🌃');
+				console.log(hrs);
 			}
 		}
 
