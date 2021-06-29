@@ -108,34 +108,25 @@ client.on('message', msg => {
 	let iyigeceler = keywords.includes('iyi geceler')
 
 
-	if (msg.content.toLowerCase() === 'yeter') {
-		msg.channel.send('bence de!');
-	}
-	if (msg.content.toLowerCase() === 'selam') {
-		msg.channel.send('selam');
-	}
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (gunaydin === true) {
+			console.log(hrs);
 			if (hrs < 12) {
 				msg.channel.send("Günaydın :city_sunset: ")
 				msg.react('✅');
 				msg.react('🌇');
-				console.log(hrs);
 			} else if (hrs < 17) {
 				msg.channel.send("Tünaydın :city_dusk: ")
 				msg.react('🚫');
 				msg.react('🌆');
-				console.log(hrs);
 			} else if (hrs < 22) {
 				msg.channel.send("Yakşamlar :cityscape: ")
 				msg.react('🚫');
 				msg.react('🏙️');
-				console.log(hrs);
 			} else if (hrs > 22 || hrs < 06) {
 				msg.channel.send("İyi geceler :night_with_stars: ")
 				msg.react('🚫');
 				msg.react('🌃');
-				console.log(hrs);
 			}
 		}
 
@@ -161,6 +152,7 @@ client.on('message', msg => {
 		}
 
 		if (yaksamlar === true) {
+			console.log(hrs);
 			if (hrs < 12) {
 				msg.channel.send("Günaydın :city_sunset: ")
 				msg.react('🚫');
@@ -182,6 +174,7 @@ client.on('message', msg => {
 		}
 
 		if (iyigeceler === true) {
+			console.log(hrs);
 			if (hrs < 12) {
 				msg.channel.send("Günaydın :city_sunset: ")
 				msg.react('🚫');
@@ -202,8 +195,8 @@ client.on('message', msg => {
 		}
 	}
 
-	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (iyiaksamlar === true) {
+			console.log(hrs);
 			if (hrs < 12 || hrs >= 24) {
 				msg.channel.send("iyi akşamar :city_sunset: ")
 				msg.react('🚫');
@@ -226,13 +219,14 @@ client.on('message', msg => {
 				return msg.channel.send(yaksa);
 			}
 		}
+
+
+	if (msg.content.toLowerCase() === 'yeter') {
+		msg.channel.send('bence de!');
 	}
-
-
-
-
-
-
+	if (msg.content.toLowerCase() === 'selam') {
+		msg.channel.send('selam');
+	}
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
 			msg.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
@@ -388,7 +382,7 @@ client.on('message', msg => {
 	}
 
 
-
+/*
 	const talkedRecently = new Set();
 	if (talkedRecently.has(msg.author.id)) {
 		msg.channel.send("Wait 1 minute before getting typing this again. - " + msg.author);
@@ -403,7 +397,7 @@ client.on('message', msg => {
 			talkedRecently.delete(msg.author.id);
 		}, 60000);
 	}
-
+*/
 
 });
 
