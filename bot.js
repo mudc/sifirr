@@ -196,8 +196,11 @@ client.on('message', msg => {
 		}
 	}
 
+});
 
+client.on('message', msg => {
 
+	if (msg.author.bot) return;
 
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
