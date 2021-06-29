@@ -3,9 +3,7 @@ const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
 
 var prefix = ayarlar.prefix;
-var myDate = new Date();
-var hrs = myDate.getHours();
-console.log(hrs);
+
 
 
 
@@ -91,9 +89,13 @@ client.on('message', msg => {
 
 
 client.on('message', msg => {
-
+	
 	if (msg.author.bot) return;
-
+	
+	var myDate = new Date();
+	var hrs = myDate.getHours();
+	console.log(hrs);
+	
 	// Kelime kontrol: Kelimeleri boşluklarına ayırır
 	let keywords = msg.content.toLowerCase();
 
