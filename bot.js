@@ -19,7 +19,7 @@ client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
 
-
+//DELLOG
 
 client.on('messageDelete', (oldmsg, newmsg) => {
 	if (!oldmsg.author) return;
@@ -43,7 +43,7 @@ client.on('messageDelete', (oldmsg, newmsg) => {
 
 });
 
-
+//EDIT LOG
 
 client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
 	if (!oldmsg.author) return;
@@ -78,17 +78,7 @@ var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 console.log(result)
 
 
-client.on('message', msg => {
-	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
-		if (msg.content === `${prefix}ping`) {
-			msg.channel.send('Pong.');
-		} else if (msg.content === `${prefix}beep`) {
-			msg.channel.send('Boop.');
-		} else if (msg.content === `${prefix}server`) {
-			msg.channel.send(`Server name: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
-		}
-	}
-});
+
 
 
 client.on('message', msg => {
@@ -109,6 +99,7 @@ client.on('message', msg => {
 	let yaksamlar = keywords.includes('yakşamlar');
 	let iyigeceler = keywords.includes('iyi geceler')
 
+//GÜNAYDIN
 
 	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (gunaydin === true) {
@@ -230,8 +221,9 @@ client.on('message', msg => {
 		msg.channel.send('selam');
 	}
 	
+//SİNEMA KODLARI
 
-if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member.roles.cache.some(role => role.name === 'movie')) {
+if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member.roles.cache.some(role => role.name === 'movie') || msg.member.roles.cache.some(role => role.name === 'angyfish')) {
 		if (msg.content === '<:pay:856947305592127579>') {
 			msg.reply('<:ticket:856947316279214111>');
 		}
@@ -261,6 +253,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		}
 }
 
+// MODS
 
 if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member.roles.cache.some(role => role.name === 'angyfish')) {
 		if (msg.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
@@ -369,6 +362,15 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 
 			return msg.channel.send(ticket);
 		}
+		
+		if (msg.content === `${prefix}ping`) {
+			msg.channel.send('Pong.');
+		} else if (msg.content === `${prefix}beep`) {
+			msg.channel.send('Boop.');
+		} else if (msg.content === `${prefix}server`) {
+			msg.channel.send(`Server name: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
+		}
+		
 	}
 
 
