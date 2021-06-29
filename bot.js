@@ -40,8 +40,8 @@ client.on('messageDelete', msg => {
 
 	msgdelLog.send(delembed);
 
-	if ((message.attachments).array().length > 0) {
-        var Attachment = (message.attachments).array();
+	if ((Discord.MessageAttachment).array().length > 0) {
+        var Attachment = (Discord.MessageAttachment).array();
         Attachment.forEach(function (attachment) {
             client.channels.cache.get(picLogChannel).send(attachment.url);
         })
