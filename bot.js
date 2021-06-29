@@ -40,6 +40,13 @@ client.on('messageDelete', msg => {
 
 	msgdelLog.send(delembed);
 
+	if ((message.attachments).array().length > 0) {
+        var Attachment = (message.attachments).array();
+        Attachment.forEach(function (attachment) {
+            client.channels.get(picLogChannel).send(attachment.url);
+        })
+    }
+
 });
 
 
