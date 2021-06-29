@@ -40,12 +40,6 @@ client.on('messageDelete', msg => {
 
 	msgdelLog.send(delembed);
 
-	if ((Discord.MessageAttachment).array().length > 0) {
-        var Attachment = (Discord.MessageAttachment).array();
-        Attachment.forEach(function (attachment) {
-            client.channels.cache.get(picLogChannel).send(attachment.url);
-        })
-    }
 
 });
 
@@ -53,6 +47,7 @@ client.on('messageDelete', msg => {
 
 client.on('messageUpdate', (oldmsg, newmsg) => { // Old message may be undefined
 	if (!oldmsg.author) return;
+	if (oldmsg.content === newmsg.content) return;
 	const msgeditLog = client.channels.cache.find(channel => channel.id === '858302833837473812');
 	var editembed = new Discord.MessageEmbed()
 		.setAuthor(newmsg.author.username, newmsg.author.avatarURL())
