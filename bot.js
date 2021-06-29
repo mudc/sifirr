@@ -140,6 +140,7 @@ client.on('message', msg => {
 		}
 
 		if (tunaydin === true) {
+			console.log(hrs);
 			if (hrs < 12) {
 				msg.channel.send("Günaydın :city_sunset: ")
 				msg.react('🚫');
