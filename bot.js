@@ -341,6 +341,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			return msg.channel.send(exampleEmbed);
 		}
 		if (msg.content === '🎫') {
+			const tckt = Math.floor(Math.random() * 65 + 1);
 			const ticket = new Discord.MessageEmbed()
 				.setColor('#ffff00')
 				.setTitle('Bilet Gişesi')
@@ -348,7 +349,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 				.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858092650606755840/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg')
 				.addFields({
 					name: 'Koltuk Numaranız',
-					value: 'Math.floor(Math.random() * 65 + 1)  12:30 https://google.com/img/exm.png'
+					value: tckt
 				}, {
 					name: 'Film Adı',
 					value: 'Filmin Adını "" arasına yazmanız gerekmekte.'
