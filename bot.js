@@ -22,19 +22,19 @@ client.on('ready', () => {
 
 
 client.on('messageDelete', (oldmsg, newmsg) => {
-	if (!msg.author) return;
+	if (!oldmsg.author) return;
 	const msgdelLog = client.channels.cache.find(channel => channel.id === '858302774721904671');
 	var delembed = new Discord.MessageEmbed()
-		.setAuthor(msg.author.username, msg.author.avatarURL())
+		.setAuthor(oldmsg.author.username, oldmsg.author.avatarURL())
 		.setColor('#c92424')
-		.setFooter(`Message ID: ${msg.id} | Author ID: ${msg.author.id}`)
+		.setFooter(`Message ID: ${oldmsg.id} | Author ID: ${oldmsg.author.id}`)
 		.setTimestamp()
 		.addFields({
 			name: '🚫 silinen mesaj:',
 			value: oldmsg.content
 		}, {
 			name: 'Channel',
-			value: msg.channel.toString(),
+			value: oldmsg.channel.toString(),
 			inline: true
 		});
 
