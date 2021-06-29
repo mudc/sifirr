@@ -31,7 +31,7 @@ client.on('messageDelete', (oldmsg, newmsg) => {
 		.setTimestamp()
 		.addFields({
 			name: '🚫 silinen mesaj:',
-			value: oldmsgContent
+			value: oldmsg.content
 		}, {
 			name: 'Channel',
 			value: msg.channel.toString(),
