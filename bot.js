@@ -196,6 +196,33 @@ client.on('message', msg => {
 		}
 	}
 
+	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
+		if (iyiaksamlar === true) {
+			if (hrs < 12 || hrs >= 24) {
+				msg.channel.send("iyi akşamar :city_sunset: ")
+				msg.react('🚫');
+				msg.react('🌇');
+			} else {
+				msg.react('🌇');
+				const yaksa = new Discord.MessageEmbed()
+					.setColor('RANDOM')
+					.setTitle('iyi akşamlar')
+					.setDescription('akşamınız hayrolsun :) ')
+					.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png')
+					.addFields({
+						name: 'Check',
+						value: '✅',
+						inline: true
+					}, )
+					.setTimestamp()
+					.setFooter('LobbyBoy');
+
+				return msg.channel.send(yaksa);
+			}
+		}
+	}
+
+
 });
 
 client.on('message', msg => {
@@ -356,31 +383,7 @@ client.on('message', msg => {
 		msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 	}
 
-	if (msg.member.roles.cache.some(role => role.name === 'jellyfish')) {
-		if (iyiaksamlar === true) {
-			if (hrs < 12 || hrs >= 24) {
-				msg.channel.send("iyi akşamar :city_sunset: ")
-				msg.react('🚫');
-				msg.react('🌇');
-			} else {
-				msg.react('🌇');
-				const yaksa = new Discord.MessageEmbed()
-					.setColor('RANDOM')
-					.setTitle('iyi akşamlar')
-					.setDescription('akşamınız hayrolsun :) ')
-					.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858085654775857162/resim_2021-06-25_234558.png')
-					.addFields({
-						name: 'Check',
-						value: '✅',
-						inline: true
-					}, )
-					.setTimestamp()
-					.setFooter('LobbyBoy');
 
-				return msg.channel.send(yaksa);
-			}
-		}
-	}
 
 	const talkedRecently = new Set();
 	if (talkedRecently.has(msg.author.id)) {
