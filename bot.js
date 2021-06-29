@@ -21,7 +21,7 @@ client.on('ready', () => {
 
 
 
-client.on('messageDelete', msg => {
+client.on('messageDelete', (oldmsg, newmsg) => {
 	if (!msg.author) return;
 	const msgdelLog = client.channels.cache.find(channel => channel.id === '858302774721904671');
 	var delembed = new Discord.MessageEmbed()
@@ -31,7 +31,7 @@ client.on('messageDelete', msg => {
 		.setTimestamp()
 		.addFields({
 			name: '🚫 silinen mesaj:',
-			value: msg.cleanContent
+			value: oldmsgContent
 		}, {
 			name: 'Channel',
 			value: msg.channel.toString(),
