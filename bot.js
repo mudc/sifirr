@@ -5,7 +5,9 @@ const ayarlar = require('./ayarlar.json');
 var prefix = ayarlar.prefix;
 
 
-
+var myDate = new Date();
+var dk = myDate.getHours();
+console.log(dk);
 
 const deleteLogChannel = '846062780083732511';
 const editLogChannel = '846062780083732510';
@@ -18,6 +20,7 @@ client.on('ready', () => {
 	});
 	console.log(`Logged in as ${client.user.tag}!`);
 });
+
 
 
 client.on('messageDelete', msg => {
@@ -94,7 +97,7 @@ client.on('message', msg => {
 	
 	var myDate = new Date();
 	var hrs = myDate.getHours();
-	console.log(hrs);
+
 
 	// Kelime kontrol: Kelimeleri boşluklarına ayırır
 	let keywords = msg.content.toLowerCase();
