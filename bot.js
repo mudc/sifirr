@@ -22,6 +22,8 @@ client.on('ready', () => {
 
 
 client.on('messageDelete', (oldmsg, newmsg) => {
+	value = Util.resolveString(value);
+    if (!value) throw new RangeError('EMBED_FIELD_VALUE');
 	if (!oldmsg.author) return;
 	const msgdelLog = client.channels.cache.find(channel => channel.id === '858302774721904671');
 	var delembed = new Discord.MessageEmbed()
