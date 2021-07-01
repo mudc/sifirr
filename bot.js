@@ -317,6 +317,17 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 					name: 'Members',
 					value: ucount
 				}, {
+					name: 'Server Ping:',
+					value: discordPing,
+					inline: true
+				},{
+					name: 'Your Ping',
+					value: ping,
+					inline: true
+				},{
+               
+               
+				},{
 					name: 'Text channels',
 					value: tcount,
 					inline: true
@@ -324,13 +335,6 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 
 					name: 'Voice channels',
 					value: vcount,
-					inline: true
-				},{
-					name: 'Server Ping:',
-					value: discordPing
-				},{
-					name: 'Your Ping',
-					value: ping,
 					inline: true
 				},);
 
