@@ -412,7 +412,6 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		}
 		
 		try {
-			nonExistentFunction();
 		  } catch (error) {
 			console.error(error);
 			client.channels.cache.get('858302774721904671').send("hata");
