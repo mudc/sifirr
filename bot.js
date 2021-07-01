@@ -274,9 +274,9 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		
 		const discordPing = msg.client.ws.ping
 		if (msg.content === prefix + 'ping') {
-			msg.channel.send('ping hesaplanıyor').then(msgping =>{
-				const ping = msgping.createdTimestamp - msg.createdTimestamp;
-				msg.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
+			msg.channel.send('ping hesaplanıyor').then(sent =>{
+				const ping = sent.createdTimestamp - msg.createdTimestamp;
+				sent.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
 
 			})
 		}
