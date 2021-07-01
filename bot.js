@@ -271,6 +271,13 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		if (msg.content === prefix + 'bilet') {
 			msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 		}
+		if (msg.content === prefix + 'ping') {
+			msg.channel.send('ping hesaplanıyor').then(msg => {
+				const ping = msg.createdtimestamp - message.createdtimestamp
+				msg.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
+
+			})
+		}
 		
 		if (msg.content.toLowerCase() === prefix + 'stats') {
 			const ucount = client.users.cache.size;
