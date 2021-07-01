@@ -303,7 +303,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
 			const discordPing = msg.client.ws.ping;
 			msg.channel.send('...').then(m =>{
-			const ping = ma.createdTimestamp - msg.createdTimestamp;
+			const ping = m.createdTimestamp - msg.createdTimestamp;
 			const stats = new Discord.MessageEmbed()
 				.setColor('RANDOM')
 				.setTitle('Film Komutları')
@@ -328,7 +328,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 					value: discordPing,
 					inline: true
 				},{
-					name: 'Your Ping',
+					name: 'LobbyBoy Ping',
 					value: ping,
 					inline: true,
 				},{ 
@@ -414,7 +414,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		try {
 		  } catch (error) {
 			console.error(error);
-			client.channels.cache.get('858302774721904671').send("hata");
+			client.channels.cache.get('860218589244162080').send("error");
 			// expected output: ReferenceError: nonExistentFunction is not defined
 			// Note - error messages will vary depending on browser
 		  } 
