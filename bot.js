@@ -299,6 +299,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		if (msg.content.toLowerCase() === prefix + 'stats') {
 			const ucount = client.users.cache.size;
 			const scount = client.guilds.cache.size;
+			const mcount = client.users.cache.size;
 			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
 			const discordPing = msg.client.ws.ping;
@@ -313,25 +314,36 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 				.addFields({
 					name: 'Server:',
 					value: scount
-				}, {
+					inline: true,
+				},{
 					name: 'Members',
-					value: ucount
-				}, {
+					value: ucount,
+					inline: true,
+				},{ 
+					name: '\u200B', 
+					value: '\u200B'
+					inline: false, 
+				},{
 					name: 'Server Ping:',
 					value: discordPing,
 					inline: true
 				},{
 					name: 'Your Ping',
 					value: ping,
-					inline: true
+					inline: true,
 				},{ 
 					name: '\u200B', 
-					value: '\u200B' 
+					value: '\u200B'
+					inline: false, 
+				},{
+					name: 'Text channels',
+					value: mcount,
+					inline: true,
 				},{
 					name: 'Text channels',
 					value: tcount,
-					inline: true
-				}, {
+					inline: true,
+				},{
 
 					name: 'Voice channels',
 					value: vcount,
