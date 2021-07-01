@@ -314,7 +314,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 				.addFields({
 					name: 'Server:',
 					value: scount
-					inline: true,
+					inline: true
 				},{
 					name: 'Members',
 					value: ucount,
