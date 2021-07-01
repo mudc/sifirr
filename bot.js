@@ -272,15 +272,30 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 		}
 		
-		const discordPing = msg.client.ws.ping
+		
 		if (msg.content === prefix + 'ping') {
-			msg.channel.send('ping hesaplanıyor').then(sent =>{
-				const ping = sent.createdTimestamp - msg.createdTimestamp;
-				sent.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
+			const discordPing = msg.client.ws.ping
+			msg.channel.send('pinging...').then(m =>{
+				const ping = m.createdTimestamp - msg.createdTimestamp;
+				const pingem = new Discord.MessageEmbed()
+				
+				.setAuthor(`Your ping is ${ping}`)
+				.setColor("Your Color")
+				.addFields({
+					name: 'Server Ping:',
+					value: discordPing
+				},{
+					name: 'Your Ping',
+					value: ping
+				},);
+				
+				m.edit(pingem)
 
-			})
+			});
 		}
 		
+		//m.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
+
 		if (msg.content.toLowerCase() === prefix + 'stats') {
 			const ucount = client.users.cache.size;
 			const scount = client.guilds.cache.size;
