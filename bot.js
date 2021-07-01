@@ -273,7 +273,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		}
 		if (msg.content === prefix + 'ping') {
 			msg.channel.send('ping hesaplanıyor').then(msg => {
-				const ping = msg.createdtimestamp - message.createdtimestamp
+				const ping = msg.createdtimestamp - msg.createdtimestamp
 				msg.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
 
 			})
@@ -370,6 +370,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			return msg.channel.send(ticket);
 		}
 		
+	/*
 		if (msg.content === `${prefix}ping`) {
 			msg.channel.send('Pong.');
 		} else if (msg.content === `${prefix}beep`) {
@@ -377,7 +378,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		} else if (msg.content === `${prefix}server`) {
 			msg.channel.send(`Server name: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
 		}
-		
+	*/	
 	}
 
 
