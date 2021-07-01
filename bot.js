@@ -299,7 +299,6 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		if (msg.content.toLowerCase() === prefix + 'stats') {
 			const ucount = client.users.cache.size;
 			const scount = client.guilds.cache.size;
-			const mcount = client.members.cache.size;
 			const gmcount = client.guild.members.cache.size;
 			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
@@ -338,11 +337,11 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 					inline: false, 
 				},{
 					name: 'user',
-					value: mcount,
+					value: gmcount,
 					inline: true,
 				},{
 					name: 'Text channels',
-					value: gmcount,
+					value: tcount,
 					inline: true,
 				},{
 
