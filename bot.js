@@ -327,10 +327,12 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 					inline: true
 				},{
 					name: 'Server Ping:',
-					value: discordPing
+					value: discordPing,
+					inline: true
 				},{
 					name: 'Your Ping',
-					value: ping
+					value: ping,
+					inline: true
 				},);
 
 			return m.edit(stats)
