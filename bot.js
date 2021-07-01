@@ -275,8 +275,8 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		
 		if (msg.content === prefix + 'ping') {
 			const discordPing = msg.client.ws.ping
-			msg.channel.send('pinging...').then(m =>{
-				const ping = m.createdTimestamp - msg.createdTimestamp;
+			msg.channel.send('...').then(mp =>{
+				const ping = mp.createdTimestamp - msg.createdTimestamp;
 				const pingem = new Discord.MessageEmbed()
 				
 				.setAuthor(`Your ping is ${ping}`)
@@ -289,7 +289,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 					value: ping
 				},);
 				
-				m.edit(pingem)
+				mp.edit(pingem)
 
 			});
 		}
@@ -301,6 +301,9 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			const scount = client.guilds.cache.size;
 			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
+			const discordPing = msg.client.ws.ping;
+			msg.channel.send('...').then(m =>{
+			const ping = m.createdTimestamp - msg.createdTimestamp;
 			const stats = new Discord.MessageEmbed()
 				.setColor('RANDOM')
 				.setTitle('Film Komutları')
@@ -322,10 +325,18 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 					name: 'Voice channels',
 					value: vcount,
 					inline: true
-				}, );
+				},{
+					name: 'Server Ping:',
+					value: discordPing
+				},{
+					name: 'Your Ping',
+					value: ping
+				},);
 
-			return msg.channel.send(stats);
+			return m.edit(stats)
+		});
 		}
+		
 		if (msg.content === prefix + 'salon') {
 			if (Math.floor((Math.random() * 4) + 2) === 1) {
 				msg.channel.send('Salon 1');
