@@ -313,7 +313,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 				.setFooter('Bot gibi bot')
 				.addFields({
 					name: 'Server:',
-					value: scount
+					value: scount,
 					inline: true
 				},{
 					name: 'Members',
@@ -321,8 +321,8 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 					inline: true,
 				},{ 
 					name: '\u200B', 
-					value: '\u200B'
-					inline: false, 
+					value: '\u200B',
+					inline: false,
 				},{
 					name: 'Server Ping:',
 					value: discordPing,
@@ -333,7 +333,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 					inline: true,
 				},{ 
 					name: '\u200B', 
-					value: '\u200B'
+					value: '\u200B',
 					inline: false, 
 				},{
 					name: 'Text channels',
