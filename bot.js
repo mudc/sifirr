@@ -309,7 +309,8 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 				.setTitle('Film Komutları')
 				.setDescription(`:white_check_mark: Statistics of Lobby Boy`)
 				.setTimestamp()
-				.setFooter('Bot gibi bot')
+				.setFooter('lobbyboy')
+				.setThumbnail('https://cdn.discordapp.com/attachments/858275837417881623/860200933463949312/zero.png')
 				.addFields({
 					name: 'Server:',
 					value: scount,
