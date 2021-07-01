@@ -327,7 +327,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 					inline: true
 				},{
 					name: 'Server Ping:',
-					value: discordPing,
+					value: discordPing
 				},{
 					name: 'Your Ping',
 					value: ping,
