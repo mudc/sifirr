@@ -272,10 +272,10 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 		}
 		
+		const discordPing = msg.client.ws.ping
 		if (msg.content === prefix + 'ping') {
 			msg.channel.send('ping hesaplanıyor').then(m =>{
 				var ping = m.createdtimestamp - msg.createdtimestamp;
-				var discordPing = msg.client.ws.ping
 				msg.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
 
 			})
