@@ -271,7 +271,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		if (msg.content === prefix + 'bilet') {
 			msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 		}
-		const discordPing = message.client.ws.ping
+		const discordPing = msg.client.ws.ping
 		if (msg.content === prefix + 'ping') {
 			msg.channel.send('ping hesaplanıyor').then(msg => {
 				const ping = msg.createdtimestamp - msg.createdtimestamp
