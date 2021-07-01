@@ -303,7 +303,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
 			const discordPing = msg.client.ws.ping;
 			msg.channel.send('...').then(m =>{
-			const ping = m.createdTimestamp - msg.createdTimestamp;
+			const ping = msg.createdTimestamp - msg.createdTimestamp;
 			const stats = new Discord.MessageEmbed()
 				.setColor('RANDOM')
 				.setTitle('Film Komutları')
