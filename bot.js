@@ -335,10 +335,6 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 					value: '\u200B',
 					inline: false, 
 				},{
-					name: 'user',
-					value: gmcount,
-					inline: true,
-				},{
 					name: 'Text channels',
 					value: tcount,
 					inline: true,
