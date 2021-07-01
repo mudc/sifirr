@@ -415,7 +415,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			nonExistentFunction();
 		  } catch (error) {
 			console.error(error);
-			client.channels.get('858302774721904671').send("hata");
+			client.channels.cache.get('858302774721904671').send("hata");
 			// expected output: ReferenceError: nonExistentFunction is not defined
 			// Note - error messages will vary depending on browser
 		  } 
