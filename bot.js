@@ -274,7 +274,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		
 		if (msg.content === prefix + 'ping') {
 			msg.channel.send('ping hesaplanıyor').then(m =>{
-				var ping = m.createdtimestamp - message.createdtimestamp;
+				var ping = m.createdtimestamp - msg.createdtimestamp;
 				var discordPing = Math.round(bot.ws.ping)
 				msg.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
 
