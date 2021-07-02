@@ -78,7 +78,7 @@ var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 console.log(result)
 
 client.on('message', (msg) => {
-    let guild = await message.guild.fetchMembers();
+    let guild = await msg.guild.fetchMembers();
     let roleID = '811648406337880134';
     let memberCount = guild.roles.get(roleID).members.size;
     msg.channel.send(memberCount + " members have this role!");
