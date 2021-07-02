@@ -272,7 +272,19 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 		}
 		
+		if (msg.content === prefix + 'bunny') {
+			const roleId = "812004859439218758"
+			const role2 = new Discord.MessageEmbed()
+			.setTitle ("Valorant Roster") 
+			.setDescription (msg.guild.roles.cache.get(roleId).members.map(m=>m.user).join('\n'));
+			 
+				
+				
+			return msg.channel.send(role2);
+
 		
+		}
+
 		if (msg.content === prefix + 'ping') {
 			const discordPing = msg.client.ws.ping
 			msg.channel.send('...').then(mp =>{
@@ -383,6 +395,9 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 
 			}
 		}
+		
+		
+		
 		if (msg.content === "deneme1") {
 			const exampleEmbed = new Discord.MessageEmbed()
 				.setColor('#ffff00')
