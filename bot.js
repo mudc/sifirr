@@ -298,7 +298,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 
 		if (msg.content.toLowerCase() === prefix + 'stats') {
 			const ucount = client.users.cache.size;
-			const mcount = client.guilds.get('794931185289265182').members.cache.filter(member => !member.user.bot).size;
+			const mcount = client.guild.members.cache.filter(member => !member.user.bot).size;
 			const scount = client.guilds.cache.size;
 			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
