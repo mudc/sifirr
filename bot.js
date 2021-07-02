@@ -21,55 +21,55 @@ client.on('ready', () => {
 
 //DELLOG
 
-client.on('messageDelete', (oldMessage, newMessage) => {
-	if (!oldMessage.author) return;
-	const MessagedelLog = client.channels.cache.find(channel => channel.id === '858302774721904671');
+client.on('messageDelete', (oldmessage, newmessage) => {
+	if (!oldmessage.author) return;
+	const messagedelLog = client.channels.cache.find(channel => channel.id === '858302774721904671');
 	var delembed = new Discord.MessageEmbed()
-		.setAuthor(oldMessage.author.username, oldMessage.author.avatarURL())
+		.setAuthor(oldmessage.author.username, oldmessage.author.avatarURL())
 		.setColor('#c92424')
-		.setFooter(`Message ID: ${oldMessage.id} | Author ID: ${oldMessage.author.id}`)
+		.setFooter(`Message ID: ${oldmessage.id} | Author ID: ${oldmessage.author.id}`)
 		.setTimestamp()
 		.addFields({
 			name: '🚫 silinen mesaj:',
-			value: oldMessage.content + '-'
+			value: oldmessage.content + '-'
 		}, {
 			name: 'Channel',
-			value: oldMessage.channel.toString(),
+			value: oldmessage.channel.toString(),
 			inline: true
 		});
 
-	MessagedelLog.send(delembed);
+	messagedelLog.send(delembed);
 
 
 });
 
 //EDIT LOG
 
-client.on('messageUpdate', (oldMessage, newMessage) => { // Old message may be undefined
-	if (!oldMessage.author) return;
-	if (oldMessage.content === newMessage.content) return;
-	const MessageeditLog = client.channels.cache.find(channel => channel.id === '858302833837473812');
+client.on('messageUpdate', (oldmessage, newmessage) => { // Old message may be undefined
+	if (!oldmessage.author) return;
+	if (oldmessage.content === newmessage.content) return;
+	const messageeditLog = client.channels.cache.find(channel => channel.id === '858302833837473812');
 	var editembed = new Discord.MessageEmbed()
-		.setAuthor(newMessage.author.username, newMessage.author.avatarURL())
+		.setAuthor(newmessage.author.username, newmessage.author.avatarURL())
 		.setColor('#ffda99')
 		.setTimestamp()
-		.setFooter(`Message ID: ${newMessage.id} | Author ID: ${newMessage.author.id}`)
+		.setFooter(`Message ID: ${newmessage.id} | Author ID: ${newmessage.author.id}`)
 		.addFields({
 			name: '📄 original:',
-			value: oldMessage
+			value: oldmessage
 		}, {
 			name: '📝 edit:',
-			value: newMessage
+			value: newmessage
 		}, {
 			name: 'Channel',
-			value: oldMessage.channel.toString(),
+			value: oldmessage.channel.toString(),
 			inline: true
 		}, {
 			name: 'Message',
-			value: '[Jump To Message](' + oldMessage.url + ')',
+			value: '[Jump To Message](' + oldmessage.url + ')',
 			inline: true
 		});
-	MessageeditLog.send(editembed);
+	messageeditLog.send(editembed);
 
 });
 
@@ -81,16 +81,16 @@ console.log(result)
 
 
 
-client.on('message', Message => {
+client.on('message', message => {
 
-	if (Message.author.bot) return;
+	if (message.author.bot) return;
 	
 	var myDate = new Date();
 	var hrs = myDate.getHours();
 
 
 	// Kelime kontrol: Kelimeleri boşluklarına ayırır
-	let keywords = Message.content.toLowerCase();
+	let keywords = message.content.toLowerCase();
 
 	// Yazılan mesajda günaydın var mı kontrol eder
 	let gunaydin = keywords.includes('günaydın');
@@ -101,89 +101,89 @@ client.on('message', Message => {
 
 //GÜNAYDIN
 
-	if (Message.member.roles.cache.some(role => role.name === 'jellyfish')) {
+	if (message.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (gunaydin === true) {
 			console.log(hrs);
 			if (hrs < 12) {
-				Message.channel.send("Günaydın :city_sunset: ")
-				Message.react('✅');
-				Message.react('🌇');
+				message.channel.send("Günaydın :city_sunset: ")
+				message.react('✅');
+				message.react('🌇');
 			} else if (hrs < 17) {
-				Message.channel.send("Tünaydın :city_dusk: ")
-				Message.react('🚫');
-				Message.react('🌆');
+				message.channel.send("Tünaydın :city_dusk: ")
+				message.react('🚫');
+				message.react('🌆');
 			} else if (hrs < 22) {
-				Message.channel.send("Yakşamlar :cityscape: ")
-				Message.react('🚫');
-				Message.react('🏙️');
+				message.channel.send("Yakşamlar :cityscape: ")
+				message.react('🚫');
+				message.react('🏙️');
 			} else if (hrs > 22 || hrs < 06) {
-				Message.channel.send("İyi geceler :night_with_stars: ")
-				Message.react('🚫');
-				Message.react('🌃');
+				message.channel.send("İyi geceler :night_with_stars: ")
+				message.react('🚫');
+				message.react('🌃');
 			}
 		}
 
 		if (tunaydin === true) {
 			console.log(hrs);
 			if (hrs < 12) {
-				Message.channel.send("Günaydın :city_sunset: ")
-				Message.react('🚫');
-				Message.react('🌇');
+				message.channel.send("Günaydın :city_sunset: ")
+				message.react('🚫');
+				message.react('🌇');
 			} else if (hrs < 17) {
-				Message.channel.send("Tünaydın :city_dusk: ")
-				Message.react('✅');
-				Message.react('🌆');
+				message.channel.send("Tünaydın :city_dusk: ")
+				message.react('✅');
+				message.react('🌆');
 			} else if (hrs < 22) {
-				Message.channel.send("Yakşamlar :cityscape: ")
-				Message.react('🚫');
-				Message.react('🏙️');
+				message.channel.send("Yakşamlar :cityscape: ")
+				message.react('🚫');
+				message.react('🏙️');
 			} else if (hrs > 22 || hrs < 06) {
-				Message.channel.send("İyi geceler :night_with_stars: ")
-				Message.react('🚫');
-				Message.react('🌃');
+				message.channel.send("İyi geceler :night_with_stars: ")
+				message.react('🚫');
+				message.react('🌃');
 			}
 		}
 
 		if (yaksamlar === true) {
 			console.log(hrs);
 			if (hrs < 12) {
-				Message.channel.send("Günaydın :city_sunset: ")
-				Message.react('🚫');
-				Message.react('🌇');
+				message.channel.send("Günaydın :city_sunset: ")
+				message.react('🚫');
+				message.react('🌇');
 			} else if (hrs < 17) {
-				Message.channel.send("Tünaydın :city_dusk: ")
-				Message.react('🚫');
-				Message.react('🌆');
+				message.channel.send("Tünaydın :city_dusk: ")
+				message.react('🚫');
+				message.react('🌆');
 			} else if (hrs < 22) {
-				Message.channel.send("Yakşamlar :cityscape: ")
-				Message.react('✅');
-				Message.react('🏙️');
-				Message.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
+				message.channel.send("Yakşamlar :cityscape: ")
+				message.react('✅');
+				message.react('🏙️');
+				message.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 			} else if (hrs > 22 || hrs < 06) {
-				Message.channel.send("İyi geceler :night_with_stars: ")
-				Message.react('🚫');
-				Message.react('🌃');
+				message.channel.send("İyi geceler :night_with_stars: ")
+				message.react('🚫');
+				message.react('🌃');
 			}
 		}
 
 		if (iyigeceler === true) {
 			console.log(hrs);
 			if (hrs < 12) {
-				Message.channel.send("Günaydın :city_sunset: ")
-				Message.react('🚫');
-				Message.react('🌇');
+				message.channel.send("Günaydın :city_sunset: ")
+				message.react('🚫');
+				message.react('🌇');
 			} else if (hrs < 17) {
-				Message.channel.send("Tünaydın :city_dusk: ")
-				Message.react('🚫');
-				Message.react('🌆');
+				message.channel.send("Tünaydın :city_dusk: ")
+				message.react('🚫');
+				message.react('🌆');
 			} else if (hrs < 22) {
-				Message.channel.send("Yakşamlar :cityscape: ")
-				Message.react('🚫');
-				Message.react('🏙️');
+				message.channel.send("Yakşamlar :cityscape: ")
+				message.react('🚫');
+				message.react('🏙️');
 			} else if (hrs > 22 || hrs < 06) {
-				Message.channel.send("İyi geceler :night_with_stars: ")
-				Message.react('✅');
-				Message.react('🌃');
+				message.channel.send("İyi geceler :night_with_stars: ")
+				message.react('✅');
+				message.react('🌃');
 			}
 		}
 	
@@ -191,11 +191,11 @@ client.on('message', Message => {
 		if (iyiaksamlar === true) {
 			console.log(hrs);
 			if (hrs < 12 || hrs >= 24) {
-				Message.channel.send("iyi akşamar :city_sunset: ")
-				Message.react('🚫');
-				Message.react('🌇');
+				message.channel.send("iyi akşamar :city_sunset: ")
+				message.react('🚫');
+				message.react('🌇');
 			} else {
-				Message.react('🌇');
+				message.react('🌇');
 				const yaksa = new Discord.MessageEmbed()
 					.setColor('RANDOM')
 					.setTitle('iyi akşamlar')
@@ -209,87 +209,87 @@ client.on('message', Message => {
 					.setTimestamp()
 					.setFooter('LobbyBoy');
 
-				return Message.channel.send(yaksa);
+				return message.channel.send(yaksa);
 			}
 		}
 	}
 
-	if (Message.content.toLowerCase() === 'yeter') {
-		Message.channel.send('bence de!');
+	if (message.content.toLowerCase() === 'yeter') {
+		message.channel.send('bence de!');
 	}
-	if (Message.content.toLowerCase() === 'selam') {
-		Message.channel.send('selam');
+	if (message.content.toLowerCase() === 'selam') {
+		message.channel.send('selam');
 	}
 	
 //SİNEMA KODLARI
 
-if (Message.member.roles.cache.some(role => role.name === 'jellyfish') || Message.member.roles.cache.some(role => role.name === 'movie') || Message.member.roles.cache.some(role => role.name === 'angyfish')) {
-		if (Message.content === '<:pay:856947305592127579>') {
-			Message.reply('<:ticket:856947316279214111>');
+if (message.member.roles.cache.some(role => role.name === 'jellyfish') || message.member.roles.cache.some(role => role.name === 'movie') || message.member.roles.cache.some(role => role.name === 'angyfish')) {
+		if (message.content === '<:pay:856947305592127579>') {
+			message.reply('<:ticket:856947316279214111>');
 		}
-		if (Message.content.toLowerCase() === prefix + 'mısır') {
-			Message.channel.send(':popcorn:');
+		if (message.content.toLowerCase() === prefix + 'mısır') {
+			message.channel.send(':popcorn:');
 		}
-		if (Message.content.toLowerCase() === prefix + 'popcorn') {
-			Message.channel.send(':popcorn:');
+		if (message.content.toLowerCase() === prefix + 'popcorn') {
+			message.channel.send(':popcorn:');
 		}
-		if (Message.content === '<:ticket:856947316279214111>') {
-			Message.channel.send('...');
+		if (message.content === '<:ticket:856947316279214111>') {
+			message.channel.send('...');
 		}
-		if (Message.content.toLowerCase() === prefix + 'film') {
-			Message.channel.send('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
+		if (message.content.toLowerCase() === prefix + 'film') {
+			message.channel.send('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
 		}
-		if (Message.content === '<:ticket:856947316279214111>') {
-			Message.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
+		if (message.content === '<:ticket:856947316279214111>') {
+			message.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 		}
-		if (Message.content === prefix + 'popcorn') {
+		if (message.content === prefix + 'popcorn') {
 			if (Math.floor((Math.random() * 3) + 1) === 1) {
-				Message.channel.send('https://tenor.com/view/popcorn-bored-gif-10365509');
+				message.channel.send('https://tenor.com/view/popcorn-bored-gif-10365509');
 			} else if (Math.floor((Math.random() * 3) + 1) === 2) {
-				Message.channel.send('https://tenor.com/view/popcorn-gif-4572206');
+				message.channel.send('https://tenor.com/view/popcorn-gif-4572206');
 			} else if (Math.floor((Math.random() * 3) + 1) === 3) {
-				Message.channel.send('https://tenor.com/view/cine-pel%c3%adcula-palomitas-kino-popcorn-gif-12330033');
+				message.channel.send('https://tenor.com/view/cine-pel%c3%adcula-palomitas-kino-popcorn-gif-12330033');
 			}
 		}
 }
 
 // MODS
 
-if (Message.member.roles.cache.some(role => role.name === 'jellyfish') || Message.member.roles.cache.some(role => role.name === 'angyfish')) {
-		if (Message.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
-			Message.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
+if (message.member.roles.cache.some(role => role.name === 'jellyfish') || message.member.roles.cache.some(role => role.name === 'angyfish')) {
+		if (message.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
+			message.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
 		}
-		if (Message.content.toLowerCase() === prefix + '321') {
+		if (message.content.toLowerCase() === prefix + '321') {
 			message.delete({ timeout: 5000, reason: 'It had to be done.' });
-			Message.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
+			message.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
 		}
-		if (Message.content.toLowerCase() === prefix + 'theend') {
-			Message.channel.send('https://tenor.com/view/sad-no-way-the-end-ending-gif-13844808');
+		if (message.content.toLowerCase() === prefix + 'theend') {
+			message.channel.send('https://tenor.com/view/sad-no-way-the-end-ending-gif-13844808');
 		}
-		if (Message.content.toLowerCase() === 'yaksamlar') {
-			Message.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
+		if (message.content.toLowerCase() === 'yaksamlar') {
+			message.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 		}
-		if (Message.content === prefix + 'bilet') {
-			Message.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
+		if (message.content === prefix + 'bilet') {
+			message.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 		}
 		
-		/*if (Message.content === prefix + 'bunny') {
+		/*if (message.content === prefix + 'bunny') {
 			const roleId = "812004859439218758"
 			const role2 = new Discord.MessageEmbed()
 			.setTitle ("Valorant Roster") 
-			.setDescription (Message.guild.roles.cache.get(roleId).members.cache.filter(member => !member.user.bot).size);
+			.setDescription (message.guild.roles.cache.get(roleId).members.cache.filter(member => !member.user.bot).size);
 			 
 				
 				
-			return Message.channel.send(role2);
+			return message.channel.send(role2);
 
 		
 		}
 */
-		if (Message.content === prefix + 'ping') {
-			const discordPing = Message.client.ws.ping
-			Message.channel.send('...').then(mp =>{
-				const ping = mp.createdTimestamp - Message.createdTimestamp;
+		if (message.content === prefix + 'ping') {
+			const discordPing = message.client.ws.ping
+			message.channel.send('...').then(mp =>{
+				const ping = mp.createdTimestamp - message.createdTimestamp;
 				const pingem = new Discord.MessageEmbed()
 				
 				.setAuthor(`Your ping is ${ping}`)
@@ -313,31 +313,31 @@ if (Message.member.roles.cache.some(role => role.name === 'jellyfish') || Messag
 		//m.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
 
 		/* ROL ÜYE SAYISI
-				if (Message.content.toLowerCase() === prefix + 'u') {
-		let guild =  Message.guild.members.fetch();
+				if (message.content.toLowerCase() === prefix + 'u') {
+		let guild =  message.guild.members.fetch();
 		let roleID = '811648406337880134';
-		let memberCount = Message.guild.roles.cache.get(roleID).members.map(m=>m.user.tag);
-		Message.channel.send(memberCount + " members have this role!");
+		let memberCount = message.guild.roles.cache.get(roleID).members.map(m=>m.user.tag);
+		message.channel.send(memberCount + " members have this role!");
 		}
-		if (Message.content.toLowerCase() === prefix + 'u') {
-			let guild = Message.guild.members.fetch();
+		if (message.content.toLowerCase() === prefix + 'u') {
+			let guild = message.guild.members.fetch();
 			let roleID = '811648406337880134';
 			let memberCount = guild.roles.cache.get(roleID).members.size;
-			Message.channel.send(memberCount + " members have this role!");
+			message.channel.send(memberCount + " members have this role!");
 		}
 		*/
 		
 
 
-		if (Message.content.toLowerCase() === prefix + 'stats') {
+		if (message.content.toLowerCase() === prefix + 'stats') {
 			const ucount = client.users.cache.size;
 			const mcount = client.guilds.cache.get('794931185289265182').members.cache.filter(member => !member.user.bot).size;
 			const scount = client.guilds.cache.size;
 			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
-			const discordPing = Message.client.ws.ping;
-			Message.channel.send('...').then(m =>{
-			const ping = m.createdTimestamp - Message.createdTimestamp;
+			const discordPing = message.client.ws.ping;
+			message.channel.send('...').then(m =>{
+			const ping = m.createdTimestamp - message.createdTimestamp;
 			const stats = new Discord.MessageEmbed()
 				.setColor('RANDOM')
 				.setTitle('Film Komutları')
@@ -388,18 +388,18 @@ if (Message.member.roles.cache.some(role => role.name === 'jellyfish') || Messag
 		});
 		}
 		
-		if (Message.content === prefix + 'salon') {
+		if (message.content === prefix + 'salon') {
 			if (Math.floor((Math.random() * 4) + 2) === 1) {
-				Message.channel.send('Salon 1');
+				message.channel.send('Salon 1');
 			} else if (Math.floor((Math.random() * 2) + 1) === 2) {
-				Message.channel.send('Salon 2');
+				message.channel.send('Salon 2');
 
 			}
 		}
 		
 		
 		
-		if (Message.content === "deneme1") {
+		if (message.content === "deneme1") {
 			const exampleEmbed = new Discord.MessageEmbed()
 				.setColor('#ffff00')
 				.setTitle('Film Komutları')
@@ -422,9 +422,9 @@ if (Message.member.roles.cache.some(role => role.name === 'jellyfish') || Messag
 				.setTimestamp()
 				.setFooter('Bot gibi bot');
 
-			return Message.channel.send(exampleEmbed);
+			return message.channel.send(exampleEmbed);
 		}
-		if (Message.content === '🎫') {
+		if (message.content === '🎫') {
 			const tckt = Math.floor(Math.random() * 65 + 1);
 			const ticket = new Discord.MessageEmbed()
 				.setColor('#ffff00')
@@ -449,7 +449,7 @@ if (Message.member.roles.cache.some(role => role.name === 'jellyfish') || Messag
 				.setTimestamp()
 				.setFooter('Bot gibi bot');
 
-			return Message.channel.send(ticket);
+			return message.channel.send(ticket);
 		}
 		
 		try {
@@ -466,17 +466,17 @@ if (Message.member.roles.cache.some(role => role.name === 'jellyfish') || Messag
 
 /*
 	const talkedRecently = new Set();
-	if (talkedRecently.has(Message.author.id)) {
-		Message.channel.send("Wait 1 minute before getting typing this again. - " + Message.author);
+	if (talkedRecently.has(message.author.id)) {
+		message.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
 	} else {
 
 		// the user can type the command ... your command code goes here :)
 	
 		// Adds the user to the set so that they can't talk for a minute
-		talkedRecently.add(Message.author.id);
+		talkedRecently.add(message.author.id);
 		setTimeout(() => {
 			// Removes the user from the set after a minute
-			talkedRecently.delete(Message.author.id);
+			talkedRecently.delete(message.author.id);
 		}, 60000);
 	}
 */
