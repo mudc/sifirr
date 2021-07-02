@@ -298,7 +298,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		if (msg.content.toLowerCase() === prefix + 'u') {
 		let guild =  msg.guild.members.fetch();
 		let roleID = '811648406337880134';
-		let memberCount = msg.guild.roles.cache.get(roleID).members.size
+		let memberCount = msg.guild.roles.cache.get(roleID).members.map(m=>m.user.tag);
 		msg.channel.send(memberCount + " members have this role!");
 		}
 		
