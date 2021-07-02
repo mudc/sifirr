@@ -297,7 +297,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		//m.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
 
 		if (msg.content.toLowerCase() === prefix + 'u') {
-			const Role = msg.guild.roles.cache.find(role => role.name == "TEST ROLE");
+			const Role = msg.guild.roles.cache.find(role => role.name == "clownfish");
 			const Members = msg.guild.members.cache.filter(member => member.roles.cache.find(role => role == Role)).map(member => member.user.tag);
 			msg.channel.send(`Users with ${Role.name}: ${Members}`);
 		};
