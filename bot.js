@@ -264,9 +264,11 @@ if (message.member.roles.cache.some(role => role.name === 'jellyfish') || messag
 			message.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
 		}
 		if (message.content.toLowerCase() === prefix + 'theend') {
+			message.delete({ timeout: 0 });
 			message.channel.send('https://tenor.com/view/sad-no-way-the-end-ending-gif-13844808');
 		}
 		if (message.content.toLowerCase() === 'yaksamlar') {
+			message.delete({ timeout: 0 });
 			message.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 		}
 		if (message.content === prefix + 'bilet') {
