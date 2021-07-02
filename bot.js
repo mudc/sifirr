@@ -276,7 +276,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			const roleId = "812004859439218758"
 			const role2 = new Discord.MessageEmbed()
 			.setTitle ("Valorant Roster") 
-			.setDescription (msg.guild.roles.cache.get(roleId).members.map(m=>m.user).join('\n'));
+			.setDescription (msg.guild.roles.cache.get(roleId).members.cache.filter(member => !member.user.bot).size);
 			 
 				
 				
