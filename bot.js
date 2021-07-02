@@ -296,13 +296,14 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		
 		//m.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
 
+		/* ROL ÜYE SAYISI
 		if (msg.content.toLowerCase() === prefix + 'u') {
 			let guild = msg.guild.members.fetch();
 			let roleID = '811648406337880134';
-			let memberCount = guild.roles.get(roleID).members.size;
+			let memberCount = guild.roles.cache.get(roleID).members.size;
 			msg.channel.send(memberCount + " members have this role!");
 		}
-	
+		*/
 		
 
 
@@ -434,16 +435,6 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			// Note - error messages will vary depending on browser
 		  } 
 
-
-	/*
-		if (msg.content === `${prefix}ping`) {
-			msg.channel.send('Pong.');
-		} else if (msg.content === `${prefix}beep`) {
-			msg.channel.send('Boop.');
-		} else if (msg.content === `${prefix}server`) {
-			msg.channel.send(`Server name: ${msg.guild.name}\nTotal members: ${msg.guild.memberCount}`);
-		}
-	*/	
 	}
 
 
