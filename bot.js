@@ -87,7 +87,7 @@ console.log(result)
 
 client.on('message', async(msg) => {
 	if (msg.content === 'ping') {
-	  let roleID = '755766619229388800';
+	  let roleID = '811648406337880134';
 	  let memberCount = msg.guild.roles.cache.get(roleID).members.size
 	  msg.channel.send(memberCount + " members have this role!");
 	  console.log(memberCount)
