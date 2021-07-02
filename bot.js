@@ -77,23 +77,15 @@ var originalText = "éàçèñ"
 var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 console.log(result)
 
-/*client.on('message', (msg) => {
-    let guild = await msg.guild.members.fetch();
+client.on('message', async(msg) => {
+    if (msg.content.toLowerCase() === prefix + 'u') {
+	}let guild = await msg.guild.members.fetch();
     let roleID = '811648406337880134';
-    let memberCount = msg.guild.roles.cache.has(roleID).members.size;
+    let memberCount = msg.guild.roles.cache.get(roleID).members.size
     msg.channel.send(memberCount + " members have this role!");
 });
-*/
 
-client.on('message', async(msg) => {
-	if (msg.content === 'ping') {
-	  let roleID = '811648406337880134';
-	  let memberCount = msg.guild.roles.cache.get(roleID).members.size
-	  msg.channel.send(memberCount + " members have this role!");
-	  console.log(memberCount)
-	  msg.reply('Pong!');
-	}
-  });
+
 
 client.on('message', msg => {
 
