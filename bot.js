@@ -296,6 +296,15 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		
 		//m.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
 
+		if (msg.content.toLowerCase() === prefix + 'u') {
+			const Role = msg.guild.roles.cache.find(role => role.name == "TEST ROLE");
+			const Members = msg.guild.members.cache.filter(member => member.roles.cache.find(role => role == Role)).map(member => member.user.tag);
+			msg.channel.send(`Users with ${Role.name}: ${Members}`);
+		};
+	
+		
+
+
 		if (msg.content.toLowerCase() === prefix + 'stats') {
 			const ucount = client.users.cache.size;
 			const mcount = client.guilds.cache.get('794931185289265182').members.cache.filter(member => !member.user.bot).size;
