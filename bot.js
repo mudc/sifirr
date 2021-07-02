@@ -272,7 +272,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 			msg.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 		}
 		
-		if (msg.content === prefix + 'bunny') {
+		/*if (msg.content === prefix + 'bunny') {
 			const roleId = "812004859439218758"
 			const role2 = new Discord.MessageEmbed()
 			.setTitle ("Valorant Roster") 
@@ -284,7 +284,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 
 		
 		}
-
+*/
 		if (msg.content === prefix + 'ping') {
 			const discordPing = msg.client.ws.ping
 			msg.channel.send('...').then(mp =>{
@@ -330,7 +330,8 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 
 		if (msg.content.toLowerCase() === prefix + 'stats') {
 			const ucount = client.users.cache.size;
-			const mcount = client.guilds.cache.get('794931185289265182').members.cache.filter(member => !member.user.bot).size;
+			//const mcount = client.guilds.cache.get('794931185289265182').members.cache.filter(member => !member.user.bot).size;
+			const acount = client.guild.roles.cache.get('812004859439218758').members.cache.filter(member => !member.user.bot).size;
 			const scount = client.guilds.cache.size;
 			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
@@ -354,7 +355,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 					inline: true,
 				},{
 					name: 'Angys Members',
-					value: mcount,
+					value: acount,
 					inline: true,
 				},{ 
 					name: '\u200B', 
