@@ -298,7 +298,7 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 
 		if (msg.content.toLowerCase() === prefix + 'u') {
 			const Role = msg.guild.roles.cache.find(role => role.name == "clownfish");
-			const Members = msg.guild.members.cache.filter(member => member.roles.cache.find(role => role == Role)).map(member => member.user.tag);
+			const Members = client.guild.members.cache.filter(member => member.roles.cache.find(role => role == Role)).map(member => member.user.tag);
 			msg.channel.send(`Users with ${Role.name}: ${Members}`);
 		};
 	
