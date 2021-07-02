@@ -260,7 +260,7 @@ if (message.member.roles.cache.some(role => role.name === 'jellyfish') || messag
 			message.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
 		}
 		if (message.content.toLowerCase() === prefix + '321') {
-			message.delete({ timeout: 5000, reason: 'It had to be done.' });
+			message.delete({ timeout: 0 });
 			message.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
 		}
 		if (message.content.toLowerCase() === prefix + 'theend') {
