@@ -297,10 +297,11 @@ if (msg.member.roles.cache.some(role => role.name === 'jellyfish') || msg.member
 		//m.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
 
 		if (msg.content.toLowerCase() === prefix + 'u') {
-			const Role = msg.guild.roles.cache.find(role => role.name == "clownfish");
-			const Members = client.guild.members.cache.filter(member => member.roles.cache.find(role => role == Role)).map(member => member.user.tag);
-			msg.channel.send(`Users with ${Role.name}: ${Members}`);
-		};
+			let guild = await msg.guild.members.fetch();
+			let roleID = '811648406337880134';
+			let memberCount = guild.roles.cache.get(roleID).members.size;
+			msg.channel.send(memberCount + " members have this role!");
+		}
 	
 		
 
