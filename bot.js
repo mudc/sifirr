@@ -3,7 +3,6 @@ const ayarlar = require('./ayarlar.json');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const mergeImages = require('merge-images');
 const Canvas = require('canvas');
 const fs = require("fs");
 
