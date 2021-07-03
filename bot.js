@@ -237,9 +237,9 @@ client.on('message', message => {
 		if (message.content.toLowerCase() === prefix + 'film') {
 			message.channel.send('https://tenor.com/view/spongebob-square-pants-spongebob-patrick-squidward-popcorn-gif-3531993');
 		}
-		if (message.content === '<:ticket:856947316279214111>') {
-			message.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
-		}
+		// if (message.content === '<:ticket:856947316279214111>') {
+		// 	message.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
+		// }
 		if (message.content === prefix + 'popcorn') {
 			if (Math.floor((Math.random() * 3) + 1) === 1) {
 				message.channel.send('https://tenor.com/view/popcorn-bored-gif-10365509');
