@@ -488,7 +488,7 @@ async function salonBilet(koltuk, filmadi, saati) {
 	b64 = canvas.toDataURL();
 	base64Data = b64.replace(/^data:image\/png;base64,/, "");
 
-	fs.writeFile("/saloon.png", base64Data, 'base64', function (err) {
+	fs.writeFile("./saloon.png", base64Data, 'base64', function (err) {
 		if (err == null) {
 			
             const file = new Discord.MessageAttachment('./saloon.png');
