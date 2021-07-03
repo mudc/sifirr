@@ -249,14 +249,14 @@ client.on('message', message => {
 				message.channel.send('https://tenor.com/view/cine-pel%c3%adcula-palomitas-kino-popcorn-gif-12330033');
 			}
 		}
-		if (message.content === '🎫') {
+		if (message.content === '<:ticket:856947316279214111>') {
 			const tckt = Math.floor(Math.random() * 55 + 1);
 
 			const filmadi = "Kung Fu Panda";
 			const saati = "21:30"
-			const filmafisi = "https://cdn.discordapp.com/attachments/846062779202535437/858092650606755840/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg"
+			const filmafisi = "https://cdn.mee6.xyz/guild-images/794931185289265182/0128938b8e0d0da77183a35c87abdc027782164179209bafdfaa67c3bb0ed7b9.png"
 
-			const kanalID = "857974372919410731"
+			const kanalID = "856958008935317564"
 
 			salonBilet(tckt, filmadi, saati, kanalID, filmafisi);
 		}
@@ -487,7 +487,7 @@ async function salonBilet(koltuk, filmadi, saati, kanalID, filmafisi) {
 	salon.font = '70px "Tahoma"';
 	salon.textAlign = "center";
 	salon.fillStyle = "rgba(255, 255, 255, 0.8)";
-	salon.fillText(koltuk, 170, 260);
+	salon.fillText(koltuk, 170, 270);
 
 	b64 = canvas.toDataURL();
 	base64Data = b64.replace(/^data:image\/png;base64,/, "");
