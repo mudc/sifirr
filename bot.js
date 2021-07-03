@@ -507,7 +507,7 @@ async function salonBilet(koltuk, filmadi, saati) {
 					},
 					{
 						name: 'Film Saati',
-						value: 21:30,
+						value: '21:30',
 						inline: true,
 					},
 				],
