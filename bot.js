@@ -249,6 +249,19 @@ client.on('message', message => {
 				message.channel.send('https://tenor.com/view/cine-pel%c3%adcula-palomitas-kino-popcorn-gif-12330033');
 			}
 		}
+		if (message.content === '🎫') {
+			const tckt = Math.floor(Math.random() * 55 + 1);
+
+			const filmadi = "Filmin Adı";
+			const saati = "16:15"
+			const filmafisi = "https://cdn.discordapp.com/attachments/846062779202535437/858092650606755840/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg"
+
+			const kanalID = "857974372919410731"
+
+			salonBilet(tckt, filmadi, saati, kanalID, filmafisi);
+		}
+
+
 	}
 
 	// MODS
@@ -430,16 +443,7 @@ client.on('message', message => {
 
 			return message.channel.send(exampleEmbed);
 		}
-		if (message.content === '🎫') {
-			const tckt = Math.floor(Math.random() * 65 + 1);
 
-			const filmadi = "Filmin Adı";
-			const saati = "16:15"
-
-			const kanalID = "857974372919410731"
-
-			salonBilet(tckt, filmadi, saati, kanalID);
-		}
 
 		try {} catch (error) {
 			console.error(error);
@@ -473,7 +477,7 @@ client.on('message', message => {
 });
 
 
-async function salonBilet(koltuk, filmadi, saati, kanalID) {
+async function salonBilet(koltuk, filmadi, saati, kanalID, filmafisi) {
 	var canvas = Canvas.createCanvas(340, 408);
 	var salon = canvas.getContext('2d');
 
@@ -497,16 +501,19 @@ async function salonBilet(koltuk, filmadi, saati, kanalID) {
 				color: 0xffff00,
 				title: 'Bilet Gişesi',
 				description: 'Hoşgeldiniz',
+				thumbnail: {
+					url: filmafisi,
+				},
 				fields: [
 					
 					{
 						name: 'Film Adı',
-						value: 'Kung Fu Panda',
+						value: filmadi,
 						inline: false,
 					},
 					{
 						name: 'Film Saati',
-						value: '21:30',
+						value: saati,
 						inline: true,
 					},
 				],
