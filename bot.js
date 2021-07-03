@@ -443,11 +443,7 @@ if (message.member.roles.cache.some(role => role.name === 'jellyfish') || messag
 					name: 'Film Saati',
 					value: '21:30',
 					inline: true
-				}, {
-					name: 'Film Afişi',
-					value: 'https://cdn.mee6.xyz/guild-images/794931185289265182/0128938b8e0d0da77183a35c87abdc027782164179209bafdfaa67c3bb0ed7b9.png',
-					inline: true
-				}, )
+				},)
 				.setTimestamp()
 				.setFooter('filmgecesi3');
 
