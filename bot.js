@@ -252,8 +252,8 @@ client.on('message', message => {
 		if (message.content === '🎫') {
 			const tckt = Math.floor(Math.random() * 55 + 1);
 
-			const filmadi = "Filmin Adı";
-			const saati = "16:15"
+			const filmadi = "Kung Fu Panda";
+			const saati = "21:30"
 			const filmafisi = "https://cdn.discordapp.com/attachments/846062779202535437/858092650606755840/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg"
 
 			const kanalID = "857974372919410731"
