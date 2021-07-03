@@ -473,7 +473,7 @@ client.on('message', message => {
 });
 
 
-async function salonBilet(koltuk, filmadi, saati) {
+async function salonBilet(koltuk, filmadi, saati, kanalID) {
 	var canvas = Canvas.createCanvas(340, 408);
 	var salon = canvas.getContext('2d');
 
