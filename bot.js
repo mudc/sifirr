@@ -477,7 +477,7 @@ async function salonBilet(koltuk, filmadi, saati) {
 	var canvas = Canvas.createCanvas(340, 408);
 	var salon = canvas.getContext('2d');
 
-	const background = await Canvas.loadImage('/koltukbg.png');
+	const background = await Canvas.loadImage('./koltukbg.png');
 	salon.drawImage(background, 0, 0, 340, 408);
 
 	salon.font = '90px "Tahoma"';
