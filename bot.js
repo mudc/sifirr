@@ -1,18 +1,20 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
 const ayarlar = require('./ayarlar.json');
 
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+const mergeImages = require('merge-images');
+const Canvas = require('canvas');
+const fs = require("fs");
+
 var prefix = ayarlar.prefix;
-
-
-
 
 const deleteLogChannel = '846062780083732511';
 const editLogChannel = '846062780083732510';
 const picLogChannel = '858302891000201247';
 
 client.on('ready', () => {
-	client.user.setActivity('v1.0.0', {
+	client.user.setActivity('v1.0.1', {
 		type: 'STREAMING',
 		url: "https://www.twitch.tv/angyfish"
 	});
@@ -78,13 +80,10 @@ var result = originalText.normalize('NFD').replace(/[\u0300-\u036f]/g, "")
 console.log(result)
 
 
-
-
-
 client.on('message', message => {
 
 	if (message.author.bot) return;
-	
+
 	var myDate = new Date();
 	var hrs = myDate.getHours();
 
@@ -99,7 +98,7 @@ client.on('message', message => {
 	let yaksamlar = keywords.includes('yakşamlar');
 	let iyigeceler = keywords.includes('iyi geceler')
 
-//GÜNAYDIN
+	//GÜNAYDIN
 
 	if (message.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (gunaydin === true) {
@@ -186,7 +185,7 @@ client.on('message', message => {
 				message.react('🌃');
 			}
 		}
-	
+
 
 		if (iyiaksamlar === true) {
 			console.log(hrs);
@@ -220,10 +219,10 @@ client.on('message', message => {
 	if (message.content.toLowerCase() === 'selam') {
 		message.channel.send('selam');
 	}
-	
-//SİNEMA KODLARI
 
-if (message.member.roles.cache.some(role => role.name === 'jellyfish') || message.member.roles.cache.some(role => role.name === 'movie') || message.member.roles.cache.some(role => role.name === 'angyfish')) {
+	//SİNEMA KODLARI
+
+	if (message.member.roles.cache.some(role => role.name === 'jellyfish') || message.member.roles.cache.some(role => role.name === 'movie') || message.member.roles.cache.some(role => role.name === 'angyfish')) {
 		if (message.content === '<:pay:856947305592127579>') {
 			message.reply('<:ticket:856947316279214111>');
 		}
@@ -251,30 +250,36 @@ if (message.member.roles.cache.some(role => role.name === 'jellyfish') || messag
 				message.channel.send('https://tenor.com/view/cine-pel%c3%adcula-palomitas-kino-popcorn-gif-12330033');
 			}
 		}
-}
+	}
 
-// MODS
+	// MODS
 
-if (message.member.roles.cache.some(role => role.name === 'jellyfish') || message.member.roles.cache.some(role => role.name === 'angyfish')) {
+	if (message.member.roles.cache.some(role => role.name === 'jellyfish') || message.member.roles.cache.some(role => role.name === 'angyfish')) {
 		if (message.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
 			message.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
 		}
 		if (message.content.toLowerCase() === prefix + '321') {
-			message.delete({ timeout: 0 });
+			message.delete({
+				timeout: 0
+			});
 			message.channel.send('https://media.giphy.com/media/d9wPasV7ukkta/giphy.gif');
 		}
 		if (message.content.toLowerCase() === prefix + 'theend') {
-			message.delete({ timeout: 0 });
+			message.delete({
+				timeout: 0
+			});
 			message.channel.send('https://tenor.com/view/sad-no-way-the-end-ending-gif-13844808');
 		}
 		if (message.content.toLowerCase() === 'yaksamlar') {
-			message.delete({ timeout: 0 });
+			message.delete({
+				timeout: 0
+			});
 			message.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
 		}
 		if (message.content === prefix + 'bilet') {
 			message.reply("`Koltuk Numaranız: " + Math.floor(Math.random() * 65 + 1) + "`");
 		}
-		
+
 		/*if (message.content === prefix + 'bunny') {
 			const roleId = "812004859439218758"
 			const role2 = new Discord.MessageEmbed()
@@ -290,28 +295,28 @@ if (message.member.roles.cache.some(role => role.name === 'jellyfish') || messag
 */
 		if (message.content === prefix + 'ping') {
 			const discordPing = message.client.ws.ping
-			message.channel.send('...').then(mp =>{
+			message.channel.send('...').then(mp => {
 				const ping = mp.createdTimestamp - message.createdTimestamp;
 				const pingem = new Discord.MessageEmbed()
-				
-				.setAuthor(`Your ping is ${ping}`)
-				.setColor("Your Color")
-				.addFields({
-					name: 'Server Ping:',
-					value: discordPing
-				},{
-					name: 'Your Ping',
-					value: ping
-				},);
-				
+
+					.setAuthor(`Your ping is ${ping}`)
+					.setColor("Your Color")
+					.addFields({
+						name: 'Server Ping:',
+						value: discordPing
+					}, {
+						name: 'Your Ping',
+						value: ping
+					}, );
+
 				mp.edit(pingem)
 
 			});
 		}
-		
-		
 
-		
+
+
+
 		//m.edit(`discord gecikmesi: ${discordPing} ms\nBot Gecikmesi: ${ping} ms`);
 
 		/* ROL ÜYE SAYISI
@@ -328,7 +333,7 @@ if (message.member.roles.cache.some(role => role.name === 'jellyfish') || messag
 			message.channel.send(memberCount + " members have this role!");
 		}
 		*/
-		
+
 
 
 		if (message.content.toLowerCase() === prefix + 'stats') {
@@ -338,58 +343,58 @@ if (message.member.roles.cache.some(role => role.name === 'jellyfish') || messag
 			const tcount = client.channels.cache.filter(c => c.type === 'text').size;
 			const vcount = client.channels.cache.filter(c => c.type === 'voice').size;
 			const discordPing = message.client.ws.ping;
-			message.channel.send('...').then(m =>{
-			const ping = m.createdTimestamp - message.createdTimestamp;
-			const stats = new Discord.MessageEmbed()
-				.setColor('RANDOM')
-				.setTitle('Film Komutları')
-				.setDescription(`:white_check_mark: Statistics of Lobby Boy`)
-				.setTimestamp()
-				.setFooter('lobbyboy')
-				.setThumbnail('https://cdn.discordapp.com/attachments/858275837417881623/860200933463949312/zero.png')
-				.addFields({
-					name: 'Server:',
-					value: scount,
-					inline: true
-				},{
-					name: 'Members',
-					value: ucount,
-					inline: true,
-				},{
-					name: 'Angys Members',
-					value: mcount,
-					inline: true,
-				},{ 
-					name: '\u200B', 
-					value: '\u200B',
-					inline: false,
-				},{
-					name: 'Server Ping:',
-					value: discordPing,
-					inline: true
-				},{
-					name: 'LobbyBoy Ping',
-					value: ping,
-					inline: true,
-				},{ 
-					name: '\u200B', 
-					value: '\u200B',
-					inline: false, 
-				},{
-					name: 'Text channels',
-					value: tcount,
-					inline: true,
-				},{
+			message.channel.send('...').then(m => {
+				const ping = m.createdTimestamp - message.createdTimestamp;
+				const stats = new Discord.MessageEmbed()
+					.setColor('RANDOM')
+					.setTitle('Film Komutları')
+					.setDescription(`:white_check_mark: Statistics of Lobby Boy`)
+					.setTimestamp()
+					.setFooter('lobbyboy')
+					.setThumbnail('https://cdn.discordapp.com/attachments/858275837417881623/860200933463949312/zero.png')
+					.addFields({
+						name: 'Server:',
+						value: scount,
+						inline: true
+					}, {
+						name: 'Members',
+						value: ucount,
+						inline: true,
+					}, {
+						name: 'Angys Members',
+						value: mcount,
+						inline: true,
+					}, {
+						name: '\u200B',
+						value: '\u200B',
+						inline: false,
+					}, {
+						name: 'Server Ping:',
+						value: discordPing,
+						inline: true
+					}, {
+						name: 'LobbyBoy Ping',
+						value: ping,
+						inline: true,
+					}, {
+						name: '\u200B',
+						value: '\u200B',
+						inline: false,
+					}, {
+						name: 'Text channels',
+						value: tcount,
+						inline: true,
+					}, {
 
-					name: 'Voice channels',
-					value: vcount,
-					inline: true
-				},);
+						name: 'Voice channels',
+						value: vcount,
+						inline: true
+					}, );
 
-			return m.edit(stats)
-		});
+				return m.edit(stats)
+			});
 		}
-		
+
 		if (message.content === prefix + 'salon') {
 			if (Math.floor((Math.random() * 4) + 2) === 1) {
 				message.channel.send('Salon 1');
@@ -398,9 +403,9 @@ if (message.member.roles.cache.some(role => role.name === 'jellyfish') || messag
 
 			}
 		}
-		
-		
-		
+
+
+
 		if (message.content === "deneme1") {
 			const exampleEmbed = new Discord.MessageEmbed()
 				.setColor('#ffff00')
@@ -428,58 +433,103 @@ if (message.member.roles.cache.some(role => role.name === 'jellyfish') || messag
 		}
 		if (message.content === '🎫') {
 			const tckt = Math.floor(Math.random() * 65 + 1);
-			const ticket = new Discord.MessageEmbed()
-				.setColor('#ffff00')
-				.setTitle('Bilet Gişesi')
-				.setDescription('de  ')
-				.setThumbnail('https://cdn.discordapp.com/attachments/846062779202535437/858092650606755840/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg')
-				.addFields({
-					name: 'Koltuk Numaranız',
-					value: tckt
-				}, {
-					name: 'Film Adı',
-					value: 'Kung Fu Panda'
-				}, {
-					name: 'Film Saati',
-					value: '21:30',
-					inline: true
-				},)
-				.setTimestamp()
-				.setFooter('filmgecesi3');
 
-			return message.channel.send(ticket);
+			const filmadi = "Filmin Adı";
+			const saati = "16:15"
+
+			const kanalID = "857974372919410731"
+
+			salonBilet(tckt, filmadi, saati, kanalID);
 		}
-		
-		try {
-		  } catch (error) {
+
+		try {} catch (error) {
 			console.error(error);
 			client.channels.cache.get('860218589244162080').send("error");
 			// expected output: ReferenceError: nonExistentFunction is not defined
 			// Note - error messages will vary depending on browser
-		  } 
+		}
 
 	}
 
 
 
-/*
-	const talkedRecently = new Set();
-	if (talkedRecently.has(message.author.id)) {
-		message.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
-	} else {
+	/*
+		const talkedRecently = new Set();
+		if (talkedRecently.has(message.author.id)) {
+			message.channel.send("Wait 1 minute before getting typing this again. - " + message.author);
+		} else {
 
-		// the user can type the command ... your command code goes here :)
-	
-		// Adds the user to the set so that they can't talk for a minute
-		talkedRecently.add(message.author.id);
-		setTimeout(() => {
-			// Removes the user from the set after a minute
-			talkedRecently.delete(message.author.id);
-		}, 60000);
-	}
-*/
+			// the user can type the command ... your command code goes here :)
+		
+			// Adds the user to the set so that they can't talk for a minute
+			talkedRecently.add(message.author.id);
+			setTimeout(() => {
+				// Removes the user from the set after a minute
+				talkedRecently.delete(message.author.id);
+			}, 60000);
+		}
+	*/
 
 
 });
+
+
+async function salonBilet(koltuk, filmadi, saati) {
+	var canvas = Canvas.createCanvas(340, 408);
+	var salon = canvas.getContext('2d');
+
+	const background = await Canvas.loadImage('/koltukbg.png');
+	salon.drawImage(background, 0, 0, 340, 408);
+
+	salon.font = '90px "Tahoma"';
+	salon.textAlign = "center";
+	salon.fillStyle = "rgba(255, 255, 255, 0.8)";
+	salon.fillText(koltuk, 170, 310);
+
+	b64 = canvas.toDataURL();
+	base64Data = b64.replace(/^data:image\/png;base64,/, "");
+
+	fs.writeFile("/saloon.png", base64Data, 'base64', function (err) {
+		if (err == null) {
+			
+            const file = new Discord.MessageAttachment('./saloon.png');
+
+            const exampleEmbed = {
+				color: 0xffff00,
+				title: 'Bilet Gişesi',
+				description: 'Hoşgeldiniz',
+				fields: [
+					
+					{
+						name: 'Film Adı',
+						value: Kung Fu Panda,
+						inline: false,
+					},
+					{
+						name: 'Film Saati',
+						value: 21:30,
+						inline: true,
+					},
+				],
+				image: {
+					url: 'attachment://saloon.png',
+				},
+				timestamp: new Date(),
+				footer: {
+					text: 'ZeldanBanlansın',
+				}
+			};
+			
+
+			client.channels.cache.get(kanalID).send({
+                    files: [file], embed: exampleEmbed
+            });
+            
+			console.log("Resim gönderildi");
+		}
+	});
+
+}
+
 
 client.login(process.env.BOT_TOKEN);
