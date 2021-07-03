@@ -502,7 +502,7 @@ async function salonBilet(koltuk, filmadi, saati) {
 					
 					{
 						name: 'Film Adı',
-						value: Kung Fu Panda,
+						value: 'Kung Fu Panda',
 						inline: false,
 					},
 					{
