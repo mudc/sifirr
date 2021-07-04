@@ -484,10 +484,10 @@ async function salonBilet(koltuk, filmadi, saati, kanalID, filmafisi) {
 	const background = await Canvas.loadImage('./koltukbg.png');
 	salon.drawImage(background, 0, 0, 340, 408);
 
-	salon.font = '70px "Tahoma"';
+	salon.font = '65px "Tahoma"';
 	salon.textAlign = "center";
 	salon.fillStyle = "rgba(255, 255, 255, 0.8)";
-	salon.fillText(koltuk, 170, 280);
+	salon.fillText(koltuk, 167, 280);
 
 	b64 = canvas.toDataURL();
 	base64Data = b64.replace(/^data:image\/png;base64,/, "");
