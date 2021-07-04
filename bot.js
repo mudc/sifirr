@@ -487,7 +487,7 @@ async function salonBilet(koltuk, filmadi, saati, kanalID, filmafisi) {
 	salon.font = '70px "Tahoma"';
 	salon.textAlign = "center";
 	salon.fillStyle = "rgba(255, 255, 255, 0.8)";
-	salon.fillText(koltuk, 170, 270);
+	salon.fillText(koltuk, 170, 280);
 
 	b64 = canvas.toDataURL();
 	base64Data = b64.replace(/^data:image\/png;base64,/, "");
