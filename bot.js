@@ -102,19 +102,19 @@ client.on('message', message => {
 	if (message.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (gunaydin === true) {
 			console.log(hrs);
-			if (hrs > 7) {
+			if (hrs < 12 || hrs > 6) {
 				message.channel.send("Günaydın :city_sunset: ")
 				message.react('✅');
 				message.react('🌇');
-			} else if (hrs < 17) {
+			} else if (hrs > 12 || hrs < 15) {
 				message.channel.send("Tünaydın :city_dusk: ")
 				message.react('🚫');
 				message.react('🌆');
-			} else if (hrs < 22) {
+			} else if (hrs > 15 || hrs < 21) {
 				message.channel.send("Yakşamlar :cityscape: ")
 				message.react('🚫');
 				message.react('🏙️');
-			} else if (hrs < 6) {
+			} else if (hrs > 21 || hrs < 06) {
 				message.channel.send("İyi geceler :night_with_stars: ")
 				message.react('🚫');
 				message.react('🌃');
