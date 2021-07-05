@@ -114,7 +114,7 @@ client.on('message', message => {
 				message.channel.send("Yakşamlar :cityscape: ")
 				message.react('🚫');
 				message.react('🏙️');
-			} else if (hrs > 22 || hrs < 6) {
+			} else if (hrs < 6) {
 				message.channel.send("İyi geceler :night_with_stars: ")
 				message.react('🚫');
 				message.react('🌃');
