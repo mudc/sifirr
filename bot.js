@@ -123,19 +123,19 @@ client.on('message', message => {
 
 		if (tunaydin === true) {
 			console.log(hrs);
-			if (hrs < 12) {
+			if (hrs > 5 && hrs < 12) {
 				message.channel.send("Günaydın :city_sunset: ")
 				message.react('🚫');
 				message.react('🌇');
-			} else if (hrs < 17) {
+			} else if (hrs > 12 && hrs < 15) {
 				message.channel.send("Tünaydın :city_dusk: ")
 				message.react('✅');
 				message.react('🌆');
-			} else if (hrs < 22) {
+			} else if (hrs > 15 && hrs < 21) {
 				message.channel.send("Yakşamlar :cityscape: ")
 				message.react('🚫');
 				message.react('🏙️');
-			} else if (hrs > 22 || hrs < 06) {
+			} else if (hrs > 21 || hrs < 05) {
 				message.channel.send("İyi geceler :night_with_stars: ")
 				message.react('🚫');
 				message.react('🌃');
@@ -144,20 +144,20 @@ client.on('message', message => {
 
 		if (yaksamlar === true) {
 			console.log(hrs);
-			if (hrs < 12) {
+			if (hrs > 5 && hrs < 12) {
 				message.channel.send("Günaydın :city_sunset: ")
 				message.react('🚫');
 				message.react('🌇');
-			} else if (hrs < 17) {
+			} else if (hrs > 12 && hrs < 15) {
 				message.channel.send("Tünaydın :city_dusk: ")
 				message.react('🚫');
 				message.react('🌆');
-			} else if (hrs < 22) {
+			} else if (hrs > 15 && hrs < 21) {
 				message.channel.send("Yakşamlar :cityscape: ")
 				message.react('✅');
 				message.react('🏙️');
 				message.channel.send('https://cdn.discordapp.com/attachments/794985310109958144/856850759282851840/Screenshot_20210609-104634_YouTube.png');
-			} else if (hrs > 22 || hrs < 06) {
+			} else if (hrs > 21 || hrs < 05) {
 				message.channel.send("İyi geceler :night_with_stars: ")
 				message.react('🚫');
 				message.react('🌃');
@@ -166,19 +166,19 @@ client.on('message', message => {
 
 		if (iyigeceler === true) {
 			console.log(hrs);
-			if (hrs < 12) {
+			if (hrs > 5 && hrs < 12) {
 				message.channel.send("Günaydın :city_sunset: ")
 				message.react('🚫');
 				message.react('🌇');
-			} else if (hrs < 17) {
+			} else if (hrs > 12 && hrs < 15) {
 				message.channel.send("Tünaydın :city_dusk: ")
 				message.react('🚫');
 				message.react('🌆');
-			} else if (hrs < 22) {
+			} else if (hrs > 15 && hrs < 21) {
 				message.channel.send("Yakşamlar :cityscape: ")
 				message.react('🚫');
 				message.react('🏙️');
-			} else if (hrs > 22 || hrs < 06) {
+			} else if (hrs > 21 || hrs < 05) {
 				message.channel.send("İyi geceler :night_with_stars: ")
 				message.react('✅');
 				message.react('🌃');
@@ -188,7 +188,7 @@ client.on('message', message => {
 
 		if (iyiaksamlar === true) {
 			console.log(hrs);
-			if (hrs < 12 || hrs >= 24) {
+			if (hrs > 5 && hrs < 12) {
 				message.channel.send("iyi akşamar :city_sunset: ")
 				message.react('🚫');
 				message.react('🌇');
