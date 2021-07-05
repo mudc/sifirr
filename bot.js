@@ -102,7 +102,7 @@ client.on('message', message => {
 	if (message.member.roles.cache.some(role => role.name === 'jellyfish')) {
 		if (gunaydin === true) {
 			console.log(hrs);
-			if (hrs > 6 || hrs < 12) {
+			if (hrs > 7) {
 				message.channel.send("Günaydın :city_sunset: ")
 				message.react('✅');
 				message.react('🌇');
