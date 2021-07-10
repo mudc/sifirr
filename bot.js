@@ -254,9 +254,9 @@ client.on('message', message => {
 		if (message.content === '<:ticket:856947316279214111>') {
 			const tckt = Math.floor(Math.random() * 55 + 1);
 
-			const filmadi = "Kung Fu Panda";
+			const filmadi = "Kung Fu Panda 2";
 			const saati = "21:30"
-			const filmafisi = "https://cdn.mee6.xyz/guild-images/794931185289265182/0128938b8e0d0da77183a35c87abdc027782164179209bafdfaa67c3bb0ed7b9.png"
+			const filmafisi = "https://imgur.com/JgaFw8u"
 
 			const kanalID = "856958008935317564"
 
@@ -269,7 +269,7 @@ client.on('message', message => {
 	// MODS
 
 	if (message.member.roles.cache.some(role => role.name === 'jellyfish') || message.member.roles.cache.some(role => role.name === 'angyfish')) {
-		if (message.content === '<:pay:856947305592127579><:pay:856947305592127579>') {
+		if (message.content === '<:pay:856947305592127579> <:pay:856947305592127579>') {
 			message.reply('<:ticket:856947316279214111><:ticket:856947316279214111>');
 		}
 		if (message.content.toLowerCase() === prefix + '321') {
@@ -496,10 +496,10 @@ async function salonBilet(koltuk, filmadi, saati, kanalID, filmafisi) {
 
 	fs.writeFile("saloon.png", base64Data, 'base64', function (err) {
 		if (err == null) {
-			
-            const file = new Discord.MessageAttachment('./saloon.png');
 
-            const exampleEmbed = {
+			const file = new Discord.MessageAttachment('./saloon.png');
+
+			const exampleEmbed = {
 				color: 0xffff00,
 				title: 'Bilet Gişesi',
 				description: 'Hoşgeldiniz',
@@ -507,7 +507,7 @@ async function salonBilet(koltuk, filmadi, saati, kanalID, filmafisi) {
 					url: filmafisi,
 				},
 				fields: [
-					
+
 					{
 						name: 'Film Adı',
 						value: filmadi,
@@ -527,12 +527,13 @@ async function salonBilet(koltuk, filmadi, saati, kanalID, filmafisi) {
 					text: 'ZeldanBanlansın',
 				}
 			};
-			
+
 
 			client.channels.cache.get(kanalID).send({
-                    files: [file], embed: exampleEmbed
-            });
-            
+				files: [file],
+				embed: exampleEmbed
+			});
+
 			console.log("Resim gönderildi");
 		}
 	});
