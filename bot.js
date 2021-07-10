@@ -256,7 +256,7 @@ client.on('message', message => {
 
 			const filmadi = "Kung Fu Panda 2";
 			const saati = "21:30"
-			const filmafisi = "https://imgur.com/Z4yjyVs"
+			const filmafisi = "https://i.imgur.com/Z4yjyVs.png"
 
 			const kanalID = "856958008935317564"
 
